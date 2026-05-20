@@ -1,0 +1,16 @@
+# tools/requirements.txt — Site Factory 3.0
+# Dependências Python para scripts da Camada 3 (A.N.T)
+# Instalar com: pip install -r tools/requirements.txt
+
+# Environment
+python-dotenv>=1.0.0
+
+# HTTP / APIs
+httpx>=0.27.0
+requests>=2.31.0
+
+# Data Processing
+pandas>=2.2.0
+
+# Utility
+rich>=13.7.0      # output formatado no terminal

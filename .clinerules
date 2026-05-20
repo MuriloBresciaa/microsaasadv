@@ -1,0 +1,45 @@
+# .clinerules — Site Factory V2.0
+
+> Regras locais do agente para este repositório.
+
+## Contexto
+
+Isto é um clone da **Fábrica de Sites (Site Factory V2.0)**.
+Este repositório serve como template base para criação de landing pages
+de alta conversão e e-commerces ultra-rápidos.
+
+## Regras Estritas
+
+### Inicialização Obrigatória
+Antes de qualquer ação, DEVE consultar em ordem:
+1. `ARQUITETURA.md` (raiz) — Stack, pastas canônicas, Iron Laws
+2. `docs/ESTADO.md` — Para saber o status atual do projeto
+3. `.agent/rules/00_master_index.md` — Protocolo Fail-Fast e mapa de utilitários
+
+### Design
+- O design padrão é **sempre Dark Mode OLED**. Sem exceções.
+- Cores: usar sempre os tokens CSS definidos em `src/styles/global.css`.
+- Fontes: Inter ou Manrope. Nunca defaults do browser.
+- Contrast ratio mínimo: 7:1.
+
+### Componentes UI
+- Componentes UI genéricos devem seguir o padrão **Shadcn** em `src/components/ui/`.
+- Usar a função `cn()` de `@/lib/utils` para merge de classes.
+- Componentes de domínio ficam em `src/components/` (fora de `/ui`).
+
+### Código
+- **Package Manager**: pnpm (obrigatório).
+- **Imports**: Sempre absolutos via `@/` alias.
+- **TypeScript**: Strict mode. Sem `any`.
+- **React**: Apenas em Islands (`client:*` directives).
+
+### Database
+- Supabase em 3FN com UUIDs.
+- RLS sempre habilitado.
+- Consultar `docs/03_DATABASE.md` para convenções.
+
+### Finalização
+Após concluir qualquer tarefa, atualizar `docs/ESTADO.md` com:
+- O que foi feito
+- Novos componentes/endpoints criados
+- Próximos passos
