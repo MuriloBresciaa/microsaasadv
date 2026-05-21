@@ -87,6 +87,8 @@
   - Implementação de atração magnética elástica nos botões com `data-magnetic-element` sob a constante de mola `elastic.out(1.1, 0.6)` e duração de `0.6s`, com ScrollTrigger micro-paralaxe nos textos internos do Bento Grid.
   - Correção de falsos-positivos de validação do vídeo e reprodução em `qa_validator_tool.py` para homologação 100% livre de erros.
 - [x] **Sanamento de Imports no Fresnel.tsx (Vite SSR Runtime Error):** Correção da quebra de runtime SSR separando e convertendo as importações de `CSSProperties` e `ReactNode` para `import type` puros no arquivo `src/components/ui/Fresnel.tsx`, destravando o build e o interpretador SSR do Vite.
+- [x] **Governança Cromática e Tipografia Matte (True Charcoal):** Criação das especificações imutáveis de design system em `docs/design-system/PALETA.md`. Correção do gradiente de `h1` e `h2` em `src/styles/global.css` eliminando pretos absolutos e aplicando o degradê fosco premium da Apple (`#2d2d30` para `#1d1d1f` True Charcoal) com suporte dinâmico a seções escuras (`#ffffff` para `#a1a1aa` prata acetinado de titânio).
+
 
 
 ## Próximos Passos
