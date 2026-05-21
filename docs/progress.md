@@ -25,6 +25,22 @@
 - [ ] próximo item
 ```
 
+### [2026-05-21] — Wave 4.5: Iluminação Atmosférica de Estúdio (Mesh Lights) e Bordas de Difração (Rim Lighting)
+**Wave/Sprint:** Wave 4.5
+**Status:** ✅ Concluído
+
+#### O que foi feito
+- Refatorados os cartões `.apple-glass-card` e `.apple-hardware-card` no arquivo `src/styles/global.css` para substituir a borda comum por uma borda dupla simulada ultra-fina (`border: 1px solid rgba(255, 255, 255, 0.15)`) combinada com um ajuste na sombra interna (`inset 0 1px 0 0 rgba(255, 255, 255, 0.2)` no estado normal e `inset 0 1px 0 0 rgba(255, 255, 255, 0.3)` no hover). Isso simula a luz do ambiente batendo nas quinas chanfradas do vidro protetor (Rim Lighting/Diffraction).
+- Adicionadas as auroras de fundo atmosféricas (Mesh Background Lights) em `src/pages/index.astro` atrás das seções de soluções Bento Grid (`#features`) e de preços (`#precos`). Utilizados blocos circulares desfocados misturando tons Gold (`#b8860b`) e Deep Navy (`#0f172a`) com classes Tailwind CSS (`absolute blur-[140px] rounded-full opacity-20 pointer-events-none`).
+- Adicionados os atributos `relative overflow-hidden` nas seções `#features` e `#precos` para conter os blobs de iluminação, e adicionada a classe `relative z-10` aos contêineres de conteúdo interno para mantê-los por cima da iluminação de estúdio.
+- Executado com sucesso o validador de qualidade do frontend local (`python tools/qa_validator_tool.py --file src/pages/index.astro --type frontend`) e compilado com êxito o build de produção (`pnpm run build`).
+- Enviada a versão final lapidada ao repositório remoto para atualização imediata na produção.
+
+#### Próximos passos
+- [ ] Conectar as telas internas de cada módulo (/app/analista-contratos, /app/copiloto-peticoes, /app/auditoria-provas) aos Drizzle schemas e fluxos correspondentes do banco.
+- [ ] Implementar a persistência e gravação de logs de uso do período de testes em MySQL local.
+
+---
 
 ### [2026-05-20] — Wave 4.4: Erradicação do Azul e Calibração Apple White Grade
 **Wave/Sprint:** Wave 4.4
