@@ -25,6 +25,23 @@
 - [ ] próximo item
 ```
 
+### [2026-05-21] — Wave 4.7: Consistência Responsiva das Luzes de Estúdio (Silk-Screen Glow & GPU Gates)
+**Wave/Sprint:** Wave 4.7
+**Status:** ✅ Concluído
+
+#### O que foi feito
+- Refatorado o dimensionamento e posicionamento das mesh lights em `src/pages/index.astro` para evitar clipping (corte de transbordo) em dispositivos móveis, substituindo as posições estáticas de canto por escala dinâmica centralizada (`w-[80%] aspect-square top-1/4` e `top-3/4`) em viewports móveis, expandindo para o posicionamento original de cantos (`md:-top-[10%] md:-left-[10%] md:w-[50%] md:h-[60%]`) em telas maiores.
+- Adicionadas classes de aceleração por hardware (GPU gates: `transform-gpu` e `will-change-transform will-change-[filter]`) para forçar a GPU móvel a reter o filtro blur de alto desempenho nas seções `#features` e `#precos`, prevenindo degradação de FPS e descartabilidade do efeito.
+- Calibrada qualitativamente a "Aura Luminosa de Seda" (Silk-Screen Glow), dosando a opacidade para `opacity-[0.12]` no mobile (compensando telas de baixo brilho sob reflexo solar) e `md:opacity-[0.08]` no desktop (telas grandes auto-emissivas de alto brilho).
+- Validado com sucesso pelo QA local e compilado build de produção.
+- Commitado e push feito na branch principal.
+
+#### Próximos passos
+- [ ] Conectar as telas internas de cada módulo (/app/analista-contratos, /app/copiloto-peticoes, /app/auditoria-provas) aos Drizzle schemas e fluxos correspondentes do banco.
+- [ ] Implementar a persistência e gravação de logs de uso do período de testes em MySQL local.
+
+---
+
 ### [2026-05-21] — Wave 4.6: Calibragem Furtiva das Luzes de Estúdio (Satin Ambient Glow)
 **Wave/Sprint:** Wave 4.6
 **Status:** ✅ Concluído
