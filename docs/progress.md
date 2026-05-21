@@ -25,6 +25,23 @@
 - [ ] próximo item
 ```
 
+### [2026-05-21] — Wave 4.6: Calibragem Furtiva das Luzes de Estúdio (Satin Ambient Glow)
+**Wave/Sprint:** Wave 4.6
+**Status:** ✅ Concluído
+
+#### O que foi feito
+- Refatorada a opacidade das auroras e mesh lights de fundo nas seções `#features` e `#precos` em `src/pages/index.astro`.
+- Aumentada a opacidade de `opacity-[0.03]` (3%) para `opacity-[0.08]` (8%) para restaurar o contraste de fundo ("Névoa de Cetim Volumétrica"), permitindo que as islands e componentes do `<Fresnel />` façam refração óptica perceptível durante o scroll.
+- Mantido o borrão amplo em `blur-[200px]` para dispersar de forma suave o Ouro (`#b8860b`) e o Deep Navy (`#0f172a`), garantindo harmonia estética sem poluir o Warm Concrete do design.
+- Validado o frontend com `qa_validator_tool.py` e executado o build de produção local com 100% de sucesso.
+- Commitado e enviado as alterações para o repositório remoto (`origin main`).
+
+#### Próximos passos
+- [ ] Conectar as telas internas de cada módulo (/app/analista-contratos, /app/copiloto-peticoes, /app/auditoria-provas) aos Drizzle schemas e fluxos correspondentes do banco.
+- [ ] Implementar a persistência e gravação de logs de uso do período de testes em MySQL local.
+
+---
+
 ### [2026-05-21] — Wave 4.5: Iluminação Atmosférica de Estúdio (Mesh Lights) e Bordas de Difração (Rim Lighting)
 **Wave/Sprint:** Wave 4.5
 **Status:** ✅ Concluído
