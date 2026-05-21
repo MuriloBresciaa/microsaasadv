@@ -394,58 +394,113 @@ import Fresnel from "../components/ui/Fresnel";
       </div>
     </section>
 
-    <!-- Seção 4: Preço Liquid Glass -->
-    <section id="precos" class="py-24 sm:py-32 border-t border-slate-200/50 bg-background relative overflow-hidden">
-      <!-- Atmospheric Mesh Lights -->
+    <!-- Seção 4: Preço — Apple Store Product Page -->
+    <section id="precos" class="py-32 sm:py-44 bg-[#0f172a] relative overflow-hidden">
+      <!-- Atmospheric Mesh Lights (Dark Mode Calibrated) -->
       <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        <div class="absolute w-[80%] aspect-square rounded-full bg-[#b8860b] blur-[150px] md:blur-[200px] opacity-[0.12] md:opacity-[0.08] top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:-top-[10%] md:-left-[10%] md:w-[50%] md:h-[60%] transform-gpu will-change-transform will-change-[filter] pointer-events-none"></div>
-        <div class="absolute w-[80%] aspect-square rounded-full bg-[#0f172a] blur-[150px] md:blur-[200px] opacity-[0.12] md:opacity-[0.08] top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:-bottom-[10%] md:-right-[10%] md:w-[50%] md:h-[60%] transform-gpu will-change-transform will-change-[filter] pointer-events-none"></div>
+        <div class="absolute w-[80%] aspect-square rounded-full bg-[#b8860b] blur-[150px] md:blur-[200px] opacity-[0.06] md:opacity-[0.04] top-0 left-1/2 -translate-x-1/2 md:translate-x-0 md:-top-[15%] md:-left-[10%] md:w-[50%] md:h-[60%] transform-gpu will-change-transform will-change-[filter] pointer-events-none"></div>
+        <div class="absolute w-[80%] aspect-square rounded-full bg-[#1e3a5f] blur-[150px] md:blur-[200px] opacity-[0.15] md:opacity-[0.10] bottom-0 right-0 md:-bottom-[15%] md:-right-[10%] md:w-[50%] md:h-[60%] transform-gpu will-change-transform will-change-[filter] pointer-events-none"></div>
       </div>
 
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
-        <h2 class="apple-text-sheen font-apple-display font-bold text-3xl sm:text-4xl tracking-[-0.04em] mb-12 sm:mb-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <!-- Section Header -->
+        <span class="inline-block text-[10px] font-bold text-accent bg-accent/10 px-3 py-1.5 rounded-full apple-pill uppercase tracking-wider font-apple-text mb-6">
+          PLANO ÚNICO
+        </span>
+        <h2 class="apple-text-sheen font-apple-display font-bold text-3xl sm:text-5xl tracking-[-0.04em] leading-[1.05] mb-5">
           Transparência absoluta. Sem fidelidade.
         </h2>
-        
-        <div class="relative overflow-hidden p-8 sm:p-12 max-w-xl mx-auto text-left rounded-[32px] apple-hardware-card">
+        <p class="font-apple-text font-normal text-slate-400 text-sm sm:text-base leading-relaxed max-w-lg mx-auto mb-16 sm:mb-20">
+          Uma assinatura, três motores de auditoria, controle total.
+        </p>
+
+        <!-- Pricing Card — Apple Hardware Card floating on Dark -->
+        <div class="relative overflow-hidden p-10 sm:p-14 lg:p-16 max-w-2xl mx-auto text-left rounded-[32px] apple-hardware-card">
           <Fresnel client:load bezelType="convex_squircle" glassThickness={120} refractiveIndex={1.52} tintColor="#ffffff" tintOpacity={78} className="absolute inset-0 z-0 pointer-events-none" />
           <div class="relative z-10">
-            <div class="flex justify-between items-start mb-6">
+
+            <!-- Plan Name + Trial Badge -->
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-10">
               <div>
-                <h3 class="font-apple-display font-bold text-lg text-[#1d1d1f]">Assinatura Mensal Pro</h3>
-                <p class="text-[11px] text-secondary font-apple-text mt-0.5 font-normal apple-vibrancy">Acesso ilimitado às 3 engines cognitivas</p>
+                <h3 class="font-apple-display font-bold text-xl sm:text-2xl text-[#1d1d1f] tracking-[-0.03em]">Assinatura Mensal Pro</h3>
+                <p class="text-[12px] text-secondary font-apple-text mt-1 font-normal apple-vibrancy">Acesso ilimitado às 3 engines cognitivas</p>
               </div>
-              <span class="relative overflow-hidden inline-flex items-center justify-center px-3 py-1 text-[10px] font-bold text-accent uppercase tracking-wider font-apple-text min-h-[24px]">
+              <span class="relative overflow-hidden inline-flex items-center justify-center px-4 py-1.5 text-[10px] font-bold text-accent uppercase tracking-wider font-apple-text min-h-[28px] shrink-0 self-start">
                 <Fresnel client:load shape="pill" bezelType="convex_squircle" glassThickness={120} refractiveIndex={1.52} tintColor="#10B981" tintOpacity={10} showBorder={false} showShadow={false} className="absolute inset-0 z-0 pointer-events-none" />
                 <span class="relative z-10">7 Dias Grátis</span>
               </span>
             </div>
-            
-            <div class="flex items-baseline gap-1 my-8 pb-8">
-              <span class="font-apple-display text-6xl font-extralight tracking-[-0.02em] text-[#1d1d1f] antialiased">R$ 297</span>
-              <span class="text-xs font-normal text-secondary font-apple-text">/mês</span>
+
+            <!-- Price — Monumental Scale -->
+            <div class="flex items-baseline gap-2 mb-12">
+              <span class="font-apple-display text-7xl sm:text-8xl font-extralight tracking-[-0.02em] text-[#1d1d1f] antialiased">R$ 297</span>
+              <span class="text-sm font-normal text-secondary font-apple-text">/mês</span>
             </div>
 
-            <div class="space-y-0 mb-8">
+            <!-- Engine Icons Row -->
+            <div class="flex items-center gap-4 sm:gap-6 mb-10">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 bg-slate-50 rounded-xl flex items-center justify-center shadow-xs border border-slate-100 laser-icon-wrapper shrink-0">
+                  <svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                  </svg>
+                </div>
+                <span class="text-[11px] font-semibold text-slate-500 font-apple-text">Contratos</span>
+              </div>
+              <div class="apple-divider-v h-5 shrink-0"></div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 bg-slate-50 rounded-xl flex items-center justify-center shadow-xs border border-slate-100 laser-icon-wrapper shrink-0">
+                  <svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+                  </svg>
+                </div>
+                <span class="text-[11px] font-semibold text-slate-500 font-apple-text">Petições</span>
+              </div>
+              <div class="apple-divider-v h-5 shrink-0"></div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 bg-slate-50 rounded-xl flex items-center justify-center shadow-xs border border-slate-100 laser-icon-wrapper shrink-0">
+                  <svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <span class="text-[11px] font-semibold text-slate-500 font-apple-text">Provas</span>
+              </div>
+            </div>
+            
+            <!-- Benefits with Subpixel Dividers -->
+            <div class="space-y-0 mb-10">
               <div class="apple-divider-h"></div>
-              <div class="py-3.5 text-[13px] font-normal text-secondary font-apple-text">
+              <div class="py-4 text-[13px] font-normal text-secondary font-apple-text">
                 Processamento seguro de arquivos PDF e DOCX
               </div>
               <div class="apple-divider-h"></div>
-              <div class="py-3.5 text-[13px] font-normal text-secondary font-apple-text">
+              <div class="py-4 text-[13px] font-normal text-secondary font-apple-text">
                 Exportação estruturada sob as diretrizes do CPC
               </div>
               <div class="apple-divider-h"></div>
-              <div class="py-3.5 text-[13px] font-normal text-secondary font-apple-text">
+              <div class="py-4 text-[13px] font-normal text-secondary font-apple-text">
                 Criptografia de dados ativa e segredo de negócio blindado
               </div>
               <div class="apple-divider-h"></div>
             </div>
 
-            <a href="/app/auth" data-magnetic-element class="cta-link w-full bg-primary text-white font-semibold text-xs min-h-[48px] flex items-center justify-center rounded-full apple-pill hover:bg-slate-800 transition-colors shadow-xs font-apple-text">
+            <!-- Primary CTA -->
+            <a href="/app/auth" data-magnetic-element class="cta-link w-full bg-primary text-white font-semibold text-sm min-h-[52px] flex items-center justify-center rounded-full apple-pill hover:bg-slate-800 transition-colors shadow-xs font-apple-text">
               Iniciar Validação de Infraestrutura
             </a>
           </div>
+        </div>
+
+        <!-- Trust Signals -->
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+            </svg>
+            <span class="text-[11px] text-slate-500 font-apple-text font-normal">Sem cartão de crédito. Ativação imediata.</span>
+          </div>
+          <div class="hidden sm:block apple-divider-v h-4 shrink-0"></div>
+          <span class="text-[11px] text-slate-500 font-apple-text font-normal">Cancele a qualquer momento.</span>
         </div>
       </div>
     </section>
