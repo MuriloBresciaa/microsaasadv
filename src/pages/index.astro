@@ -396,23 +396,17 @@ import Fresnel from "../components/ui/Fresnel";
 
     <!-- Seção 4: Preço — Apple Store Product Page -->
     <section id="precos" class="py-32 sm:py-44 bg-[#0f172a] relative overflow-hidden">
-      <!-- Atmospheric Mesh Lights (Dark Mode Calibrated) -->
+      <!-- Atmospheric Mesh Lights (Studio Calibrated) -->
       <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        <div class="absolute w-[80%] aspect-square rounded-full bg-[#b8860b] blur-[150px] md:blur-[200px] opacity-[0.06] md:opacity-[0.04] top-0 left-1/2 -translate-x-1/2 md:translate-x-0 md:-top-[15%] md:-left-[10%] md:w-[50%] md:h-[60%] transform-gpu will-change-transform will-change-[filter] pointer-events-none"></div>
-        <div class="absolute w-[80%] aspect-square rounded-full bg-[#1e3a5f] blur-[150px] md:blur-[200px] opacity-[0.15] md:opacity-[0.10] bottom-0 right-0 md:-bottom-[15%] md:-right-[10%] md:w-[50%] md:h-[60%] transform-gpu will-change-transform will-change-[filter] pointer-events-none"></div>
+        <div class="absolute w-[80%] aspect-square rounded-full bg-[#b8860b] blur-[200px] opacity-[0.08] top-0 left-1/4 -translate-x-1/2 transform-gpu will-change-transform pointer-events-none"></div>
+        <div class="absolute w-[80%] aspect-square rounded-full bg-[#0f172a] blur-[200px] opacity-[0.08] bottom-0 right-0 md:-bottom-[10%] md:-right-[10%] transform-gpu will-change-transform pointer-events-none"></div>
       </div>
 
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
         <!-- Section Header -->
-        <span class="inline-block text-[10px] font-bold text-accent bg-accent/10 px-3 py-1.5 rounded-full apple-pill uppercase tracking-wider font-apple-text mb-6">
-          PLANO ÚNICO
-        </span>
-        <h2 class="apple-text-sheen font-apple-display font-bold text-3xl sm:text-5xl tracking-[-0.04em] leading-[1.05] mb-5">
+        <h2 class="apple-text-sheen font-apple-display font-bold text-4xl sm:text-6xl tracking-[-0.04em] leading-[1.05] mb-16 sm:mb-24">
           Transparência absoluta. Sem fidelidade.
         </h2>
-        <p class="font-apple-text font-normal text-slate-400 text-sm sm:text-base leading-relaxed max-w-lg mx-auto mb-16 sm:mb-20">
-          Uma assinatura, três motores de auditoria, controle total.
-        </p>
 
         <!-- Pricing Card — Apple Hardware Card floating on Dark -->
         <div class="relative overflow-hidden p-10 sm:p-14 lg:p-16 max-w-2xl mx-auto text-left rounded-[32px] apple-hardware-card">
@@ -423,17 +417,18 @@ import Fresnel from "../components/ui/Fresnel";
             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-10">
               <div>
                 <h3 class="font-apple-display font-bold text-xl sm:text-2xl text-[#1d1d1f] tracking-[-0.03em]">Assinatura Mensal Pro</h3>
-                <p class="text-[12px] text-secondary font-apple-text mt-1 font-normal apple-vibrancy">Acesso ilimitado às 3 engines cognitivas</p>
+                <div class="mt-2 inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100/80 text-slate-800 apple-vibrancy">
+                  Acesso ilimitado às 3 engines cognitivas
+                </div>
               </div>
-              <span class="relative overflow-hidden inline-flex items-center justify-center px-4 py-1.5 text-[10px] font-bold text-accent uppercase tracking-wider font-apple-text min-h-[28px] shrink-0 self-start">
-                <Fresnel client:load shape="pill" bezelType="convex_squircle" glassThickness={120} refractiveIndex={1.52} tintColor="#10B981" tintOpacity={10} showBorder={false} showShadow={false} className="absolute inset-0 z-0 pointer-events-none" />
-                <span class="relative z-10">7 Dias Grátis</span>
+              <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#b8860b]/10 text-[#b8860b] border border-[#b8860b]/20 shrink-0 self-start">
+                7 Dias Grátis
               </span>
             </div>
 
             <!-- Price — Monumental Scale -->
             <div class="flex items-baseline gap-2 mb-12">
-              <span class="font-apple-display text-7xl sm:text-8xl font-extralight tracking-[-0.02em] text-[#1d1d1f] antialiased">R$ 297</span>
+              <span class="font-apple-display text-7xl sm:text-8xl font-extralight tracking-[-0.03em] text-[#1d1d1f] antialiased">R$ 297</span>
               <span class="text-sm font-normal text-secondary font-apple-text">/mês</span>
             </div>
 
@@ -470,22 +465,22 @@ import Fresnel from "../components/ui/Fresnel";
             <!-- Benefits with Subpixel Dividers -->
             <div class="space-y-0 mb-10">
               <div class="apple-divider-h"></div>
-              <div class="py-4 text-[13px] font-normal text-secondary font-apple-text">
+              <div class="py-4 text-[13px] font-normal text-slate-600 font-apple-text">
                 Processamento seguro de arquivos PDF e DOCX
               </div>
               <div class="apple-divider-h"></div>
-              <div class="py-4 text-[13px] font-normal text-secondary font-apple-text">
+              <div class="py-4 text-[13px] font-normal text-slate-600 font-apple-text">
                 Exportação estruturada sob as diretrizes do CPC
               </div>
               <div class="apple-divider-h"></div>
-              <div class="py-4 text-[13px] font-normal text-secondary font-apple-text">
+              <div class="py-4 text-[13px] font-normal text-slate-600 font-apple-text">
                 Criptografia de dados ativa e segredo de negócio blindado
               </div>
               <div class="apple-divider-h"></div>
             </div>
 
             <!-- Primary CTA -->
-            <a href="/app/auth" data-magnetic-element class="cta-link w-full bg-primary text-white font-semibold text-sm min-h-[52px] flex items-center justify-center rounded-full apple-pill hover:bg-slate-800 transition-colors shadow-xs font-apple-text">
+            <a href="/app/auth" data-magnetic-element class="cta-link apple-cta-button data-magnetic-element w-full bg-primary text-white font-semibold text-sm min-h-[52px] flex items-center justify-center rounded-full apple-pill hover:bg-slate-800 transition-all duration-200 shadow-sm font-apple-text relative z-10">
               Iniciar Validação de Infraestrutura
             </a>
           </div>
