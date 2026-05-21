@@ -86,6 +86,8 @@
   - Configuração de gradientes tipográficos puristas metálicos anodizados nos seletores `h1` e `h2` em `src/styles/global.css` com a paleta `Dark Premium` (`#0C0A09`, `#1C1917`, `#44403C`, `#D6D3D1`).
   - Implementação de atração magnética elástica nos botões com `data-magnetic-element` sob a constante de mola `elastic.out(1.1, 0.6)` e duração de `0.6s`, com ScrollTrigger micro-paralaxe nos textos internos do Bento Grid.
   - Correção de falsos-positivos de validação do vídeo e reprodução em `qa_validator_tool.py` para homologação 100% livre de erros.
+- [x] **Sanamento de Imports no Fresnel.tsx (Vite SSR Runtime Error):** Correção da quebra de runtime SSR separando e convertendo as importações de `CSSProperties` e `ReactNode` para `import type` puros no arquivo `src/components/ui/Fresnel.tsx`, destravando o build e o interpretador SSR do Vite.
+
 
 ## Próximos Passos
 1. Conectar as telas internas de cada módulo (/app/analista-contratos, /app/copiloto-peticoes, /app/auditoria-provas) aos Drizzle schemas e fluxos correspondentes do banco.
