@@ -25,6 +25,24 @@
 - [ ] próximo item
 ```
 
+### [2026-05-21] — Wave 4.8: Paridade Estética Absoluta iOS (G2 Squircle & Comportamento Nativo)
+**Wave/Sprint:** Wave 4.8
+**Status:** ✅ Concluído
+
+#### O que foi feito
+- Injetada a superelipse matemática invisível do Apple Squircle G2 (`#apple-squircle-mask`) em `src/layouts/RootLayout.astro` antes de `</body>`.
+- Adicionadas regras de comportamento e motor gráfico do iOS em `src/styles/global.css` (antialiasing global `-webkit-font-smoothing`, rolagem elástica `-webkit-overflow-scrolling` e remoção de tap highlights azuis/cinzas no Android e outros sistemas via `-webkit-tap-highlight-color`).
+- Estruturada a classe corporativa `.apple-squircle-g2` em `src/styles/global.css` com a máscara matemática SVG e filtros `drop-shadow` em camadas combinados com bordas de difração translúcidas internas (`inset 0 1px 0 0 rgba(255,255,255,0.2)`).
+- Acoplado o feedback tátil qualitativo no active state (`:active` com scale down para `0.985` e opacidade de `0.92`) nos cartões e elementos interativos.
+- Substituído o arredondamento estático `rounded-[32px]` pela classe `.apple-squircle-g2` na Landing Page (`src/pages/index.astro`).
+- Homologado em build de produção e aprovado no QA local.
+
+#### Próximos passos
+- [ ] Conectar as telas internas de cada módulo (/app/analista-contratos, /app/copiloto-peticoes, /app/auditoria-provas) aos Drizzle schemas e fluxos correspondentes do banco.
+- [ ] Implementar a persistência e gravação de logs de uso do período de testes em MySQL local.
+
+---
+
 ### [2026-05-21] — Wave 4.7: Consistência Responsiva das Luzes de Estúdio (Silk-Screen Glow & GPU Gates)
 **Wave/Sprint:** Wave 4.7
 **Status:** ✅ Concluído

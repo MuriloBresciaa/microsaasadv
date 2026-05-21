@@ -27,5 +27,12 @@ import "../styles/global.css";
   </head>
   <body class="min-h-screen relative overflow-x-hidden bg-background text-primary">
     <slot />
+    <svg class="sr-only" width="0" height="0" aria-hidden="true" style="position: absolute; width: 0; height: 0;">
+      <defs>
+        <clipPath id="apple-squircle-mask" clipPathUnits="objectBoundingBox">
+          <path d="M 0,0.5 C 0,0.038 0.038,0 0.5,0 C 0.962,0 1,0.038 1,0.5 C 1,0.962 0.962,1 0.5,1 C 0.038,1 0,0.962 0,0.5 Z" />
+        </clipPath>
+      </defs>
+    </svg>
   </body>
 </html>

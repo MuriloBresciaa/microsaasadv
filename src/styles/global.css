@@ -41,12 +41,21 @@
   --font-apple-text: "SF Pro Text", -apple-system, sans-serif;
 }
 
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+}
+
+a, button, [role="button"], input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-primary);
   font-family: var(--font-apple-text);
   font-weight: 400;
-  -webkit-font-smoothing: antialiased;
 }
 
 /* ── Textura Cinematográfica Suave ── */
@@ -142,6 +151,15 @@ h1, h2 {
     0 80px 160px -30px rgba(29, 29, 31, 0.08);
 }
 
+.apple-glass-card:active,
+.apple-hardware-card:active,
+.rounded-\[32px\]:active,
+.apple-squircle-g2:active {
+  transform: translateY(-2px) scale(0.985);
+  opacity: 0.92;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 /* Ambient Occlusion Overrides for Dark Backgrounds (Deep Navy / Deep Space Navy) */
 [class*="bg-slate-900"] .apple-glass-card, [class*="bg-slate-900"] .apple-hardware-card, [class*="bg-slate-900"] .rounded-\[32px\],
 [class*="bg-slate-950"] .apple-glass-card, [class*="bg-slate-950"] .apple-hardware-card, [class*="bg-slate-950"] .rounded-\[32px\],
@@ -195,6 +213,51 @@ h1, h2 {
 }
 
 /* ── Custom Squircle Scale & Curvature Helpers ── */
+.apple-squircle-g2 {
+  clip-path: url(#apple-squircle-mask);
+  -webkit-clip-path: url(#apple-squircle-mask);
+  will-change: transform, filter;
+  transform: translate3d(0, 0, 0);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+  filter: drop-shadow(0 1px 2px rgba(29, 29, 31, 0.01))
+          drop-shadow(0 8px 16px rgba(29, 29, 31, 0.02))
+          drop-shadow(0 24px 48px -8px rgba(29, 29, 31, 0.03))
+          drop-shadow(0 50px 100px -20px rgba(29, 29, 31, 0.04));
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-squircle-g2:hover {
+  transform: translateY(-4px);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0 2px 4px rgba(29, 29, 31, 0.02))
+          drop-shadow(0 16px 32px rgba(29, 29, 31, 0.03))
+          drop-shadow(0 40px 80px -10px rgba(29, 29, 31, 0.05))
+          drop-shadow(0 80px 160px -30px rgba(29, 29, 31, 0.08));
+}
+
+/* Ambient Occlusion Overrides for Dark Backgrounds */
+[class*="bg-slate-900"] .apple-squircle-g2,
+[class*="bg-slate-950"] .apple-squircle-g2,
+[class*="bg-[#0f172a]"] .apple-squircle-g2,
+.dark .apple-squircle-g2 {
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.20))
+          drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25))
+          drop-shadow(0 24px 48px -8px rgba(0, 0, 0, 0.35))
+          drop-shadow(0 50px 100px -20px rgba(0, 0, 0, 0.5));
+}
+
+[class*="bg-slate-900"] .apple-squircle-g2:hover,
+[class*="bg-slate-950"] .apple-squircle-g2:hover,
+[class*="bg-[#0f172a]"] .apple-squircle-g2:hover,
+.dark .apple-squircle-g2:hover {
+  box-shadow: inset 0 1.5px 0 0 rgba(255, 255, 255, 0.2);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25))
+          drop-shadow(0 16px 32px rgba(0, 0, 0, 0.30))
+          drop-shadow(0 40px 80px -10px rgba(0, 0, 0, 0.45))
+          drop-shadow(0 80px 160px -30px rgba(0, 0, 0, 0.55));
+}
+
 .apple-pill {
   border-radius: 9999px;
   corner-shape: squircle;
