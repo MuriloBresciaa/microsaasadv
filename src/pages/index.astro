@@ -644,17 +644,23 @@ import Fresnel from "../components/ui/Fresnel";
     }
 
     // 6.5. ScrollTrigger Micro-Parallax nos Textos do Bento Grid (interactive-engine-card)
-    gsap.utils.toArray(".interactive-engine-card .lg\\:col-span-7").forEach(textBlock => {
-      gsap.fromTo(textBlock, { y: 25 }, {
-        y: -25,
-        ease: "none",
-        scrollTrigger: {
-          trigger: textBlock,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1.5
-        }
-      });
+    gsap.utils.toArray(".interactive-engine-card").forEach(card => {
+      const textBlock = card.querySelector(".lg\\:col-span-7");
+      if (textBlock) {
+        gsap.fromTo(textBlock,
+          { y: 0 },
+          {
+            y: -15,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1.5
+            }
+          }
+        );
+      }
     });
 
     // 7. Efeito de Botão Magnético de Alta Fidelidade (Cinematic Builder §3.3)

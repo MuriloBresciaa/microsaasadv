@@ -100,6 +100,19 @@ h1, h2 {
 
 
 /* ── Técnica Liquid Glass de Profundidade Óptica ── */
+.apple-glass-card,
+.apple-hardware-card,
+.rounded-\[32px\] {
+  box-shadow:
+    0 0 0 1px rgba(29, 29, 31, 0.03),
+    inset 0 1.5px 0 0 rgba(255, 255, 255, 0.8),
+    0 1px 2px rgba(29, 29, 31, 0.01),
+    0 8px 16px rgba(29, 29, 31, 0.02),
+    0 24px 48px -8px rgba(29, 29, 31, 0.03),
+    0 50px 100px -20px rgba(29, 29, 31, 0.04);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .apple-glass-card {
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid var(--color-border);
@@ -107,11 +120,6 @@ h1, h2 {
   -webkit-backdrop-filter: blur(20px);
   border-radius: 32px;
   corner-shape: squircle;
-  box-shadow:
-    0 0 0 0.5px rgba(255, 255, 255, 0.9),
-    0 1px 2px rgba(29, 29, 31, 0.01),
-    0 12px 32px rgba(29, 29, 31, 0.02);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .apple-hardware-card {
@@ -119,19 +127,46 @@ h1, h2 {
   border: 1px solid var(--color-border);
   border-radius: 32px;
   corner-shape: squircle;
-  box-shadow:
-    0 1px 2px rgba(29, 29, 31, 0.02),
-    0 4px 12px rgba(29, 29, 31, 0.02),
-    0 12px 32px rgba(29, 29, 31, 0.02);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.apple-hardware-card:hover {
-  transform: translateY(-2px);
+.apple-glass-card:hover,
+.apple-hardware-card:hover,
+.rounded-\[32px\]:hover {
+  transform: translateY(-4px);
   box-shadow:
-    0 1px 2px rgba(29, 29, 31, 0.02),
+    0 0 0 1px rgba(29, 29, 31, 0.05),
+    inset 0 1.5px 0 0 rgba(255, 255, 255, 0.95),
+    0 2px 4px rgba(29, 29, 31, 0.02),
     0 16px 32px rgba(29, 29, 31, 0.03),
-    0 40px 80px rgba(29, 29, 31, 0.04);
+    0 40px 80px -10px rgba(29, 29, 31, 0.05),
+    0 80px 160px -30px rgba(29, 29, 31, 0.08);
+}
+
+/* Ambient Occlusion Overrides for Dark Backgrounds (Deep Navy / Deep Space Navy) */
+[class*="bg-slate-900"] .apple-glass-card, [class*="bg-slate-900"] .apple-hardware-card, [class*="bg-slate-900"] .rounded-\[32px\],
+[class*="bg-slate-950"] .apple-glass-card, [class*="bg-slate-950"] .apple-hardware-card, [class*="bg-slate-950"] .rounded-\[32px\],
+[class*="bg-[#0f172a]"] .apple-glass-card, [class*="bg-[#0f172a]"] .apple-hardware-card, [class*="bg-[#0f172a]"] .rounded-\[32px\],
+.dark .apple-glass-card, .dark .apple-hardware-card, .dark .rounded-\[32px\] {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.25),
+    0 24px 48px -8px rgba(0, 0, 0, 0.35),
+    0 50px 100px -20px rgba(0, 0, 0, 0.5);
+}
+
+[class*="bg-slate-900"] .apple-glass-card:hover, [class*="bg-slate-900"] .apple-hardware-card:hover, [class*="bg-slate-900"] .rounded-\[32px\]:hover,
+[class*="bg-slate-950"] .apple-glass-card:hover, [class*="bg-slate-950"] .apple-hardware-card:hover, [class*="bg-slate-950"] .rounded-\[32px\]:hover,
+[class*="bg-[#0f172a]"] .apple-glass-card:hover, [class*="bg-[#0f172a]"] .apple-hardware-card:hover, [class*="bg-[#0f172a]"] .rounded-\[32px\]:hover,
+.dark .apple-glass-card:hover, .dark .apple-hardware-card:hover, .dark .rounded-\[32px\]:hover {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1.5px 0 0 rgba(255, 255, 255, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 16px 32px rgba(0, 0, 0, 0.3),
+    0 40px 80px -10px rgba(0, 0, 0, 0.45),
+    0 80px 160px -30px rgba(0, 0, 0, 0.55);
 }
 
 .interactive-engine-card {
