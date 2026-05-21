@@ -19,14 +19,13 @@
  */
 
 import {
-    CSSProperties,
-    ReactNode,
     useCallback,
     useEffect,
     useId,
     useRef,
     useState,
 } from "react"
+import type { CSSProperties, ReactNode } from "react"
 
 // ═══════════════════════════════════════════════════════════
 // SURFACE EQUATIONS
