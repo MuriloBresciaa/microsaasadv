@@ -60,9 +60,9 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
-/* ── Calibração Furtiva do Reflexo Metálico Apple ── */
+/* ── Calibração Furtiva do Reflexo Metálico Apple (True Charcoal) ── */
 h1, h2 {
-  background: linear-gradient(135deg, #0C0A09 0%, #1C1917 25%, #44403C 50%, #D6D3D1 75%, #1C1917 100%);
+  background: linear-gradient(135deg, #2d2d30 0%, #1d1d1f 30%, #6b7280 50%, #1d1d1f 70%, #2d2d30 100%);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
@@ -71,13 +71,33 @@ h1, h2 {
 }
 
 .apple-text-sheen {
-  background: linear-gradient(135deg, #0C0A09 0%, #1C1917 25%, #44403C 50%, #D6D3D1 75%, #1C1917 100%);
+  background: linear-gradient(135deg, #2d2d30 0%, #1d1d1f 30%, #6b7280 50%, #1d1d1f 70%, #2d2d30 100%);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
   text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
 }
+
+/* Suporte a seções escuras: Gradiente alternando de branco puro para prata acetinado de titânio */
+[class*="bg-slate-900"] h1, [class*="bg-slate-900"] h2,
+[class*="bg-slate-950"] h1, [class*="bg-slate-950"] h2,
+[class*="bg-slate-800"] h1, [class*="bg-slate-800"] h2,
+[class*="bg-[#0f172a]"] h1, [class*="bg-[#0f172a]"] h2,
+.dark h1, .dark h2,
+[class*="bg-slate-900"] .apple-text-sheen,
+[class*="bg-slate-950"] .apple-text-sheen,
+[class*="bg-slate-800"] .apple-text-sheen,
+[class*="bg-[#0f172a]"] .apple-text-sheen,
+.dark .apple-text-sheen {
+  background: linear-gradient(135deg, #ffffff 0%, #e4e4e7 30%, #a1a1aa 50%, #e4e4e7 70%, #ffffff 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
 
 /* ── Técnica Liquid Glass de Profundidade Óptica ── */
 .apple-glass-card {
