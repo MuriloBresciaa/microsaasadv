@@ -1,84 +1,899 @@
 ---
-import RootLayout from '@/layouts/RootLayout.astro';
+import RootLayout from "../layouts/RootLayout.astro";
 ---
 
-<RootLayout title="Site Factory V2.0 | Template Base">
-  <main class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6">
-    <!-- Background Grid Pattern -->
-    <div
-      class="pointer-events-none absolute inset-0"
-      style="background-image: linear-gradient(var(--color-border-subtle) 1px, transparent 1px), linear-gradient(90deg, var(--color-border-subtle) 1px, transparent 1px); background-size: 64px 64px;"
-      aria-hidden="true"
-    ></div>
+<RootLayout title="JurisAI — Inteligência Artificial Jurídica Corporativa">
+  <header id="main-header" class="fixed top-4 left-4 right-4 mx-auto max-w-5xl z-50 bg-[#F9F9FB]/90 backdrop-blur-xl border border-slate-200/60 rounded-full apple-pill shadow-md transition-all duration-300 origin-top">
+    <div class="px-6 sm:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+        <span class="font-apple-display font-bold tracking-tight text-sm text-primary">JurisAI</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold text-secondary">
+        <a href="#features" class="hover:text-primary transition-colors font-apple-text py-2">Soluções</a>
+        <a href="#governanca" class="hover:text-primary transition-colors font-apple-text py-2">Privacidade</a>
+        <a href="#precos" class="hover:text-primary transition-colors font-apple-text py-2">Preços</a>
+      </nav>
+      <a href="/app/auth" data-magnetic class="cta-link bg-primary text-white font-semibold text-[11px] px-4 min-h-[44px] flex items-center justify-center rounded-full apple-pill hover:bg-slate-800 transition-colors shadow-xs font-apple-text">
+        Iniciar Teste
+      </a>
+    </div>
+  </header>
 
-    <!-- Radial Glow -->
-    <div
-      class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full opacity-20"
-      style="background: radial-gradient(circle, hsl(192, 100%, 48%) 0%, transparent 70%);"
-      aria-hidden="true"
-    ></div>
+  <main id="main-content" class="w-full bg-background pt-16 overflow-hidden">
+    
+    <section id="hero-trigger" class="max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-32 pb-16 sm:pb-24 relative grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-x-24 lg:gap-y-6 items-center">
+      
+      <div id="hero-backlight" class="absolute w-[600px] h-[600px] rounded-full bg-radial from-slate-200/40 via-slate-100/10 to-transparent blur-3xl pointer-events-none z-0 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
 
-    <!-- Hero Content -->
-    <section class="relative z-10 flex max-w-3xl flex-col items-center text-center">
-      <!-- Badge -->
-      <div
-        class="mb-8 inline-flex items-center gap-2 rounded-full border border-[var(--color-border-strong)] bg-[var(--color-bg-surface)] px-4 py-1.5 text-xs font-medium tracking-wider uppercase text-[var(--color-text-secondary)]"
-      >
-        <span
-          class="inline-block h-2 w-2 rounded-full bg-[var(--color-accent-400)]"
-          style="box-shadow: 0 0 8px hsl(142, 90%, 55% / 0.6);"
-        ></span>
-        Sistema Operacional
+      <!-- Bloco A: Tag + Título -->
+      <div class="z-10 relative text-left lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2">
+        <span data-anim="hero-tag" class="inline-block text-[10px] sm:text-[11px] font-semibold tracking-tight text-primary bg-white border border-border shadow-xs px-3.5 py-1.5 rounded-full apple-pill mb-6 font-apple-text">
+          Inteligência Artificial Premium
+        </span>
+        <h1 data-anim="hero-title" class="apple-text-sheen font-apple-display font-bold text-3xl sm:text-4xl lg:text-[62px] tracking-[-0.05em] leading-[1.05] text-primary">
+          A inteligência artificial que lê, analisa e redige seus documentos jurídicos.
+        </h1>
       </div>
 
-      <!-- Heading -->
-      <h1
-        class="text-5xl font-extrabold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl"
-      >
-        <span class="text-gradient-primary">Site Factory</span>
-        <br />
-        <span class="text-[var(--color-text-primary)]">V2.0 Ativo</span>
-      </h1>
-
-      <!-- Subheading -->
-      <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[var(--color-text-secondary)]">
-        Template base para landing pages de alta conversão e e-commerces ultra-rápidos.
-        Astro &bull; React &bull; Tailwind &bull; Supabase.
-      </p>
-
-      <!-- CTA -->
-      <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row">
-        <a
-          href="#docs"
-          class="glow-md inline-flex items-center justify-center rounded-lg bg-[var(--color-primary-500)] px-8 py-3.5 text-sm font-semibold text-[var(--color-text-inverted)] transition-all duration-200 hover:bg-[var(--color-primary-400)] hover:glow-lg"
-        >
-          Ver Documentação
-        </a>
-        <a
-          href="https://github.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center rounded-lg border border-[var(--color-border-strong)] bg-[var(--color-bg-surface)] px-8 py-3.5 text-sm font-semibold text-[var(--color-text-primary)] transition-all duration-200 hover:border-[var(--color-primary-500)] hover:text-[var(--color-primary-400)]"
-        >
-          GitHub →
-        </a>
+      <!-- Bloco B: Cinema Video Box -->
+      <div id="video-reveal-container" class="z-10 relative flex justify-center lg:justify-end w-full lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-3 self-center">
+        <div class="apple-video-hardware-card w-full max-w-xl aspect-[16/10] bg-white rounded-[32px] border border-border shadow-xl relative overflow-hidden p-1.5 bg-slate-50">
+          <div class="w-full h-full rounded-[26px] apple-video-inner overflow-hidden relative">
+            <video 
+              class="w-full h-full object-cover scale-102" 
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              preload="auto"
+            >
+              <source src="/div.mp4" type="video/mp4" />
+              <p class="text-xs text-secondary p-4">Seu navegador não suporta vídeos incorporados.</p>
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent pointer-events-none"></div>
+          </div>
+        </div>
       </div>
 
-      <!-- Tech Stack Badges -->
-      <div class="mt-16 flex flex-wrap items-center justify-center gap-3">
-        {['Astro 6', 'React 19', 'Tailwind v4', 'Framer Motion', 'Supabase', 'Nano Stores'].map(tech => (
-          <span
-            class="rounded-md border border-[var(--color-border-default)] bg-[var(--color-bg-raised)] px-3 py-1.5 text-xs font-medium text-[var(--color-text-muted)] transition-colors duration-200 hover:border-[var(--color-primary-600)] hover:text-[var(--color-primary-400)]"
-          >
-            {tech}
-          </span>
-        ))}
+      <!-- Bloco C: Descrição + CTAs -->
+      <div class="z-10 relative text-left lg:col-start-1 lg:col-end-2 lg:row-start-2 lg:row-end-3">
+        <p data-anim="hero-sub" class="mt-4 lg:mt-6 font-apple-text font-normal text-secondary text-sm sm:text-base leading-relaxed max-w-xl">
+          Com precisão matemática, audite minutas, elabore peças fundamentadas e organize provas de forma instantânea. Integrado perfeitamente à sua rotina, sem alterar em nada o seu fluxo de trabalho atual.
+        </p>
+        <div data-anim="hero-cta" class="mt-8 lg:mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
+          <a href="/app/auth" data-magnetic class="cta-link bg-primary text-white font-semibold text-xs px-7 min-h-[46px] flex items-center justify-center rounded-full apple-pill hover:bg-slate-800 transition-all shadow-xs font-apple-text">
+            Testar grátis por 7 dias
+          </a>
+          <a href="#features" class="text-xs font-semibold text-primary hover:underline underline-offset-4 flex items-center min-h-[44px] px-2 gap-1 font-apple-text">
+            Conhecer soluções →
+          </a>
+        </div>
+        <p class="text-[11px] text-slate-500 mt-3 pl-1 font-apple-text">Não exigimos cartão de crédito para o período de testes.</p>
+      </div>
+
+    </section>
+
+    <!-- Seção 1: O Manifesto Tipográfico -->
+    <section class="w-full bg-[#F9F9FB] py-36 sm:py-44 px-4 sm:px-6 relative overflow-hidden flex flex-col items-center justify-center text-center border-t border-slate-200/40">
+      <div class="max-w-4xl mx-auto z-10">
+        <h2 class="apple-text-sheen font-apple-display font-bold text-4xl sm:text-7xl tracking-[-0.05em] leading-[1.05] text-primary">
+          A complexidade jurídica resolvida com elegância matemática.
+        </h2>
+        <p class="mt-8 font-apple-text font-normal text-secondary text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+          Não criamos apenas ferramentas de automação. Projetamos sistemas cognitivos de alta precisão que funcionam como extensões intelectuais do seu escritório, convertendo a sobrecarga processual em clareza estratégica.
+        </p>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
+    </section>
+
+    <!-- Seção 2: Linha de Produtos (Apple Lineup Style) -->
+    <section id="features" class="border-t border-slate-200/50 bg-white py-24 sm:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="max-w-3xl mb-20 sm:mb-24">
+          <h2 class="apple-text-sheen font-apple-display font-bold text-3xl sm:text-5xl tracking-[-0.04em] leading-[1.1] text-primary">
+            Três soluções de alta precisão desenvolvidas para eliminar a burocracia jurídica do seu dia a dia.
+          </h2>
+        </div>
+
+        <div class="flex flex-col gap-12 sm:gap-16">
+          
+          <!-- Produto 01: Análise de Contratos -->
+          <div data-engine="1" class="interactive-engine-card active apple-hardware-card p-8 sm:p-12 lg:p-16 transition-all cursor-pointer">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              
+              <!-- Coluna Texto -->
+              <div class="lg:col-span-7 space-y-6">
+                <div class="flex items-center gap-3">
+                  <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase">01 / CONTRATOS</span>
+                  <div class="w-8 h-8 bg-white rounded-xl flex items-center justify-center shadow-xs border border-slate-100 laser-icon-wrapper shrink-0">
+                    <svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <h3 class="font-apple-display font-bold text-2xl sm:text-3xl tracking-[-0.04em] text-primary leading-[1.1]">Análise de Contratos com IA</h3>
+                  <p class="font-apple-display font-semibold text-lg text-slate-700 leading-normal">Encontre riscos escondidos em qualquer minuta antes de assinar.</p>
+                  <p class="apple-proximity-text font-apple-text font-normal text-slate-500 text-sm leading-relaxed">
+                    O sistema analisa integralmente o documento e aponta de forma clara e imediata se houver alguma cláusula de risco ou passivo perigoso escondido na redação, protegendo seu escritório contra surpresas jurídicas.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Coluna Visual Mockup -->
+              <div class="lg:col-span-5 flex justify-center lg:justify-end w-full">
+                <div class="bg-slate-50/80 rounded-[24px] apple-mockup-card p-6 border border-slate-100 max-w-sm w-full shadow-xs flex flex-col gap-4">
+                  <div class="flex items-center justify-between border-b border-slate-200/60 pb-3 w-full">
+                    <span class="text-[9px] font-bold text-slate-400 font-apple-text tracking-wider uppercase">contrato_servicos.docx</span>
+                    <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+                  </div>
+                  <div class="flex flex-col gap-2 w-full">
+                    <div class="w-full h-1.5 bg-slate-200/80 rounded-full"></div>
+                    <div class="w-4/5 h-1.5 bg-slate-200/80 rounded-full"></div>
+                  </div>
+                  <div class="bg-red-50/40 border border-red-100 rounded-xl p-4 flex flex-col gap-3 relative w-full">
+                    <div class="flex items-center justify-between gap-2 w-full">
+                      <span class="inline-flex items-center gap-1.5 text-[8px] font-bold text-red-600 bg-red-50 px-2.5 py-1 rounded-full apple-pill uppercase tracking-wider font-apple-text shrink-0">
+                        <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                        Risco Grave
+                      </span>
+                      <span class="text-[8px] font-semibold text-slate-400 font-apple-text shrink-0">Cláusula 12.4</span>
+                    </div>
+                    <p class="font-apple-text text-[10px] text-red-900 leading-relaxed font-medium">
+                      "Multa rescisória de 40% sobre o saldo total pendente..."
+                    </p>
+                    <div class="text-[9px] font-semibold text-slate-500 font-apple-text bg-white/90 p-2 rounded-lg border border-red-100/30 flex items-center gap-1.5 w-full">
+                      <span class="shrink-0">⚠️</span>
+                      <span class="leading-normal">Abusividade: Excede a razoabilidade estipulada pelo CDC e jurisprudência do STJ.</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 w-full">
+                    <div class="w-5/6 h-1.5 bg-slate-200/80 rounded-full"></div>
+                    <div class="w-2/3 h-1.5 bg-slate-200/80 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Produto 02: Criador de Petições (Asymmetric Alternated Layout) -->
+          <div data-engine="2" class="interactive-engine-card apple-hardware-card p-8 sm:p-12 lg:p-16 transition-all cursor-pointer">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              
+              <!-- Coluna Visual Mockup (On left for desktop) -->
+              <div class="lg:col-span-5 order-last lg:order-first flex justify-center lg:justify-start">
+                <div class="flex items-center justify-center relative w-full max-w-sm h-56">
+                  <!-- Anotação Bruta -->
+                  <div class="bg-slate-50 rounded-[20px] apple-mockup-card-small p-4 border border-slate-200/60 shadow-xs max-w-[170px] w-full space-y-2.5 rotate-[-4deg] z-10 absolute left-4 sm:left-8 top-4 hover:rotate-0 transition-transform duration-300">
+                    <div class="flex items-center gap-2 border-b border-slate-200/60 pb-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                      <span class="text-[8px] font-bold text-slate-400 font-apple-text tracking-wider uppercase">notas_caso.txt</span>
+                    </div>
+                    <p class="font-apple-text text-[9px] text-slate-500 leading-relaxed italic">
+                      "O cliente trabalhou 3 anos sem receber horas extras, fazia duas horas a mais por dia e a empresa nunca pagou..."
+                    </p>
+                  </div>
+                  <!-- Petição Estruturada -->
+                  <div class="bg-white rounded-[24px] apple-mockup-card p-5 border border-slate-200/80 shadow-md max-w-[210px] w-full space-y-3.5 rotate-[4deg] z-20 absolute right-4 sm:right-8 bottom-4 hover:rotate-0 transition-transform duration-300">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                      <span class="text-[8px] font-bold text-accent font-apple-text tracking-wider uppercase">peca_inicial.pdf</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    </div>
+                    <div class="space-y-2 text-[9px] font-apple-text text-primary">
+                      <div class="font-bold text-[7px] text-slate-400 uppercase">Art. 319 do CPC</div>
+                      <div class="font-bold border-l-2 border-primary pl-2 my-1">I. DOS FATOS</div>
+                      <p class="text-[8px] text-slate-500 leading-normal">
+                        "O Reclamante laborou sob regime de sobrejornada habitual, extrapolando..."
+                      </p>
+                      <div class="font-bold border-l-2 border-primary pl-2 my-1">II. DO DIREITO</div>
+                      <div class="font-bold border-l-2 border-primary pl-2 my-1">III. DOS PEDIDOS</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Coluna Texto -->
+              <div class="lg:col-span-7 space-y-6">
+                <div class="flex items-center gap-3">
+                  <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase">02 / REDAÇÃO</span>
+                  <div class="w-8 h-8 bg-white rounded-xl flex items-center justify-center shadow-xs border border-slate-100 laser-icon-wrapper shrink-0">
+                    <svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <h3 class="font-apple-display font-bold text-2xl sm:text-3xl tracking-[-0.04em] text-primary leading-[1.1]">Criador de Petições</h3>
+                  <p class="font-apple-display font-semibold text-lg text-slate-700 leading-normal">Transforme uma simples anotação em uma peça jurídica completa.</p>
+                  <p class="apple-proximity-text font-apple-text font-normal text-slate-500 text-sm leading-relaxed">
+                    A partir de um breve relato do caso ou notas de áudio, nossa inteligência constrói uma peça de alta qualidade técnica, perfeitamente estruturada nos moldes da lei e pronta para o protocolo.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Produto 03: Organizador de Provas -->
+          <div data-engine="3" class="interactive-engine-card apple-hardware-card p-8 sm:p-12 lg:p-16 transition-all cursor-pointer">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              
+              <!-- Coluna Texto -->
+              <div class="lg:col-span-7 space-y-6">
+                <div class="flex items-center gap-3">
+                  <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase">03 / INSTRUÇÃO</span>
+                  <div class="w-8 h-8 bg-white rounded-xl flex items-center justify-center shadow-xs border border-slate-100 laser-icon-wrapper shrink-0">
+                    <svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <h3 class="font-apple-display font-bold text-2xl sm:text-3xl tracking-[-0.04em] text-primary leading-[1.1]">Organizador de Provas</h3>
+                  <p class="font-apple-display font-semibold text-lg text-slate-700 leading-normal">Transforme conversas de WhatsApp e arquivos em uma linha do tempo clara.</p>
+                  <p class="apple-proximity-text font-apple-text font-normal text-slate-500 text-sm leading-relaxed">
+                    A inteligência artificial organiza o caos de capturas de tela, áudios e arquivos anexados. O sistema gera uma linha do tempo cronológica incontestável e aponta exatamente onde a parte contrária está mentindo.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Coluna Visual Mockup -->
+              <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                <div class="bg-slate-50/80 rounded-[24px] apple-mockup-card p-6 border border-slate-100 max-w-sm w-full shadow-xs space-y-4">
+                  <div class="flex items-center justify-between border-b border-slate-200/60 pb-3">
+                    <span class="text-[9px] font-bold text-slate-400 font-apple-text tracking-wider uppercase">linha_tempo_provas.exe</span>
+                    <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+                  </div>
+                  
+                  <div class="space-y-3">
+                    <!-- WhatsApp Bubble -->
+                    <div class="flex flex-col items-start space-y-1">
+                      <div class="bg-white text-slate-800 rounded-xl rounded-tl-none p-3 max-w-[240px] border border-slate-200/40 shadow-xs">
+                        <div class="flex justify-between items-center gap-4 mb-1">
+                          <span class="font-bold text-[8px] text-slate-500 font-apple-text">WhatsApp (Réu)</span>
+                          <span class="text-[7px] text-slate-400 font-apple-text">14/03 14:22</span>
+                        </div>
+                        <p class="font-apple-text text-[9px] text-slate-700 leading-normal">
+                          "Eu nunca recebi essa mercadoria em mãos e não assinei nenhum papel."
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Timeline Match/Contradiction Alert -->
+                    <div class="bg-red-50/40 border border-red-100 rounded-xl p-3 space-y-2 relative ml-4">
+                      <div class="absolute -left-[14px] top-4 w-2 h-2 bg-red-400 rounded-full border-2 border-white"></div>
+                      
+                      <div class="flex justify-between items-center">
+                        <span class="inline-flex items-center gap-1 text-[8px] font-bold text-red-600 bg-red-50 bg-red-50/80 px-2 py-0.5 rounded-full apple-pill uppercase tracking-wider font-apple-text">
+                          Inconsistência
+                        </span>
+                        <span class="text-[7px] font-semibold text-slate-400 font-apple-text">Fato #04</span>
+                      </div>
+                      
+                      <div class="text-[9px] text-red-950 font-apple-text leading-relaxed">
+                        <strong>Conflito:</strong> A assinatura digital do autor consta no comprovante de entrega no dia 14/03 às 10:15h.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <!-- Footer Signature -->
-    <footer class="absolute bottom-8 text-xs text-[var(--color-text-muted)]">
-      Construído com precisão industrial &mdash; Site Factory V2.0
-    </footer>
+    <!-- Seção 3: O Cofre de Governança (Apple Privacy Style) -->
+    <section id="governanca" class="py-24 sm:py-32 bg-white border-t border-slate-200/50 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <!-- Header da Governança -->
+        <div class="max-w-3xl mb-20 sm:mb-28">
+          <span class="inline-block text-[10px] font-bold text-accent bg-accent/10 px-2.5 py-1 rounded-full apple-pill uppercase tracking-wider font-apple-text mb-4">
+            Confiança e Privacidade
+          </span>
+          <h2 class="apple-text-sheen font-apple-display font-bold text-3xl sm:text-5xl tracking-[-0.04em] leading-[1.1] text-primary">
+            Privacidade absoluta. O sigilo do seu escritório blindado por padrão.
+          </h2>
+        </div>
+
+        <!-- Prateleiras Verticais de Confiança Assimétricas (Apple Trust Lineup) -->
+        <div class="border-t border-slate-200/80 pt-12 space-y-12 lg:space-y-16">
+          
+          <!-- Pilar 1: Confidencialidade (Asset Esq / Texto Dir) -->
+          <div class="governanca-shelf apple-hardware-card p-6 sm:p-10 lg:p-14">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+              <!-- Asset Container (60%) -->
+              <div class="lg:col-span-7 apple-glass-image-card relative overflow-hidden aspect-[16/10] bg-[#F9F9FB]/40 w-full">
+                <img 
+                  src="/assets/governanca/confidencialidade.png" 
+                  alt="Isolamento Absoluto" 
+                  class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <!-- Text Container (40%) -->
+              <div class="lg:col-span-5 flex flex-col justify-center">
+                <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase mb-3">01 / CONFIDENCIALIDADE</span>
+                <h3 class="font-apple-display font-bold text-2xl lg:text-3xl text-primary tracking-[-0.03em] leading-tight mb-4">Isolamento Absoluto</h3>
+                <p class="apple-proximity-text font-apple-text font-normal text-secondary text-sm lg:text-base leading-relaxed">
+                  Garantia contratual de sigilo. Suas minutas, petições e estratégias são processadas em ambiente fechado. Nossos modelos são privados: seus dados nunca treinam a IA.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pilar 2: Blindagem (Texto Esq / Asset Dir) -->
+          <div class="governanca-shelf apple-hardware-card p-6 sm:p-10 lg:p-14">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+              <!-- Text Container (40%) - Desktop Order 1 -->
+              <div class="lg:col-span-5 lg:order-1 flex flex-col justify-center">
+                <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase mb-3">02 / BLINDAGEM</span>
+                <h3 class="font-apple-display font-bold text-2xl lg:text-3xl text-primary tracking-[-0.03em] leading-tight mb-4">Blindagem de Hardware</h3>
+                <p class="apple-proximity-text font-apple-text font-normal text-secondary text-sm lg:text-base leading-relaxed">
+                  Arquitetura criptográfica de nível bancário. Todas as comunicações e documentos digitais passam por chaves de segurança ponta a ponta, isolando o fluxo de dados do seu escritório contra qualquer vetor de invasão.
+                </p>
+              </div>
+              <!-- Asset Container (60%) - Desktop Order 2 -->
+              <div class="lg:col-span-7 lg:order-2 apple-glass-image-card relative overflow-hidden aspect-[16/10] bg-[#F9F9FB]/40 w-full">
+                <img 
+                  src="/assets/governanca/blindagem.png" 
+                  alt="Blindagem de Hardware" 
+                  class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Pilar 3: Ética (Asset Esq / Texto Dir) -->
+          <div class="governanca-shelf apple-hardware-card p-6 sm:p-10 lg:p-14">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+              <!-- Asset Container (60%) -->
+              <div class="lg:col-span-7 apple-glass-image-card relative overflow-hidden aspect-[16/10] bg-[#F9F9FB]/40 w-full">
+                <img 
+                  src="/assets/governanca/etica.png" 
+                  alt="Conformidade Ética" 
+                  class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <!-- Text Container (40%) -->
+              <div class="lg:col-span-5 flex flex-col justify-center">
+                <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase mb-3">03 / ÉTICA E LEI</span>
+                <h3 class="font-apple-display font-bold text-2xl lg:text-3xl text-primary tracking-[-0.03em] leading-tight mb-4">Conformidade Ética</h3>
+                <p class="apple-proximity-text font-apple-text font-normal text-secondary text-sm lg:text-base leading-relaxed">
+                  Respeito absoluto ao Estatuto da Advocacia e às normas éticas da OAB. Proteção irrevogável das prerrogativas profissionais e do sigilo entre advogado e cliente.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Seção 4: Preço Liquid Glass -->
+    <section id="precos" class="py-24 sm:py-32 border-t border-slate-200/50 bg-background">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="font-apple-display font-bold text-3xl sm:text-4xl tracking-[-0.04em] text-primary mb-12 sm:mb-16">
+          Transparência absoluta. Sem fidelidade.
+        </h2>
+        
+        <div class="apple-glass-card p-8 sm:p-12 max-w-xl mx-auto text-left relative">
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <h3 class="font-apple-display font-bold text-lg text-primary">Plano Mensal Pro</h3>
+              <p class="text-[11px] text-secondary font-apple-text mt-0.5 font-normal">Acesso ilimitado às 3 engines cognitivas</p>
+            </div>
+            <span class="text-[10px] font-bold text-accent bg-accent/10 px-3 py-1 rounded-full apple-pill uppercase tracking-wider font-apple-text">
+              7 Dias Grátis
+            </span>
+          </div>
+          
+          <div class="flex items-baseline gap-1 my-8 border-b border-slate-100 pb-8">
+            <span class="font-apple-display text-6xl font-extralight tracking-[-0.04em] text-primary">R$ 297</span>
+            <span class="text-xs font-normal text-secondary font-apple-text">/mês</span>
+          </div>
+
+          <ul class="space-y-4 text-xs font-normal text-secondary font-apple-text mb-8">
+            <li class="flex items-center gap-3">
+              <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Processamento de arquivos anexados em formato PDF e DOCX
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Exportação de peças formatadas nas diretrizes estruturadas do CPC
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Segurança e sigilo integral blindados por criptografia invisível
+            </li>
+          </ul>
+
+          <a href="/app/auth" data-magnetic class="cta-link w-full bg-primary text-white font-semibold text-xs min-h-[48px] flex items-center justify-center rounded-full apple-pill hover:bg-slate-800 transition-colors shadow-xs font-apple-text">
+            Iniciar Teste Sem Cartão
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Assistente Virtual Premium (Apple Concierge Card) -->
+    <div id="concierge-panel" class="apple-glass-card fixed bottom-24 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] flex flex-col hidden overflow-hidden shadow-2xl border border-slate-200/60" style="transform-origin: bottom right;">
+      <!-- Header -->
+      <div class="px-6 py-4 border-b border-slate-200/50 flex items-center justify-between bg-white/40">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center text-white font-bold text-[10px] relative shadow-inner">
+            AI
+            <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-accent rounded-full border border-white apple-online-pulse"></span>
+          </div>
+          <div>
+            <h4 class="font-apple-display font-bold text-xs text-primary leading-tight">Concierge JurisAI</h4>
+            <span class="text-[9px] text-accent font-semibold font-apple-text tracking-wide uppercase">Online agora</span>
+          </div>
+        </div>
+        <button id="concierge-close" class="w-7 h-7 rounded-full flex items-center justify-center hover:bg-slate-200/50 transition-colors text-slate-400 hover:text-slate-800 cursor-pointer">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Messages Area -->
+      <div id="concierge-chat-area" class="flex-1 p-6 overflow-y-auto space-y-4 max-h-[300px] min-h-[250px] bg-slate-50/30">
+        <!-- Initial Assistant Message -->
+        <div class="flex items-start gap-2.5">
+          <div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200/40 text-[9px] font-bold text-slate-700 shrink-0">AI</div>
+          <div class="bg-white border border-slate-200/40 rounded-2xl rounded-tl-none p-3.5 shadow-xs max-w-[85%]">
+            <p class="font-apple-text text-[11px] text-slate-800 leading-relaxed font-normal">
+              Olá. Sou o Concierge do JurisAI. Como posso otimizar a rotina de análise e redação jurídica do seu escritório hoje?
+            </p>
+          </div>
+        </div>
+
+        <!-- Suggestion Chip Area -->
+        <div id="concierge-suggestions" class="space-y-2 pt-2">
+          <p class="text-[9px] font-bold text-slate-400 font-apple-text tracking-wider uppercase pl-8 mb-2">Sugestões de perguntas</p>
+          <div class="flex flex-col gap-1.5 pl-8">
+            <button class="suggestion-chip text-left text-[10px] font-apple-text font-semibold text-slate-600 hover:text-primary bg-white hover:bg-slate-100/80 border border-slate-200/60 rounded-xl px-3 py-2 transition-all shadow-2xs hover:shadow-xs active:scale-98 cursor-pointer">
+              Como funciona o teste de 7 dias?
+            </button>
+            <button class="suggestion-chip text-left text-[10px] font-apple-text font-semibold text-slate-600 hover:text-primary bg-white hover:bg-slate-100/80 border border-slate-200/60 rounded-xl px-3 py-2 transition-all shadow-2xs hover:shadow-xs active:scale-98 cursor-pointer">
+              A IA atende às normas da OAB?
+            </button>
+            <button class="suggestion-chip text-left text-[10px] font-apple-text font-semibold text-slate-600 hover:text-primary bg-white hover:bg-slate-100/80 border border-slate-200/60 rounded-xl px-3 py-2 transition-all shadow-2xs hover:shadow-xs active:scale-98 cursor-pointer">
+              Posso auditar contratos em lote?
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Base Input Area -->
+      <div class="p-4 border-t border-slate-200/50 bg-white/60 backdrop-blur-sm flex items-center gap-2">
+        <input 
+          type="text" 
+          id="concierge-input" 
+          placeholder="Escreva sua dúvida..." 
+          class="flex-1 bg-white border border-slate-200/60 rounded-full px-4 py-2 text-xs font-apple-text text-primary focus:outline-hidden focus:border-slate-400 transition-colors"
+        />
+        <button 
+          id="concierge-send" 
+          class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-slate-800 transition-colors shadow-xs active:scale-95 shrink-0 cursor-pointer"
+        >
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Trigger Button -->
+    <button 
+      id="concierge-trigger" 
+      data-magnetic
+      class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full apple-glass-card flex items-center justify-center shadow-lg cursor-pointer hover:shadow-xl active:scale-95 group border border-slate-200/80"
+      aria-label="Falar com o assistente"
+    >
+      <!-- Active Notification Badge -->
+      <span class="absolute top-0 right-0 w-3 h-3 bg-accent rounded-full border border-white apple-online-pulse"></span>
+      <!-- Laser line icon -->
+      <svg class="w-5 h-5 text-primary transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+      </svg>
+    </button>
   </main>
 </RootLayout>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    // 0. Animação de Entrada GSAP para Elementos do Hero
+    const tlHero = gsap.timeline({ defaults: { ease: "power3.out" } });
+    tlHero.from('[data-anim="hero-tag"]', { opacity: 0, y: 15, duration: 0.6 })
+          .from('[data-anim="hero-title"]', { opacity: 0, y: 25, duration: 0.8 }, "-=0.4")
+          .from('[data-anim="hero-sub"]', { opacity: 0, y: 15, duration: 0.6 }, "-=0.5")
+          .from('[data-anim="hero-cta"]', { opacity: 0, scale: 0.96, duration: 0.5 }, "-=0.4");
+
+    // 1. Motor de Coordenadas de Luz Traseira Hero
+    const trigger = document.getElementById("hero-trigger");
+    const backlight = document.getElementById("hero-backlight");
+
+    if (trigger && backlight) {
+      trigger.addEventListener("mousemove", (e) => {
+        const rect = trigger.getBoundingClientRect();
+        const x = e.clientX - rect.left - 300;
+        const y = e.clientY - rect.top - 300;
+        gsap.to(backlight, { x: x, y: y, duration: 1.2, ease: "power2.out" });
+      });
+    }
+
+    // 2. Efeito de Scroll: Capsule Navbar Shifting (Mobile & Desktop)
+    const header = document.getElementById("main-header");
+    if (header) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 40) {
+          header.classList.add("shadow-lg", "border-slate-300/80", "bg-[#F9F9FB]/95");
+          gsap.to(header, { scale: 0.95, duration: 0.3, ease: "power2.out" });
+        } else {
+          header.classList.remove("shadow-lg", "border-slate-300/80", "bg-[#F9F9FB]/95");
+          gsap.to(header, { scale: 1, duration: 0.3, ease: "power2.out" });
+        }
+      });
+    }
+
+    // 2.5. Efeito de Scroll: Revelação Suave das Prateleiras de Governança
+    gsap.utils.toArray(".governanca-shelf").forEach(shelf => {
+      gsap.fromTo(shelf,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.0,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: shelf,
+            start: "top 85%",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+    });
+
+    // 3. Efeito de Scroll: Proximity Focus Text (Foco Dinâmico de Linha)
+    gsap.utils.toArray(".apple-proximity-text").forEach(text => {
+      gsap.fromTo(text,
+        { opacity: 0.35, y: 5 },
+        {
+          opacity: 1,
+          y: 0,
+          scrollTrigger: {
+            trigger: text,
+            start: "top 85%",
+            end: "top 50%",
+            scrub: true
+          }
+        }
+      );
+    });
+
+    // 4. Efeito de Scroll: Laser Icon Parallax Assíncrono
+    gsap.utils.toArray(".laser-icon-wrapper").forEach(icon => {
+      gsap.to(icon, {
+        yPercent: -25,
+        ease: "none",
+        scrollTrigger: {
+          trigger: icon,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+    });
+
+    // 5. Animação de Scroll-Driven Metallic Sheen Separada por Título
+    gsap.utils.toArray(".apple-text-sheen").forEach(title => {
+      gsap.fromTo(title, 
+        { backgroundPosition: "200% center" },
+        {
+          backgroundPosition: "0% center",
+          scrollTrigger: {
+            trigger: title,
+            start: "top 85%",
+            end: "bottom 15%",
+            scrub: 1.2
+          }
+        }
+      );
+    });
+
+    // 6. Expansão Controlada do Cinema Video Box
+    const videoCard = document.querySelector(".apple-video-hardware-card");
+    if (videoCard) {
+      gsap.fromTo(videoCard,
+        { scale: 0.96 },
+        {
+          scale: 1.02,
+          scrollTrigger: {
+            trigger: "#video-reveal-container",
+            start: "top 90%",
+            end: "bottom 30%",
+            scrub: 1
+          }
+        }
+      );
+    }
+
+    // 7. Efeito de Botão Magnético de Alta Fidelidade (Cinematic Builder §3.3)
+    document.querySelectorAll('[data-magnetic]').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        gsap.to(btn, {
+          x: x * 0.3,
+          y: y * 0.3,
+          scale: 1.02,
+          duration: 0.4,
+          ease: 'power2.out'
+        });
+      });
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, { x: 0, y: 0, scale: 1, duration: 0.5, ease: 'elastic.out(1, 0.5)' });
+      });
+    });
+
+    // 8. Seleção Interativa de Engines com Feedback Táctil
+    const engineCards = document.querySelectorAll(".interactive-engine-card");
+    engineCards.forEach(card => {
+      card.addEventListener("click", () => {
+        engineCards.forEach(c => c.classList.remove("active"));
+        card.classList.add("active");
+        
+        // Micro-interação de ressalto
+        gsap.fromTo(card,
+          { scale: 0.98 },
+          { scale: 1, duration: 0.4, ease: "back.out(1.7)" }
+        );
+      });
+    });
+
+    // 9. Interceptação de links de CTA com Animação Cinematográfica GSAP
+    document.querySelectorAll('.cta-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const destination = link.getAttribute('href');
+
+        gsap.to("#main-content", {
+          opacity: 0,
+          scale: 0.98,
+          duration: 0.5,
+          ease: "power2.inOut",
+          onComplete: () => {
+            window.location.href = destination;
+          }
+        });
+        
+        // Suavizar encolhimento do Header junto
+        gsap.to("#main-header", {
+          opacity: 0,
+          y: -20,
+          duration: 0.4,
+          ease: "power2.inOut"
+        });
+      });
+    });
+
+    // 10. Lógica de Interação e Simulação do Assistente Virtual Premium (Concierge Card)
+    const conciergeTrigger = document.getElementById("concierge-trigger");
+    const conciergePanel = document.getElementById("concierge-panel");
+    const conciergeClose = document.getElementById("concierge-close");
+    const conciergeInput = document.getElementById("concierge-input");
+    const conciergeSend = document.getElementById("concierge-send");
+    const conciergeChatArea = document.getElementById("concierge-chat-area");
+
+    let isConciergeOpen = false;
+
+    function openConcierge() {
+      isConciergeOpen = true;
+      conciergePanel.classList.remove("hidden");
+      
+      // Esconder a pulsação de notificação do trigger quando aberto
+      const badge = conciergeTrigger.querySelector(".apple-online-pulse");
+      if (badge) {
+        gsap.to(badge, { opacity: 0, scale: 0, duration: 0.3 });
+      }
+
+      gsap.fromTo(conciergePanel,
+        { scale: 0.9, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.5)" }
+      );
+      
+      setTimeout(() => {
+        conciergeChatArea.scrollTop = conciergeChatArea.scrollHeight;
+      }, 100);
+    }
+
+    function closeConcierge() {
+      isConciergeOpen = false;
+      gsap.to(conciergePanel, {
+        scale: 0.9,
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in",
+        onComplete: () => {
+          conciergePanel.classList.add("hidden");
+        }
+      });
+    }
+
+    if (conciergeTrigger && conciergePanel && conciergeClose) {
+      conciergeTrigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (isConciergeOpen) {
+          closeConcierge();
+        } else {
+          openConcierge();
+        }
+      });
+
+      conciergeClose.addEventListener("click", (e) => {
+        e.stopPropagation();
+        closeConcierge();
+      });
+
+      // Fechar ao clicar fora
+      document.addEventListener("click", (e) => {
+        if (isConciergeOpen && !conciergePanel.contains(e.target) && !conciergeTrigger.contains(e.target)) {
+          closeConcierge();
+        }
+      });
+
+      // Fechar com a tecla Esc
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && isConciergeOpen) {
+          closeConcierge();
+        }
+      });
+    }
+
+    // Simulador de Conversa
+    function appendMessage(sender, text) {
+      if (!conciergeChatArea) return;
+      const msgDiv = document.createElement("div");
+      msgDiv.className = "flex items-start gap-2.5 " + (sender === "user" ? "justify-end" : "");
+      
+      const iconOrNone = sender === "user" 
+        ? "" 
+        : `<div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200/40 text-[9px] font-bold text-slate-700 shrink-0">AI</div>`;
+        
+      const bgAndStyle = sender === "user"
+        ? "bg-primary text-white rounded-2xl rounded-tr-none p-3.5 shadow-xs max-w-[85%]"
+        : "bg-white border border-slate-200/40 rounded-2xl rounded-tl-none p-3.5 shadow-xs max-w-[85%]";
+
+      const textStyle = sender === "user"
+        ? "font-apple-text text-[11px] leading-relaxed font-normal"
+        : "font-apple-text text-[11px] text-slate-800 leading-relaxed font-normal";
+
+      msgDiv.innerHTML = `
+        ${iconOrNone}
+        <div class="${bgAndStyle}">
+          <p class="${textStyle}">${text}</p>
+        </div>
+      `;
+      
+      conciergeChatArea.appendChild(msgDiv);
+      conciergeChatArea.scrollTop = conciergeChatArea.scrollHeight;
+      
+      // Animação GSAP de entrada da mensagem
+      gsap.from(msgDiv, { opacity: 0, y: 10, duration: 0.3, ease: "power2.out" });
+    }
+
+    function showTypingIndicator() {
+      if (!conciergeChatArea) return;
+      const indicatorDiv = document.createElement("div");
+      indicatorDiv.id = "concierge-typing-indicator";
+      indicatorDiv.className = "flex items-start gap-2.5";
+      indicatorDiv.innerHTML = `
+        <div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200/40 text-[9px] font-bold text-slate-700 shrink-0">AI</div>
+        <div class="bg-white border border-slate-200/40 rounded-2xl rounded-tl-none px-4 py-3.5 shadow-xs max-w-[85%] flex items-center gap-1">
+          <span class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style="animation-delay: 0ms"></span>
+          <span class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style="animation-delay: 150ms"></span>
+          <span class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style="animation-delay: 300ms"></span>
+        </div>
+      `;
+      conciergeChatArea.appendChild(indicatorDiv);
+      conciergeChatArea.scrollTop = conciergeChatArea.scrollHeight;
+    }
+
+    function removeTypingIndicator() {
+      const indicator = document.getElementById("concierge-typing-indicator");
+      if (indicator) {
+        indicator.remove();
+      }
+    }
+
+    const presetResponses = {
+      "como funciona o teste de 7 dias": "O teste é 100% gratuito por 7 dias. Não exigimos cartão de crédito na ativação. Você terá acesso total às 3 engines (Contratos, Petições e Provas) com limites amplos para testar com casos reais. A qualquer momento, você pode migrar para a assinatura ou cancelar sem taxas.",
+      "a ia atende as normas da oab": "Sim. O JurisAI foi desenvolvido em conformidade estrita com o Estatuto da Advocacia e o Código de Ética da OAB. A IA funciona como uma ferramenta auxiliar de co-piloto; a responsabilidade técnica e assinatura final dos documentos continuam sendo exclusivas do advogado.",
+      "posso auditar contratos em lote": "Sim! Pelo painel corporativo (Dashboard), você pode fazer o upload de múltiplos arquivos em lote. O sistema processa cada minuta de forma isolada, gerando um relatório consolidado com matriz de riscos graves, médios e cláusulas recomendadas."
+    };
+
+    function handleUserMessage(messageText) {
+      if (!messageText.trim()) return;
+      appendMessage("user", messageText);
+      
+      // Mostrar indicador de digitação após delay suave
+      setTimeout(() => {
+        showTypingIndicator();
+      }, 400);
+
+      // Limpar acentos para busca de resposta
+      const normalizedMsg = messageText.trim().toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/[?.]/g, "");
+      
+      let reply = "Entendido. Um de nossos especialistas em tecnologia jurídica entrará em contato para detalhar esse fluxo. Se desejar testar imediatamente, basta clicar no botão 'Iniciar Teste Sem Cartão' logo abaixo!";
+      
+      for (const key in presetResponses) {
+        if (normalizedMsg.includes(key) || key.includes(normalizedMsg)) {
+          reply = presetResponses[key];
+          break;
+        }
+      }
+
+      setTimeout(() => {
+        removeTypingIndicator();
+        appendMessage("ai", reply);
+      }, 1600);
+    }
+
+    // Configurar Chips de Sugestão
+    document.querySelectorAll(".suggestion-chip").forEach(chip => {
+      chip.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const question = chip.innerText.trim();
+        const suggestionsDiv = document.getElementById("concierge-suggestions");
+        if (suggestionsDiv) {
+          gsap.to(suggestionsDiv, { 
+            opacity: 0, 
+            height: 0, 
+            duration: 0.3, 
+            onComplete: () => suggestionsDiv.remove() 
+          });
+        }
+        handleUserMessage(question);
+      });
+    });
+
+    // Enviar mensagem via botão ou enter
+    if (conciergeSend && conciergeInput) {
+      conciergeSend.addEventListener("click", () => {
+        const text = conciergeInput.value;
+        if (text.trim()) {
+          conciergeInput.value = "";
+          const suggestionsDiv = document.getElementById("concierge-suggestions");
+          if (suggestionsDiv) suggestionsDiv.remove();
+          handleUserMessage(text);
+        }
+      });
+
+      conciergeInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          const text = conciergeInput.value;
+          if (text.trim()) {
+            conciergeInput.value = "";
+            const suggestionsDiv = document.getElementById("concierge-suggestions");
+            if (suggestionsDiv) suggestionsDiv.remove();
+            handleUserMessage(text);
+          }
+        }
+      });
+    }
+  });
+</script>

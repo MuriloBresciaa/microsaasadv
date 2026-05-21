@@ -43,6 +43,7 @@ Este arquivo contém:
 ### Tipo de Tarefa (marcar uma)
 - [ ] 🎨 **Frontend/Landing** → Aplicar Gate das 4 Perguntas (`01_cinematic_builder.md §1`)
 - [ ] ⚙️ **Backend/API** → Aplicar Protocolo V.L.A.E.G (`06_vlaeg_protocol.md`)
+- [ ] 🤖 **Agência Integrada** → Aplicar Protocolo Tríade de Superpoderes (`07_agency_superpowers.md`)
 - [ ] 🗄️ **Database** → Schema Drizzle em `src/db/schemas/schema-[entidade].ts`
 - [ ] 🐍 **Automação Python** → Usar `tools/_template_tool.py` como base
 
@@ -79,6 +80,7 @@ Este arquivo contém:
 | Tool template       | `tools/_template_tool.py`     | Base para scripts Python determinísticos     |
 | Constituição        | `docs/gemini.md`              | Esquemas, mapa cognitivo, glossário          |
 | Presets Estéticos   | `.agent/rules/01_cinematic_builder.md` | 4 identidades visuais completas    |
+| Tríade Superpoderes | `.agent/rules/07_agency_superpowers.md` | UI-UX Pro Max, Superpowers & GSD  |
 
 ---
 

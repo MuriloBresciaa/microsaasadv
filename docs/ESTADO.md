@@ -1,112 +1,111 @@
-# ESTADO.md — Site Factory V2.0
+# ESTADO — Memory Bank
 
-> Última atualização: 2026-04-30 · Design System travado: Monumental Editorial / Warm Concrete · Sistema Imune: **Nível 3 (Bulletproof)**
-
-## Status Atual
-
-✅ **Site Factory 2.0 — Golden Template | Sistema Imune Nível 3 (Bulletproof)**
-
-> **Definição de Nível 3:** O agente não consegue gerar código de baixa qualidade _mesmo que queira_.
-> As 6 camadas de regras ativas tornam o comportamento correto a única saída possível.
-
-## O Que Foi Feito
-
-### Scaffolding Completo
-- [x] Astro 6 inicializado (template minimal, strict TS)
-- [x] React 19 integrado via `@astrojs/react`
-- [x] Tailwind CSS v4 via `@tailwindcss/vite` (Vite plugin)
-- [x] Framer Motion instalado
-- [x] Nano Stores configurado com atoms globais
-- [x] Supabase client tipado em `src/lib/supabase.ts`
-- [x] Função `cn()` (Shadcn pattern) em `src/lib/utils.ts`
-- [x] Path aliases `@/*` configurados no `tsconfig.json`
-
-### Design System
-- [x] `global.css` com tokens Dark Mode OLED (Warm Concrete)
-- [x] Escala de cores: `--color-bg-*`, `--color-concrete-*`, `--color-navy-*`, `--color-gold-*`
-- [x] Utilities: `.glass`, `.glass-light`, `.text-gradient-gold`, `.text-gradient-navy`, `.card-editorial`
-- [x] Fontes: **Anton** (display) + **Geist** (UI) + **Inter** (body) — Sem Manrope, sem Bodoni
-
-### Página Demo
-- [x] `RootLayout.astro` com SEO completo (OG, Twitter, canonical)
-- [x] `index.astro` com Hero industrial/minimalista
-- [x] Grid pattern background + radial glow effect
-
-### Documentação
-- [x] `docs/01_TECH_STACK.md` — Stack completa documentada
-- [x] `docs/02_UI_UX.md` — Design system documentado
-- [x] `docs/03_DATABASE.md` — Convenções Supabase
-- [x] `docs/ESTADO.md` — Este arquivo
-- [x] `.clinerules` — Regras locais do agente
-
-### 🛡️ Blindagem de Infraestrutura (2026-04-30)
-- [x] `.nvmrc` atualizado: Node **22** (era 20)
-- [x] `netlify.toml` criado: `corepack enable pnpm && pnpm install && pnpm run build`, publish `dist`
-- [x] `.github/workflows/ci.yml` criado: Node 22 + PNPM v9 + `--frozen-lockfile` + cache de store
-- [x] `ARQUITETURA.md` criado na raiz: fonte de verdade arquitetural completa (stack, pastas, ADR)
-- [x] `.agent/rules/00_master_index.md` criado: protocolo Fail-Fast com checklist pré-execução
-
-### 🧰 Utilitários Cross-Browser (2026-04-30)
-- [x] `copyToClipboard(text)` adicionado em `src/lib/utils.ts`
-  - Strategy 1: `navigator.clipboard.writeText()` (modern, HTTPS)
-  - Strategy 2: `document.createRange()` + `window.getSelection().addRange()` + `execCommand('copy')` (iOS/Safari fallback)
-
-### 🎨 Motor de Design UI/UX Pro Max (2026-04-30)
-- [x] `uipro-cli@2.2.3` instalado globalmente via NPM
-- [x] `uipro init --ai antigravity` executado — skill instalado em `.agent/skills/ui-ux-pro-max/`
-- [x] ~~Design System SaaS Minimalista~~ → **SUBSTITUÍDO pelo padrão canônico**
-
-### 🔒 Design System Travado — Monumental Editorial / Warm Concrete (2026-04-30)
-- [x] `design-system/sitefactory2/MASTER.md` **SOBRESCRITO** com estética canônica aprovada pelo arquiteto-chefe
-  - **Estilo:** Monumental Editorial / Warm Concrete
-  - **Paletas:** Deep Navy (`--color-navy-*`) · Champagne Gold (`--color-gold-*`) · Warm Concrete (`--color-concrete-*`)
-  - **Fontes:** Anton (display) · Geist (UI) · Inter (body)
-  - **Utilities:** `.glass`, `.glass-light`, `.text-gradient-gold`, `.text-gradient-navy`, `.btn-gold`, `.card-editorial`
-  - **Eliminado:** Cyan, Bodoni Moda, Jost, cores genéricas de SaaS
-- [x] `.agent/rules/01_design_lock.md` criado: diretiva de bloqueio imutável para todos os clones
-
-### 🛡️ Sistema Imune Nível 3 — 5 Camadas de Regras Ativas (2026-04-30)
-- [x] `.agent/rules/02_git_commit.md`: Conventional Commits obrigatórios + scopes canônicos + fluxo de branches
-- [x] `.agent/rules/03_typescript.md`: Proibição total de `any` + contratos de Props/Drizzle/Supabase/API
-- [x] `.agent/rules/04_error_handling.md`: Padrão `{ data, error }` + status codes semânticos + wrappers para DB/API/Auth/Fetch
-- [x] `.agent/rules/05_naming.md`: Nomenclatura completa de variáveis, booleanos, handlers, stores, CSS e arquivos
-- [x] `ARQUITETURA.md` atualizado: pasta `.agents/` corrigida para `.agent/`, ADR registrado
-- [x] `00_master_index.md` atualizado: todos os paths de `ESTADO.md` apontam para `docs/ESTADO.md`
-- [x] `.clinerules` atualizado: protocolo de inicialização agora referencia `ARQUITETURA.md` como primário
-
-## Estrutura de Pastas
-
-```
-src/
-├── components/
-│   └── ui/          # Componentes Shadcn (a criar)
-├── layouts/
-│   └── RootLayout.astro
-├── lib/
-│   ├── supabase.ts
-│   └── utils.ts
-├── pages/
-│   └── index.astro
-├── store/
-│   └── globals.ts
-└── styles/
-    └── global.css
-docs/
-├── 01_TECH_STACK.md
-├── 02_UI_UX.md
-├── 03_DATABASE.md
-└── ESTADO.md
-```
+## Fase Atual
+- [x] Clonagem do Repositório GitHub
+- [x] Criação da estrutura de pastas canônica
+- [x] Geração da ferramenta tools/qa_validator_tool.py
+- [x] Criação do arquivo de design system master (Preset Apple Clean)
+- [x] Criação da especificação do banco para controle do Trial de 7 dias
+- [x] Criação do Schema Drizzle (schema-usuario.ts)
+- [x] Expansão do modelo de dados em 3FN (schema-contrato.ts, schema-peticao.ts, schema-auditoria.ts)
+- [x] Criação dos POPs de arquitetura baseados no V.L.A.E.G
+- [x] Vinculação manual das regras imunes (.agent/rules)
+- [x] Setup visual base (Tailwind v4 global.css + RootLayout.astro com GSAP & Squircle clip-path)
+- [x] Ativação da página inicial corporativa em formato Landing Page (src/pages/index.astro) consumindo o RootLayout
+- [x] Execução de QA Validator Tool no layout base e na página inicial frontend
+- [x] Instalação de dependências via pnpm e ativação do servidor de desenvolvimento Astro local em http://localhost:4321/
+- [x] Redesenho total e imediato de index.astro sob narrativa editorial clean de luxo (Premium White/Apple/Dell) e aprovação em QA Validator.
+- [x] Reset Estético e Engenharia Visual: Remoção de clip-path SVG deformáveis e adoção de curvatura CSS nativa Apple calibrada (`rounded-[32px]`) com sombras sutis em camadas.
+- [x] Tipografia nativa Apple com Webfonts Estáveis e Optical Sizes calibrados: `SF Pro Display` (para títulos e preço) e `SF Pro Text` (para parágrafos, botões e labels) carregados explicitamente via `@font-face` eliminando inconsistências de renderização no Windows (Segoe UI/Consolas).
+- [x] Refatoração absoluta e purista da interface (Header fixo e flutuante, Hero Assimétrico Editorial com Mockup Canvas realista, Bento Grid assimétrico, e Bloco de Preço com oclusão profunda, translúcido e 7 dias de trial sem cartão).
+- [x] Bento Grid Assimétrico: O primeiro card (Engine 01) ocupa `md:col-span-2`, o segundo (Engine 02) ocupa `md:col-span-1` e o terceiro (Engine 03) ocupa `md:col-span-3` horizontalmente.
+- [x] Ícones Técnicos de Linha Laser: SVGs inline puros encapsulados em micro-quadrados com cantos `rounded-xl` e sombras sutis, simulando botões físicos de alumínio usinado.
+- [x] Motor de Refração de Luz Ambiente Interativo: Listener de mouse em Vanilla JS + GSAP movimentando suavemente um backlight radial (`#hero-backlight`) com interpolação de física realista.
+- [x] Refinamentos de iluminação e tipografia: aplicação do preço ultra-fino (`font-extralight`), backlight gradient atrás do mockup do hero, contornos `border-slate-200/40`, e fontes das descrições em `text-slate-500 text-sm leading-relaxed`.
+- [x] Engine interativa do Mockup: Script Vanilla/GSAP de comutação ativa dos estados do Workspace do Hero a partir da interação (hover/click) nos cards de engines do Bento Grid.
+- [x] Calibração de Cores e Erradicação do Azul: Substituição integral por tons corporativos puristas claros (Carbon Black `#1D1D1F`, cinza secundário `#86868B`, bordas translúcidas `rgba(29, 29, 31, 0.08)` e fundo `#F9F9FB`), aprovados pelo QA local e build de produção.
+- [x] Implementação do Scroll-Driven Metallic Text Sheen (Reflexo de Luz por Rolagem): Adição da classe `.apple-text-sheen` e do controle ScrollTrigger GSAP para rolar o reflexo luminoso metálico nos títulos das seções Hero e Features.
+- [x] Calibração Furtiva do Metallic Sheen: Reduzido o ponto médio do contraste da cor do reflexo de `#AEAEB2` para `#48484A` criando um visual furtivo, sutil e premium.
+- [x] Efeito Liquid Glass: Criação da classe `.apple-glass-card` com opacidade baseada em refração óptica (`rgba(255,255,255,0.78)`), `backdrop-blur(20px)` e contornos translúcidos (`border-border` em `rgba(29,29,31,0.06)`), aplicada no Header e no Card de Preços.
+- [x] Botões Magnéticos com Física Real: Integração do script de atração magnética com interpolação de cursor (`data-magnetic`) nos botões primários via GSAP, recuando elasticamente ao sair da área de contato.
+- [x] Header Responsivo (Capsule Pattern): Remoção dos links centrais poluídos no viewport mobile (< 768px), convertendo o cabeçalho em uma cápsula limpa e compacta com o logo à esquerda e o botão CTA à direita.
+- [x] Cinema Video Box (Hostinger-Grade): Substituição do mockup anterior por uma tag de vídeo otimizada com aceleração de hardware (`autoplay muted loop playsinline`) executando animações digitais fluidas em loop, integrada por meio de masks de gradiente com o fundo alabastro.
+- [x] Revelação Scroll-Driven do Vídeo: Animação GSAP ScrollTrigger que expande progressivamente o contêiner de vídeo (`scale: 0.96` para `scale: 1.02`) conforme o usuário rola a página, criando imersão de hardware.
+- [x] Otimização Mobile 375px: Calibração de espaçamentos laterais (`px-4` no mobile e `px-6` / `px-8` em telas maiores) para extinguir qualquer sangria horizontal ou quebras de texto.
+- [x] Capsule Navbar Shifting: Implementação de lógica dinâmica via ScrollTrigger. Quando a página rola além de 40px, o cabeçalho contrai suavemente (`scale: 0.96`), ajusta suas margens horizontais e assume o formato de pílula flutuante isolada.
+- [x] Proximity Focus Text: Classe `.apple-proximity-text` aplicada aos textos descritivos das engines para controle progressivo de opacidade (de `0.35` a `1.0`) e deslocamento vertical no centro da viewport.
+- [x] Laser Icon Parallax: Micro-deslocamento assíncrono vertical (`yPercent: -25`) aplicado nos contêineres de ícone `.laser-icon-wrapper` em relação à rolagem do card base das engines.
+- [x] Unificação Global de Scroll: Garantida a fluidez e compatibilidade de todas as dinâmicas de ScrollTrigger (metal sheen, proximidade de texto, paralaxe de ícones e expansão do vídeo) em gestos de toque no mobile e mouses de alta taxa de atualização no desktop.
+- [x] Touch Targets Apple HIG: Ajustados todos os elementos clicáveis e CTAs para cumprirem rigorosamente a dimensão mínima de 44x44px em telas menores, utilizando paddings dinâmicos e alturas mínimas (`min-h-[44px]`, `min-h-[46px]`, `min-h-[48px]`).
+- [x] Aceleração Nativa de GPU: Classe `.apple-video-hardware-card` implementada em `global.css` forçando composição de hardware nativa (`will-change: transform`, `translate3d(0,0,0)`, `backface-visibility: hidden`), eliminando stutters no carregamento e renderização do vídeo loop.
+- [x] Padronização do Padrão Squircle (G2): Aplicação da propriedade de hardware `corner-shape: squircle` em conjunto com `border-radius: 32px` nas classes `.apple-glass-card`, `.apple-hardware-card` e `.apple-video-hardware-card`, assegurando continuidade matemática de curvatura G2.
+- [x] Integração de Vídeo Local Oficial: Substituição do placeholder externo de vídeo no hero pelo asset local `/div.mp4` localizado na pasta pública, mantendo as propriedades de loop e aceleração por hardware nativa.
+- [x] Navbar Flutuante Estilo Apple por Padrão: Substituição da navbar colada por uma cápsula flutuante (`top-4`) por padrão, que reage suavemente à rolagem com micro-escala (`scale: 0.95`), evitando saltos e recalculações pesadas de layout.
+- [x] Seleção Interativa de Engines no Bento Grid: Implementado listener em Vanilla JS com efeito de comutação de estado ativo e animações táteis elásticas (`gsap.fromTo` com `ease: "back.out(1.7)"`), trazendo dinamicidade de uso real às engines.
+- [x] Contraste Visual Aprimorado: Refinamento de contraste em micro-textos sob o fundo alabastro, aumentando a legibilidade da linha de apoio ("Não exigimos cartão de crédito...") de `text-slate-400` para `text-slate-500`.
+- [x] Rota de Autenticação Minimalista: Criação da página `/app/auth.astro` utilizando o `RootLayout`, equipada com contêiner central estilo hardware, entrada de e-mail corporativo, botão com atração magnética compatível com touch target HIG e animação GSAP de entrada/saída.
+- [x] Workspace Central do Advogado: Criação do painel principal `/app/dashboard.astro` contendo uma barra lateral flutuante semi-translúcida (`.apple-glass-card`) e área de conteúdo principal assimétrica com cartões de acesso rápido para as três ferramentas cognitivas.
+- [x] Scaffolding de Engines com Split View: Criação das três telas de visualização dos serviços utilizando nomenclatura em kebab-case, organizadas em duas colunas largas (Split View) com títulos em SF Pro Display de tracking colado:
+  - `/app/analista-contratos.astro` (com upload simulado de minutas e parâmetros de rigidez).
+  - `/app/copiloto-peticoes.astro` (com caixa de fatos estruturada e simulação de redação de peça).
+  - `/app/auditoria-provas.astro` (com timeline cronológica intuitiva e detecção de contradições).
+- [x] Animações de Transição de Tela: Integração de animações GSAP de fade e transição fluida nas novas rotas da pasta `/app/` para garantir uma experiência de aplicação desktop nativa.
+- [x] Conexão Total de CTAs da Landing Page: Vinculação integral de todos os botões de ação e conversão primários da página principal (`/`) para redirecionar diretamente à rota `/app/auth` (botão do Header Capsule, botão principal do Hero e o botão de ação do Card de Preços Liquid Glass).
+- [x] Interceptor de Saída Cinematográfica (Page Exit): Acoplada lógica com Vanilla JS e GSAP nos links `.cta-link` do index.astro para interceptar cliques, rodar um fade-out e escala decrescente (`scale: 0.98`) ultra-suave na tag `<main>` e transicionar de forma transparente para a aplicação privada.
+- [x] Auditoria de Rotas Internas: Verificado o fluxo completo de interação e navegação do ambiente `/app/` (avanços a partir do formulário de autenticação, botões de retorno ao Dashboard e botões de encerramento de sessão).
+- [x] Inserção da **Seção 1: O Manifesto Tipográfico** em `src/pages/index.astro` com espaçamento vertical de grande impacto (`py-36` a `py-44`) sob o fundo alabastro, com título central monumental em `SF Pro Display`, tracking esmagado e reflexo metálico (`.apple-text-sheen`) acionado por rolagem.
+- [x] Manutenção e Polimento do Bento Grid das Engines: Estrutura mantida em 3 colunas assimétricas (`md:col-span-2`, `md:col-span-1`, `md:col-span-3`) com comutação JS tátil e ressaltos táteis GSAP.
+- [x] Inserção da **Seção 3: O Cofre de Governança (Apple Privacy Style)**: Seção purista e técnica antes do bloco de preços, estruturada com linhas divisórias ultra-finas e três colunas técnicas detalhando Isolamento 3FN, Logs Criptografados e Infraestrutura Isolada em VPC dedicada. Utilizados parágrafos de proximidade de texto (`.apple-proximity-text`) para controle gradual de opacidade por scroll.
+- [x] Integração com a Seção 4: Preço Liquid Glass: Calibrada a tipografia fina `font-extralight` no preço "R$ 297" e validação dos CTAs em vidro líquido com transições de tela do GSAP.
+- [x] Homologação Total de Build e Qualidade: Aprovado pela ferramenta `tools/qa_validator_tool.py` e build de produção com 100% de sucesso em todas as rotas internas e externas.
+- [x] **Upgrade Crítico de Agência (Wave 1.42.3):** Instalação global e local da tríade de superpoderes (UI-UX Pro Max v2.0, Superpowers e Get Shit Done v1.42.3) com sincronização e blindagem em `.agent/rules/07_agency_superpowers.md` e build de validação Astro homologado com 100% de êxito.
+- [x] **Overhaul Editorial do Bento Grid:** Refatoração profunda da seção de Engines cognitivas em `src/pages/index.astro` ativando as diretrizes de `ui-ux-pro-max` e `get-shit-done`. Substituição de cópias prolixas por copywriting minimalista com tom de autoridade Apple (Engine 01 Contratos: *"Pontos cegos eliminados antes da assinatura"*; Engine 02 Petições: *"Da nota mental à peça processual estruturada"*; Engine 03 Provas: *"A verdade factual isolada do caos"*), ampliação de paddings internos (`p-10 lg:p-14`), gap mais espaçado (`gap-8`) para respiração editorial premium, badges simplificados ("Engine 01") em `SF Pro Text Regular` e contraste de escala rigoroso. Homologado pelo QA local e build do Astro com 100% de sucesso.
+- [x] **Restruturação de Prateleiras (Apple Lineup Style):** Reconfiguração total da seção `#features` do `src/pages/index.astro` de Bento Grid para prateleiras verticais alternadas e assimetricamente balanceadas. Erradicação absoluta de jargões técnicos para focar em advogados tradicionais (Produto 1: *Análise de Contratos com IA*, Produto 2: *Criador de Petições*, Produto 3: *Organizador de Provas*). Criação de representações visuais ricas e minimalistas construídas inteiramente em HTML/CSS para ilustrar os produtos em tempo real (alerta de cláusula abusiva, notas vs. petições iniciais alinhadas ao CPC e timelines de WhatsApp expondo contradições documentais). Preservação perfeita das dinâmicas e classes interativas do GSAP, proximity text focus, sheens de texto e paralaxe de ícones. Homologação total por meio do QA Validator e build estável gerando 6 rotas estáticas impecáveis.
+- [x] **Simplificação e Hierarquia do Hero e Governança:** Reconstrução profunda do copywriting do Hero, removendo terminologias artificiais e adotando uma declaração focada e 100% humanizada da IA que lê, analisa e redige com precisão sem interferir na rotina do advogado. Remodelação integral da seção de Governança (`#governanca`) em 3 pilares pragmáticos de confiança no estilo *Apple Privacy* ("Seus dados nunca treinam a IA", "Proteção de Nível Bancário", "Conformidade Estrita com a OAB").
+- [x] **Auditoria do Motor Squircle (Curvaturas Contínuas):** Implementação de classes de curvatura de hardware (.apple-pill, .apple-video-inner, .apple-mockup-card, .apple-mockup-card-small) e aplicação do pente-fino de contorno em headers flutuantes, botões pill, badges de seção, Cinema Video Box e mockups físicos de produtos, garantindo continuidade matemática G2 pura e eliminando cantos ásperos ou quebras angulares circulares grosseiras.
+- [x] **Seção de Governança Apple Trust Lineup (Alta Fidelidade):** Transformação total da seção de governança de privacidade (`#governanca`) de colunas textuais para prateleiras verticais assimétricas (60/40 alternadas). Integração de 3 assets de alta resolução (`confidencialidade.png`, `blindagem.png`, `etica.png`) gerados pelo Google Omni com estética Liquid Glass. Ativação de animação física de entrada ScrollTrigger no GSAP para revelação suave ao scroll. Homologado com sucesso pelo QA local e build Astro de produção impecável.
+- [x] **Correções Geométricas & Acabamento Squircle (G2):** Solucionado o alinhamento do mockup do Produto 1 (`contrato_servicos.docx`), adicionando o wrapper `.lg:col-span-5` ausente que causava empilhamento vertical colapsado no desktop, e estruturando sub-blocos internos com flex/gap robustos. Criada a classe utilitária `.apple-glass-image-card` em `global.css` e aplicada nos contêineres de imagem da Seção de Governança para garantir acabamento de hardware físico Squircle G2 esculpido com refração de vidro. Validação de QA e compilação de produção homologadas com 100% de êxito.
+- [x] **Ritmo Móvel do Hero (Apple Mobile Rhythm):** Reestruturação da seção do Hero com CSS Grid bidimensional no desktop e empilhamento ordenado no mobile (Tag + Título -> Vídeo Loop -> Parágrafos + CTAs) eliminando densidade excessiva e paredes de texto. Ajuste na escala tipográfica e síntese cirúrgica no copy de apoio para escaneabilidade de alta conversão.
+- [x] **Assistente Virtual Premium (Apple Concierge Card):** Implementação do botão flutuante magnético circular de `56x56px` com pulsação ativa de status (`.apple-online-pulse`), e do painel de chat suspenso com cantos G2 Squircle e efeito de vidro de alta refração (`.apple-glass-card`). Configurado simulador de digitação humana inteligente com delay realista de 1.6s, chips de sugestão rápida interativos com respostas de autoridade Apple, e controle de fechamento via tecla `Esc` ou cliques externos acionados por GSAP.
+- [x] **Ecossistema de Autenticação Unificado 3FN (Apple Identity Panel):** Concepção da modelagem relacional em Terceira Forma Normal (3FN) via Drizzle ORM/MySQL, com tabelas `usuarios` (migrada para UUID varchar 36), `oauth_contas` (isolando Google/Apple com restrição única composta para impedir duplicações) e `sessoes` (controle de expiração). Desenvolvida a tela de login unificada `/app/auth` com abas dinâmicas, comutação e animação de altura elástica GSAP (exibição/ocultação do campo Nome), botões sociais puristas HIG, luz traseira física e atração magnética.
+- [x] **Normalização de Restrições MySQL no Drizzle ORM:** Correção de quebra de tipo de driver em Drizzle Kit. Reconfiguramos as tabelas `auditorias_provas`, `analises_contratos` e `peticoes_geradas` migrando a coluna `criadoEm` de `datetime` para `timestamp`, preservando integralmente todas as restrições relacionais 3FN e UUIDs intactos. Sincronização executada com sucesso via `drizzle-kit push` contra a base de dados.
+- [x] **Fallback Preventivo Apple Auth:** Implementação de interceptador inteligente no clique do ID Apple em `auth.astro`. Se acionado, exibe um contêiner de aviso com efeito Liquid Glass e transição GSAP, executando uma condução óptica (foco automático e pulsação em cor esmeralda no input de e-mail corporativo) para guiar o usuário à submissão convencional.
+- [x] **Mecanismo de Auto-Sandbox Inteligente Google OAuth:** Integração de validação condicional no endpoint `/api/auth/google`. Se o identificador de cliente for um placeholder (`placeholder_google`), o fluxo intercepta o redirecionamento externo e encaminha o usuário diretamente para a rota local de callback com o `state` correto e cookie pré-registrado, permitindo simulação e testes de backend locais robustos contra o MySQL.
+- [x] **Refatoração Absoluta do Painel Central do Advogado:** Alinhamento estético total em `src/pages/app/dashboard.astro` sob o design Bento Grid e cantos Squircle G2, erradicação de jargões técnicos substituídos por nomes reais de produtos, e inserção de previews CSS/Tailwind ricos.
+- [x] **Integração da Camada de Dados com Drizzle no Dashboard:** Implementação de Prepared Statements estritos para lookup seguro de sessões (`get_session_user`), fallback dinâmico local de desenvolvimento (`get_last_user`), e cálculo de dias restantes do trial.
+- [x] **Modernização Visual Squircle G2 Absoluta do Dashboard:** Padronização geométrica completa de todos os elementos estruturais (sidebar, cards, pills, widgets, botões) sob classes `apple-glass-card`, `apple-hardware-card`, `apple-mockup-card`, `apple-mockup-card-small` e `apple-pill` com `corner-shape: squircle`. Upgrade iconográfico para micro-quadrados de alumínio usinado com `laser-icon-wrapper` e efeito paralaxe vertical via GSAP ScrollTrigger (`data-parallax-icon`). Previews visuais enriquecidos: documento com alerta de risco calibrado, esqueleto CPC tripartido (Fatos/Direito/Pedidos), e timeline cronológica com nós conectados por fios de gradiente e detecção de conflito. Tags semânticas `<article>` e `<header>` aplicadas.
 
 ## Próximos Passos
+1. Conectar as telas internas de cada módulo (/app/analista-contratos, /app/copiloto-peticoes, /app/auditoria-provas) aos Drizzle schemas e fluxos correspondentes do banco.
+2. Implementar a persistência e gravação de logs de uso do período de testes em MySQL local.
 
-- [ ] Instalar e configurar componentes Shadcn base (Button, Card, Input)
-- [ ] Criar componente `<Header />` responsivo
-- [ ] Criar componente `<Footer />`
-- [ ] Criar `src/lib/errors.ts` com mapa de erros Supabase PT-BR (definido em `04_error_handling.md`)
-- [ ] Criar `src/lib/constants.ts` com constantes globais do projeto
-- [ ] Criar `src/lib/types.ts` com tipos compartilhados
-- [ ] Gerar tipos Supabase via `supabase gen types typescript` e salvar em `src/lib/database.types.ts`
-- [ ] Implementar primeiro fluxo de dados com Supabase
-- [ ] Adicionar `class-variance-authority` para variantes de componentes
-- [ ] Configurar ESLint com regras TypeScript strict para enforcement em CI
+## Ferramentas de Agência Ativas (Wave 1.42.3)
+- **UI-UX Pro Max v2.0 (Design Reasoning Engine):** Ativado de forma global via `uipro-cli` e incorporado ao ecossistema em `C:\Users\muril\.gemini\config\skills\ui-ux-pro-max\` e localmente em `.agent/skills/ui-ux-pro-max/`. Conduz a geração de interfaces Apple White Grade.
+- **Superpowers (Development Methodology):** Registrado em `C:\Users\muril\.gemini\config\skills\superpowers\` e no protocolo local `.agent/rules/07_agency_superpowers.md`, governando o refinamento socrático (Brainstorming), tarefas microscópicas em checklists atômicos e TDD rigoroso.
+- **Get Shit Done (GSD) v1.42.3 (Context Engineering):** Ativo em `C:\Users\muril\.gemini\config\skills\get-shit-done\`, gerenciando o manifesto de arquivos da sessão, guards de leitura antes de edição, e delegação para Fresh Context Subagents para controle absoluto de Context Rot (< 40% bloat).
+
+
+## Especificações Técnicas (Design System Apple Clean)
+- **Palette**: Background `#F9F9FB`, Surface `#FFFFFF`, Primary `#1D1D1F` (Carbon Black), Secondary `#86868B` (Muted Metallic), Accent `#10B981`, Border `rgba(29, 29, 31, 0.06)`.
+- **Typography**: Títulos e preço com *SF Pro Display* (Light/Regular/Bold), Corpo e microcopy com *SF Pro Text* (Regular/Semibold).
+- **Cantos (Border Radius)**: Uso de curvatura contínua por CSS nativo via classes tailwind ex: `rounded-[32px]`.
+- **Sombras**: Camadas de sombra difusa com oclusão ambiente para simulação volumétrica realística.
+- **Iluminação (Hero)**: Backlight radial `#hero-backlight` interativo com física e rastreamento de coordenadas do cursor.
+- **Efeitos Premium**:
+  - Reflexo de luz por rolagem (`.apple-text-sheen`) sincronizado pelo ScrollTrigger do GSAP (deslocando a posição do gradiente de `200% center` para `0% center` via `ease: power2.out` com brilho furtivo médio em `#48484A`).
+  - Camada de vidro líquido (`.apple-glass-card`) com profundidade óptica 3D e contorno de halo translúcido.
+  - Atração de botões magnéticos (`data-magnetic`) com raio de influência de 30% e retornos elásticos via GSAP `elastic.out(1, 0.5)`.
+  - Cinema Video Reveal: Efeito de aproximação imersiva (`scale: 0.96` a `scale: 1.02`) com controle do scrollbar do mouse.
+  - Capsule Navbar Shift: Transição geométrica e dimensional do header a partir de 40px de rolagem vertical.
+  - Parallax Tridimensional Táctil: Ajuste assíncrono de eixos nos elementos de marcação laser de ícones (`yPercent: -25`).
+  - Proximity Reading Focus: Destaque de contraste dinâmico de texto (`opacity: 0.35` -> `1.0`).
+  - Touch Targets & GPU Gates: Botões táteis com área de toque mínima regulada por HIG, com aceleração tridimensional para prevenir gargalos de hardware.
+
+## Índice de Banco de Dados (Drizzle Schemas - 3FN)
+- **usuarios** (`src/db/schemas/schema-usuario.ts`): Controle de dados cadastrais e trial de 7 dias.
+- **analises_contratos** (`src/db/schemas/schema-contrato.ts`): Relatórios de auditoria de contratos (Analista de Riscos).
+- **peticoes_geradas** (`src/db/schemas/schema-peticao.ts`): Armazenamento de fatos brutos e petições finais em markdown (Copiloto de Petições).
+- **auditorias_provas** (`src/db/schemas/schema-auditoria.ts`): Linha do tempo de evidências e inconsistências mapeadas (Auditor de Provas).
+- **oauth_contas** (`src/db/schemas/schema-oauth.ts`): Vínculos com provedores de credenciais sociais Google/Apple (3FN).
+- **sessoes** (`src/db/schemas/schema-sessao.ts`): Controle de sessões de login seguras, tokens e expiração de sessões.
+

@@ -25,6 +25,90 @@
 - [ ] próximo item
 ```
 
+
+### [2026-05-20] — Wave 4.4: Erradicação do Azul e Calibração Apple White Grade
+**Wave/Sprint:** Wave 4.4
+**Status:** ✅ Concluído
+
+#### O que foi feito
+- Executada a busca da inteligência UI/UX Pro Max pelo padrão de design corporativo claro (Apple/Dell White Grade).
+- Substituída integralmente a paleta azul e ardósia em `src/styles/global.css`, redefinindo as variáveis do Tailwind v4 (`--color-primary` como Carbon Black `#1D1D1F`, `--color-secondary` como `#86868B`, `--color-border` como `rgba(29, 29, 31, 0.08)` e os cantos/sombras condizentes).
+- Refatorado o arquivo `src/pages/index.astro` para remover classes de cores de texto e bordas hardcoded antigas (como `text-[#0F172A]`, `text-slate-500`, `border-slate-200/...`), substituindo-as pelas classes utilitárias do tema (`text-primary`, `text-secondary`, `bg-background`, `border-border`, `bg-primary`, etc.).
+- Refatorado `src/layouts/RootLayout.astro` para aplicar as classes globais `bg-background` e `text-primary` na tag `<body>`.
+- Executado o script de QA do frontend (`tools/qa_validator_tool.py`) e compilada a versão de produção com sucesso e sem avisos (`pnpm build`).
+
+#### Próximos passos
+- [ ] Iniciar a construção do painel/dashboard de advocacia para interação direta com os módulos da JurisAI.
+- [ ] Integrar as engines especialistas (Contratos, Petições e Evidências) com a camada de banco de dados (Drizzle schemas).
+
+---
+
+### [2026-05-20] — Wave 4.3: Reset Estético e Verdadeira Curvatura Apple
+**Wave/Sprint:** Wave 4.3
+**Status:** ✅ Concluído
+
+#### O que foi feito
+- Eliminada a dependência de clip-path SVG que causava distorções nas bordas responsivas.
+- Adotadas as curvaturas CSS nativas (`rounded-3xl` e `rounded-[32px]`) com sombras sutis em camadas e contornos (`shadow-sm` + `ring-1 ring-slate-200/60`) para emular com perfeição a G2 Curvature da Apple.
+- Aplicado o Reset Estético e Purismo Tipográfico: fonte Geist com escala massiva e tracking apertado (`tracking-[-0.05em]`) para títulos, e Inter para textos de apoio.
+- Sobrescrevida a folha de estilo global em `src/styles/global.css` e o arquivo `src/layouts/RootLayout.astro` removendo os blocos SVG invisíveis obsoletos.
+- Validada com sucesso absoluto a nova página através da ferramenta local `tools/qa_validator_tool.py`.
+
+#### Próximos passos
+- [ ] Iniciar a construção do painel/dashboard de advocacia para interação direta com os módulos da JurisAI.
+- [ ] Integrar as engines especialistas (Contratos, Petições e Evidências) com a camada de banco de dados (Drizzle schemas).
+
+---
+
+### [2026-05-20] — Wave 4.2: Purismo Tipográfico e Correção G2 de Squircles
+**Wave/Sprint:** Wave 4.2
+**Status:** ✅ Concluído
+
+#### O que foi feito
+- Removido o uso da fonte Cormorant Garamond do head de `src/layouts/RootLayout.astro` e de toda a marcação de `src/pages/index.astro`.
+- Adotadas as fontes puristas Geist (Semibold/Bold) para títulos/UI e Inter para corpo de texto em `src/pages/index.astro`, alcançando a estética geométrica e moderna da Apple/Dell.
+- Corrigida a deformação geométrica das bordas dos Squircles: removidas classes externas de borda CSS (`border-[#...]`) dos elementos `.squircle` e adicionada sombra interna por box-shadow (`box-shadow: inset 0 0 0 1px var(--color-border)`) para os cards e `.squircle-dark` (`inset 0 0 0 1px rgba(255, 255, 255, 0.15)`) para CTAs escuros.
+- Executada e aprovada com sucesso a ferramenta de validação determinística de frontend `tools/qa_validator_tool.py` sobre `src/pages/index.astro`.
+
+#### Próximos passos
+- [ ] Iniciar a construção do painel/dashboard de advocacia para interação direta com os módulos da JurisAI.
+- [ ] Integrar as engines especialistas (Contratos, Petições e Evidências) com a camada de banco de dados (Drizzle schemas).
+
+---
+
+### [2026-05-20] — Wave 4.1: Redesenho Editorial Clean de Luxo (Apple/Dell Premium)
+**Wave/Sprint:** Wave 4.1
+**Status:** ✅ Concluído
+
+#### O que foi feito
+- Substituída integralmente a página `src/pages/index.astro` por uma versão com layout não-linear, assimétrico, eliminando grades triviais e adotando uma narrativa editorial premium.
+- Integradas as fontes `Cormorant Garamond` (para títulos dramáticos/luxuosos) e `Geist` (para UI e controles) no layout raiz `src/layouts/RootLayout.astro`.
+- Implementado o Premium White Override: fundo branco/alabastro, contraste WCAG AAA com Deep Slate, e Cinematic Noise ajustado com opacidade sutil de 0.02.
+- Aplicado o uso rigoroso de `.squircle` com clipPath SVG matemático da Apple em todos os cards e botões principais de conversão.
+- Adicionadas animações de scroll avançadas (GSAP ScrollTrigger com transições não-lineares Power2/Power3) e interações táteis/magnéticas em todos os botões CTA.
+- Validada com sucesso absoluto a integridade técnica da nova interface utilizando a ferramenta `tools/qa_validator_tool.py`.
+
+#### Próximos passos
+- [ ] Iniciar a construção do painel/dashboard de advocacia para interação direta com os módulos da JurisAI.
+- [ ] Integrar as engines especialistas (Contratos, Petições e Evidências) com a camada de banco de dados (Drizzle schemas).
+
+---
+
+### [2026-05-20] — Wave 4: Apple Clean & Professional Visual Base Setup
+**Wave/Sprint:** Wave 4
+**Status:** ✅ Concluído
+
+#### O que foi feito
+- Atualizada a folha de estilos global `src/styles/global.css` com a especificação do Tailwind v4 contendo as paletas de cores do Preset Apple Clean, o Cinematic Noise Overlay, e a classe `.squircle` integrada ao clip-path.
+- Atualizado o layout central `src/layouts/RootLayout.astro` importando os estilos atualizados, configurando o clipPath SVG parametrizado por `objectBoundingBox` para o Squircle e injetando as dependências do GSAP e ScrollTrigger.
+- Montada a página inicial corporativa em formato Landing Page em `src/pages/index.astro`, estruturada em seções canônicas de alta conversão (Hero, Social Proof, Features, Preços e Rodapé) e explicitando a proposta comercial de 7 dias grátis sem cartão.
+- Executada a ferramenta de validação de qualidade frontend determinística (`tools/qa_validator_tool.py`) sobre o layout raiz e a página inicial, confirmando sucesso absoluto.
+- Instaladas as dependências do projeto via `pnpm install` e ativado o servidor de desenvolvimento local na porta padrão `http://localhost:4321/`.
+
+#### Próximos passos
+- [ ] Iniciar a construção do painel/dashboard de advocacia para interação direta com os módulos da JurisAI.
+- [ ] Integrar as engines especialistas (Contratos, Petições e Evidências) com a camada de banco de dados (Drizzle schemas).
+
 ---
 
 ### [2026-05-04] — Wave 3: Memory Init & Master Sync

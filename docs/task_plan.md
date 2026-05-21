@@ -45,8 +45,18 @@ Estimativa: [horas/dias]
 - [x] `ARQUITETURA.md` — Atualizado para v3.0
 - [x] `00_master_index.md` — Checklist atualizado
 
-### Fase 4 — [Próxima] (⏳ Pendente)
-- [ ] [Definir próxima fase conforme missão do usuário]
+### Fase 4 — Visual Foundation (✅ Concluída)
+- [x] Atualizada a folha de estilo global em `src/styles/global.css` com o Preset Apple Clean e Cinematic Noise.
+- [x] Criado o `src/layouts/RootLayout.astro` com suporte a GSAP e ScrollTrigger.
+- [x] Criada a landing page inicial da plataforma baseada no Preset Apple Clean em `src/pages/index.astro`.
+- [x] Redesenhada a landing page para uma narrativa não-linear de luxo clean (Premium White) com Geist, Inter e GSAP.
+- [x] Aplicado o Reset Estético: remoção de clip-path SVG deformáveis e adoção de curvatura CSS nativa Apple calibrada (`rounded-[32px]`) com sombras sutis em camadas.
+- [x] Executadas as validações através do `tools/qa_validator_tool.py` com sucesso.
+- [x] Ativado o servidor de desenvolvimento local na porta padrão 4321.
+
+### Fase 5 — UI & Domain Modules (⏳ Pendente)
+- [ ] Implementar o Dashboard de controle de Trial, Análise de Contratos, Geração de Petições e Auditoria de Provas.
+- [ ] Integrar os schemas Drizzle e rotas de API para salvar as interações dos advogados.
 
 ---
 

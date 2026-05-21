@@ -26,3 +26,6 @@ pnpm-debug.log*
 # A.N.T Temporary Layer
 .tmp/
 !.tmp/.gitkeep
+
+# Local Netlify folder
+.netlify
