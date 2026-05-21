@@ -1,44 +1,118 @@
-# .clinerules — Site Factory V2.0
+# .clinerules — JurisAI Micro-SaaS (Canônico)
 
-> Regras locais do agente para este repositório.
+> Regras locais do agente para o repositório JurisAI.
+> Última atualização: 2026-05-21 | Mantenedor: Elite Architect Murilo Brescia
+
+---
 
 ## Contexto
 
-Isto é um clone da **Fábrica de Sites (Site Factory V2.0)**.
-Este repositório serve como template base para criação de landing pages
-de alta conversão e e-commerces ultra-rápidos.
+Este é o **JurisAI**, um Micro-SaaS jurídico de auditoria cognitiva para advogados.
+Três motores de IA: Analista de Contratos, Copiloto de Petições e Auditor de Provas.
+Modelo de negócio: Trial gratuito de 7 dias sem cartão → R$ 297/mês.
+
+---
 
 ## Regras Estritas
 
 ### Inicialização Obrigatória
+
 Antes de qualquer ação, DEVE consultar em ordem:
 1. `ARQUITETURA.md` (raiz) — Stack, pastas canônicas, Iron Laws
 2. `docs/ESTADO.md` — Para saber o status atual do projeto
 3. `.agent/rules/00_master_index.md` — Protocolo Fail-Fast e mapa de utilitários
 
-### Design
-- O design padrão é **sempre Dark Mode OLED**. Sem exceções.
-- Cores: usar sempre os tokens CSS definidos em `src/styles/global.css`.
-- Fontes: Inter ou Manrope. Nunca defaults do browser.
-- Contrast ratio mínimo: 7:1.
+---
+
+### Lei de Design Única — Estética Canônica Monumental Editorial / Warm Concrete
+
+A identidade visual do JurisAI é IMUTÁVEL. Qualquer desvio configura violação de protocolo.
+
+#### Paleta Oficial (Tokens Obrigatórios)
+
+| Token                  | Hex       | Uso                                           |
+| ---------------------- | --------- | --------------------------------------------- |
+| Warm Concrete          | `#f5f5f4` | Fundo base de todas as páginas públicas       |
+| Deep Navy              | `#0f172a` | Fundo de contraste (seções escuras, footer)   |
+| True Charcoal          | `#1d1d1f` | Títulos, headings, texto primário             |
+| Muted Metallic         | `#86868b` | Texto secundário, labels, microcopy           |
+| Burnished Gold         | `#b8860b` | Accent principal, destaques editoriais        |
+| WhatsApp Green         | `#25d366` | CTA de conversão WhatsApp, badges de status   |
+| Border Translucent     | `rgba(29, 29, 31, 0.06)` | Bordas de cards e divisores    |
+| Surface White          | `#ffffff` | Cards elevados sobre Warm Concrete            |
+
+#### Proibições Absolutas
+
+- ❌ Dark Mode OLED, Cyan Neon, Electric Green, cores genéricas (plain red/blue/green)
+- ❌ Gradientes neon, glow shadows, estética industrial minimalista
+- ❌ Qualquer referência ao template "Site Factory" anterior
+
+#### Tipografia Oficial (Fontes Locais Apple — Obrigatórias)
+
+| Papel                 | Font Family      | Fallback Stack                    |
+| --------------------- | ---------------- | --------------------------------- |
+| Headings / Display    | `SF Pro Display` | `Anton, system-ui, sans-serif`    |
+| Body / UI / Microcopy | `SF Pro Text`    | `Geist, system-ui, sans-serif`    |
+
+- Carregamento via `@font-face` local em `src/styles/global.css`
+- Proibido: Inter, Manrope, Google Fonts CDN, fontes padrão do browser
+
+#### Curvatura e Geometria
+
+- Cantos contínuos Apple G2 Squircle: `corner-shape: squircle` + `border-radius: 32px`
+- Classes canônicas: `.apple-glass-card`, `.apple-hardware-card`, `.apple-pill`
+- Cantos concêntricos para elementos aninhados (32px → 24px → 16px → 8px)
+
+---
 
 ### Componentes UI
-- Componentes UI genéricos devem seguir o padrão **Shadcn** em `src/components/ui/`.
-- Usar a função `cn()` de `@/lib/utils` para merge de classes.
-- Componentes de domínio ficam em `src/components/` (fora de `/ui`).
+
+- Componentes UI genéricos devem seguir o padrão **Shadcn** em `src/components/ui/`
+- Usar a função `cn()` de `@/lib/utils` para merge de classes
+- Componentes de domínio ficam em `src/components/` (fora de `/ui`)
 
 ### Código
-- **Package Manager**: pnpm (obrigatório).
-- **Imports**: Sempre absolutos via `@/` alias.
-- **TypeScript**: Strict mode. Sem `any`.
-- **React**: Apenas em Islands (`client:*` directives).
+
+- **Package Manager**: `pnpm` v9 strict via `--frozen-lockfile` (obrigatório)
+- **Runtime**: Node 22 LTS (travado em `.nvmrc` e `package.json`)
+- **Framework**: Astro 6 Islands Architecture
+- **Imports**: Sempre absolutos via `@/` alias
+- **TypeScript**: Strict mode. Sem `any`
+- **React**: Apenas em Islands (`client:*` directives)
+- **Animações**: GSAP + ScrollTrigger (vanilla). Sem Framer Motion
 
 ### Database
-- Supabase em 3FN com UUIDs.
-- RLS sempre habilitado.
-- Consultar `docs/03_DATABASE.md` para convenções.
+
+- **ORM**: Drizzle ORM sobre MySQL (Laragon local, porta 3306)
+- **Normalização**: 3FN estrita com UUIDs (`varchar(36)`) na tabela `usuarios`
+- **Schemas**: Um arquivo por entidade em `src/db/schemas/schema-[entidade].ts`
+- **Queries**: Sempre via Drizzle Prepared Statements. Proibido SQL raw concatenado
+- **Variáveis**: Server-only por padrão. Prefixo `PUBLIC_` exclusivo para UI
+
+#### Proibições de Banco
+
+- ❌ Supabase como banco principal (migrado para MySQL/Drizzle)
+- ❌ RLS (conceito Supabase, não aplicável a MySQL/Drizzle)
+- ❌ `@supabase/supabase-js` como client de dados
+
+---
+
+### Regra de Saída — Proibição de Truncamento
+
+```
+QUALQUER ARQUIVO MODIFICADO DEVE SER IMPRESSO POR INTEIRO.
+Terminantemente proibido usar placeholders de truncamento como:
+  "// resto do código"
+  "// ... existing code ..."
+  "/* demais seções omitidas */"
+  "... (truncado)"
+Violação = invalidação imediata da entrega.
+```
+
+---
 
 ### Finalização
+
 Após concluir qualquer tarefa, atualizar `docs/ESTADO.md` com:
 - O que foi feito
 - Novos componentes/endpoints criados

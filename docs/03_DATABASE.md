@@ -1,66 +1,80 @@
-# 03 — Database (Supabase)
+# 03 — Database (MySQL / Drizzle ORM)
 
-> Convenções de banco de dados para o Site Factory V2.0.
+> Convenções de banco de dados para o JurisAI.
+> Última atualização: 2026-05-21
 
 ## Provider
 
-- **Supabase** (PostgreSQL gerenciado)
-- Client: `@supabase/supabase-js`
-- Autenticação: Supabase Auth (RLS obrigatório)
+- **MySQL 8.x** (Laragon local, porta 3306)
+- Driver: `mysql2/promise` (async/await nativo)
+- ORM: Drizzle ORM v0.44+ com type-safety completa
+- Schemas: Um arquivo por entidade em `src/db/schemas/schema-[entidade].ts`
 
 ## Variáveis de Ambiente
 
 ```env
-PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=
+DB_NAME=jurisai
 ```
 
-> ⚠️ Nunca exponha `service_role_key` no client. Apenas server-side.
+> ⚠️ Todas as variáveis de banco são **server-only**. Nunca usar prefixo `PUBLIC_`.
+> O arquivo `.env` está protegido pelo `.gitignore`. Nunca commitar valores reais.
 
 ## Convenções de Schema
 
 ### Normalização
 - **Terceira Forma Normal (3FN)** obrigatória
 - Sem dados duplicados entre tabelas
-- Relações via foreign keys com `ON DELETE CASCADE` ou `RESTRICT`
+- Relações via foreign keys com `ON DELETE CASCADE`
 
 ### Identificadores
-- **Primary Keys**: `UUID` (v4) via `gen_random_uuid()`
-- **Naming**: `snake_case` para tabelas e colunas
-- **Timestamps**: `created_at` e `updated_at` com `timestamptz` e default `now()`
+- **Primary Key da tabela `usuarios`**: UUID `varchar(36)` gerado pela aplicação
+- **Primary Keys das demais tabelas**: `INT AUTO_INCREMENT`
+- **Naming**: `snake_case` para tabelas e colunas no MySQL
+- **Naming (Drizzle)**: `camelCase` para propriedades TypeScript
+- **Timestamps**: `timestamp` com `defaultNow()` para `criado_em`
 
-### Row Level Security (RLS)
-- **Sempre habilitado** em tabelas com dados de usuário
-- Policies nomeadas descritivamente: `users_can_read_own_data`
-- Sem `public` access sem policy explícita
+### Schemas Registrados
 
-## Padrão de Tabelas
+| Tabela               | Schema File                  | Propósito                           |
+| -------------------- | ---------------------------- | ----------------------------------- |
+| `usuarios`           | `schema-usuario.ts`          | Cadastro e ciclo trial/ativo        |
+| `oauth_contas`       | `schema-oauth.ts`            | Provedores sociais (Google/Apple)   |
+| `sessoes`            | `schema-sessao.ts`           | Tokens e expiração de sessões       |
+| `analises_contratos` | `schema-contrato.ts`         | Engine 01: Analista de Riscos       |
+| `peticoes_geradas`   | `schema-peticao.ts`          | Engine 02: Copiloto de Petições     |
+| `auditorias_provas`  | `schema-auditoria.ts`        | Engine 03: Auditor de Provas        |
 
-```sql
-CREATE TABLE public.example (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  -- columns aqui
-  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
-);
+> Referência completa de tipagem e constraints: `docs/DATA_DICTIONARY.md`
 
-ALTER TABLE public.example ENABLE ROW LEVEL SECURITY;
-```
-
-## Client Usage (TypeScript)
+## Client Usage (TypeScript / Drizzle)
 
 ```typescript
-import { supabase } from '@/lib/supabase';
+import { db } from '@/db';
+import { usuarios } from '@/db/schemas/schema-usuario';
+import { eq } from 'drizzle-orm';
 
-const { data, error } = await supabase
-  .from('example')
-  .select('*')
-  .order('created_at', { ascending: false });
+// SELECT com Prepared Statement implícito (type-safe)
+const user = await db
+  .select()
+  .from(usuarios)
+  .where(eq(usuarios.email, email));
+
+// INSERT
+await db.insert(usuarios).values({
+  id: crypto.randomUUID(),
+  nome: 'João Silva',
+  email: 'joao@escritorio.com.br',
+});
 ```
 
 ## Regras
 
-1. Nunca concatenar variáveis em queries (use `.eq()`, `.filter()`, etc.)
-2. Sempre verificar `error` antes de usar `data`
-3. Tipar responses com generics do Supabase quando possível
+1. Nunca concatenar variáveis em queries — sempre use Drizzle ORM (Prepared Statements)
+2. Sempre verificar resultados antes de usar dados retornados
+3. Tipar responses com os schemas Drizzle exportados
 4. Indexes em colunas usadas em `WHERE`, `ORDER BY` e `JOIN`
+5. Foreign keys com `ON DELETE CASCADE` para integridade referencial
+6. UUIDs apenas na tabela `usuarios` — demais usam `INT AUTO_INCREMENT`

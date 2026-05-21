@@ -1,8 +1,8 @@
-# 06 — Protocolo V.L.A.E.G + Arquitetura A.N.T (Site Factory 3.0)
+# 06 — Protocolo V.L.A.E.G + Arquitetura A.N.T (JurisAI)
 
 > Motor de backend e automações. Leitura obrigatória antes de qualquer implementação
 > de lógica de servidor, integração de API ou script de processamento de dados.
-> Criado em: 2026-05-04
+> Criado em: 2026-05-04 | Atualizado em: 2026-05-21
 
 ---
 
@@ -74,8 +74,7 @@ Checklist obrigatório:
 - [ ] Pontos de falha mapeados (timeouts, indisponibilidade de terceiros)
 ```
 
-**Regra de Secrets:** Toda variável sensível DEVE existir em `.env.local`
-(nunca hardcoded). Nomear como `SERVICE_NOME_DA_VARIAVEL`.
+**Regra de Secrets:** Toda variável sensível DEVE ser lida de variáveis de ambiente seguras server-only (nunca `PUBLIC_` ou expostas na UI).
 
 ---
 
@@ -115,7 +114,7 @@ Regras invioláveis de estilo para scripts backend:
 
 ```
 ✅ TypeScript strict mode em todos os arquivos .ts
-✅ Prepared Statements (PDO/Drizzle) — PROIBIDO concatenar SQL
+✅ Prepared Statements (Drizzle ORM) — PROIBIDO concatenar SQL
 ✅ Sanitização de input em todo endpoint público
 ✅ Retorno de erro padronizado: { success: false, error: { code, message } }
 ✅ Retorno de sucesso padronizado: { success: true, data: {...} }
@@ -126,10 +125,10 @@ Regras invioláveis de estilo para scripts backend:
 
 Nomenclatura obrigatória:
 ```
-Endpoints:   /api/[recurso]/[acao]       → /api/leads/capture
-Services:    src/lib/services/<nome>.ts   → leadService.ts
-Tools:       tools/<nome>_tool.py         → scraper_tool.py
-POPs:        architecture/<nome>.md       → lead-capture.md
+Endpoints:   /api/[recurso]/[acao]        → /api/analise/processar
+Services:    src/lib/services/<nome>.ts   → analiseService.ts
+Tools:       tools/<nome>_tool.py         → qa_validator_tool.py
+POPs:        architecture/<nome>.md       → analise-contratos.md
 ```
 
 ---
@@ -151,9 +150,9 @@ Documentar obrigatoriamente:
 2. **Comando de Teste Local:**
    ```bash
    # Exemplo obrigatório no POP
-   curl -X POST http://localhost:4321/api/leads/capture \
+   curl -X POST http://localhost:4321/api/analise/processar \
      -H "Content-Type: application/json" \
-     -d '{"email":"test@test.com","nome":"Test"}'
+     -d '{"usuarioId":"123","nomeArquivo":"minuta.docx"}'
    ```
 
 3. **Critério de Done (Iron Law §4.1):**
@@ -171,7 +170,7 @@ A.N.T = Architecture · Navigation · Tools
 ```
 
 ```
-site-factory-master2/
+jurisai-microsaas/
 ├── architecture/    ← CAMADA 1: POPs em Markdown (fonte de verdade)
 ├── tools/           ← CAMADA 3: Scripts Python determinísticos
 └── .tmp/            ← Artefatos temporários (NÃO commitar)
@@ -185,14 +184,14 @@ site-factory-master2/
 
 Regras:
 - Um arquivo `.md` por módulo/feature
-- Nomeação: `kebab-case.md` (ex: `email-capture.md`, `webhook-stripe.md`)
+- Nomeação: `kebab-case.md` (ex: `analise-contrato.md`, `google-oauth.md`)
 - Incluir sempre: fluxo, diagrama ASCII, decisões de design, rollback
 - Atualizar o POP ANTES de refatorar o código correspondente
 - **NUNCA deletar um POP** — versionar com `_v2`, `_deprecated` se necessário
 
 Índice obrigatório (`architecture/INDEX.md`):
 ```markdown
-# Architecture Index — Site Factory 3.0
+# Architecture Index — JurisAI
 
 | Módulo | Arquivo | Status | Última Atualização |
 |--------|---------|--------|-------------------|
@@ -208,7 +207,7 @@ Regras:
 Responsabilidades desta camada:
 - Ler POPs em `architecture/` antes de implementar qualquer coisa
 - Consultar `docs/ESTADO.md` para contexto de onde o projeto está
-- Cruzar `TECH_SPEC.md` para decisões de stack
+- Cruzar `docs/DATA_DICTIONARY.md` para decisões de banco
 - Navegar schemas em `src/db/schemas/` antes de qualquer query
 - **Nunca escrever código sem ter passado pelas Fases V e L do protocolo**
 
@@ -235,14 +234,14 @@ Regras:
 - **CLI First:** Todo script deve aceitar argumentos via `argparse` ou `sys.argv`
 - **Exit codes:** 0 = sucesso, 1 = erro de input, 2 = erro de runtime, 3 = erro de rede
 - **Saída estruturada:** JSON no stdout, logs no stderr
-- **Sem secrets no código:** Usar `python-dotenv` e `.env.local`
+- **Sem secrets no código:** Usar `.env` no ambiente local
 - **Requirements:** Documentar dependências em `tools/requirements.txt`
 
 Template base obrigatório (`tools/_template_tool.py`):
 ```python
 #!/usr/bin/env python3
 """
-<Nome do Script> — Site Factory 3.0 Tools Layer
+<Nome do Script> — JurisAI Tools Layer
 Propósito: <descrição em uma linha>
 Uso: python tools/<nome>_tool.py --input <valor>
 """
@@ -252,7 +251,7 @@ import json
 import sys
 from dotenv import load_dotenv
 
-load_dotenv(".env.local")
+load_dotenv()
 
 
 def main(args: argparse.Namespace) -> dict:
@@ -302,11 +301,9 @@ Violação desta regra = blocking issue a ser documentado em `docs/ESTADO.md`.
 
 | Regra | Relação com V.L.A.E.G |
 |-------|----------------------|
-| `00_master_index.md` | Consultar antes da Fase L para mapear módulos existentes |
-| `02_git_commit.md` | Todo POP novo = commit `docs(architecture): add POP <nome>` |
-| `03_typescript.md` | Fase E aplica strict mode em todo código gerado |
-| `04_error_handling.md` | Schema de erros da Fase V segue os padrões definidos aqui |
-| `05_naming.md` | Nomenclatura da Fase E alinhada com convenções do projeto |
+| `00_master_index.md` | Consultar antes da Fase L para mapear os schemas do Drizzle |
+| `.clinerules` | Aplica a estética canônica e a regra de não truncamento de código |
+| `docs/DATA_DICTIONARY.md` | Fonte absoluta de verdade das tabelas e tipos |
 
 ---
 
@@ -316,10 +313,10 @@ Violação desta regra = blocking issue a ser documentado em `docs/ESTADO.md`.
   de API cacheadas, outputs intermediários de scripts)
 - **Nunca commitar:** Garantir que `.tmp/` está no `.gitignore`
 - **TTL implícito:** Arquivos com mais de 24h devem ser deletados manualmente ou por script
-- **Naming:** `<timestamp>_<descricao>.json` (ex: `20260504_leads_export.json`)
+- **Naming:** `<timestamp>_<descricao>.json` (ex: `20260521_analise_exemplo.json`)
 
 ---
 
-> **Este protocolo é obrigatório para todo desenvolvimento backend no Site Factory 3.0.**
+> **Este protocolo é obrigatório para todo desenvolvimento backend no JurisAI.**
 > Agentes que pularem fases do V.L.A.E.G devem registrar o desvio em `docs/ESTADO.md`
 > com a justificativa técnica. Sem justificativa = violação de Iron Law §4.2.

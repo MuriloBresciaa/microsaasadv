@@ -1,137 +1,64 @@
-# 01 — Cinematic Builder (Site Factory 3.0)
+# 01 — Cinematic Builder (JurisAI)
 
-> Regra de execução obrigatória para todo agente que produzir uma landing page neste repositório.
-> Substitui `01_design_lock.md` a partir de 2026-05-04.
+> Regra de execução obrigatória para todo agente que produzir ou alterar uma interface pública ou privada neste repositório.
+> Última atualização: 2026-05-21
 
 ---
 
 ## §1. REGRA DAS 4 PERGUNTAS — GATE OBRIGATÓRIO
 
-**ANTES de escrever uma linha de código ou HTML, o agente DEVE disparar UMA única chamada `AskUserQuestion` contendo as 4 perguntas abaixo.**
+**ANTES de escrever uma linha de código ou HTML que crie ou altere uma rota pública ou tela da aplicação, o agente DEVE disparar UMA única chamada `AskUserQuestion` contendo as 4 perguntas abaixo.**
 Nenhuma suposição é permitida. Se o usuário omitir alguma resposta, use os defaults indicados.
 
 ```
 PERGUNTA 1 — Marca / Propósito
 "Qual é o nome da marca/produto e qual a ação principal que o visitante deve realizar?"
-Default: marca = "[Projeto]", ação = "entrar em contato"
+Default: marca = "JurisAI", ação = "Iniciar período de trial gratuito de 7 dias"
 
 PERGUNTA 2 — Estética (Preset)
 "Qual preset estético você quer usar?
-  A) Organic Tech  — natureza + tecnologia, luz suave
-  B) Midnight Luxe — premium escuro, dourado, exclusividade
-  C) Brutalist Signal — impacto cru, tipografia agressiva, sem ornamento
-  D) Vapor Clinic  — neon pastéis, estética vapor/clínica, Y2K clean"
-Default: A
+  A) Monumental Editorial / Warm Concrete (Estética canônica JurisAI)
+  B) Midnight Luxe (Preset escuro premium)"
+Default: A (Monumental Editorial / Warm Concrete)
 
 PERGUNTA 3 — 3 Propostas de Valor
 "Liste as 3 principais propostas de valor (benefícios, não features).
-Exemplo: 'Economia de tempo / Sem burocracia / Suporte 24h'"
-Default: usar copy genérico alinhado ao propósito informado
+Exemplo: 'Segurança absoluta 3FN / Sem exigência de cartão de crédito / Diagnósticos em segundos'"
+Default: "Diagnósticos em segundos / Sem exigência de cartão / Conformidade com a OAB"
 
 PERGUNTA 4 — CTA Principal
 "Qual o texto e destino do botão CTA principal?
-Exemplo: 'Quero Começar → #formulario' ou 'Agendar Demonstração → https://...'"
-Default: "Saiba Mais → #sobre"
+Exemplo: 'Começar Trial de 7 Dias → /app/auth' ou 'Demonstração Prática'"
+Default: "Começar Trial de 7 Dias → /app/auth"
 ```
 
 **Só avance após receber as respostas (ou expirar o timeout com os defaults).**
 
 ---
 
-## §2. PRESETS ESTÉTICOS — 4 Identidades Canônicas
+## §2. PRESET ESTÉTICO CANÔNICO — Monumental Editorial / Warm Concrete
 
-### PRESET A — Organic Tech
+A estética oficial JurisAI é **imparcial, purista e baseada em tipografia editorial premium com materiais físicos**.
+
 ```yaml
-identity: "Natureza encontra tecnologia. Confiança orgânica com precisão digital."
+identity: "Monumental Editorial / Warm Concrete. Inspiração: Apple Hardware, Dell Premium, Hostinger Cinema."
 palette:
-  background:   "#0D1F16"   # verde-floresta profundo
-  surface:      "#152B1E"   # card base
-  primary:      "#4ADE80"   # verde neon vibrante (lime-400)
-  secondary:    "#86EFAC"   # verde menta suave
-  accent:       "#A3E635"   # lima elétrico
-  text:         "#F0FDF4"   # off-white esverdeado
-  muted:        "#6B7280"   # cinza neutro
+  background:   "#f5f5f4"   # Warm Concrete
+  surface:      "#ffffff"   # Card Surface
+  contrast:     "#0f172a"   # Deep Navy (seções escuras, footer)
+  primary:      "#1d1d1f"   # True Charcoal
+  secondary:    "#86868b"   # Muted Metallic
+  accent:       "#b8860b"   # Burnished Gold
+  whatsapp:     "#25d366"   # WhatsApp Green (conversão)
+  border:       "rgba(29, 29, 31, 0.06)" # Borda translúcida
 typography:
-  heading:      "Syne"      # Google Fonts — geométrico/orgânico
-  body:         "Inter"
-  mono:         "JetBrains Mono"
+  heading:      "SF Pro Display" # Apple Local
+  body:         "SF Pro Text"    # Apple Local
   heading_weight: 800
 image_mood: >
-  Macro textures of leaves, moss, circuits on bark, bioluminescent fungi,
-  clean lab environments with natural light, earth tones + electric green overlays.
-```
-
----
-
-### PRESET B — Midnight Luxe
-```yaml
-identity: "Premium escuro. Exclusividade silenciosa. Dourado como assinatura."
-palette:
-  background:   "#080808"   # OLED black
-  surface:      "#111111"   # card base
-  primary:      "#D4AF37"   # dourado clássico
-  secondary:    "#F5E6A3"   # champagne suave
-  accent:       "#C084FC"   # púrpura luxo
-  text:         "#F8F8F8"   # branco quase puro
-  muted:        "#525252"   # cinza escuro
-typography:
-  heading:      "Cormorant Garamond"   # elegância editorial
-  body:         "DM Sans"
-  mono:         "Fira Code"
-  heading_weight: 600
-image_mood: >
-  Dark studio photography, gold bokeh, silk textures, black marble,
-  candlelight reflections, deep shadows with single light sources,
-  watches/jewelry/architecture shot in chiaroscuro.
-```
-
----
-
-### PRESET C — Brutalist Signal
-```yaml
-identity: "Sem ornamento. Impacto direto. A mensagem É o design."
-palette:
-  background:   "#F5F0E8"   # off-white cru
-  surface:      "#FFFFFF"
-  primary:      "#0A0A0A"   # preto absoluto
-  secondary:    "#FF3B30"   # vermelho sinal
-  accent:       "#FFD60A"   # amarelo alerta
-  text:         "#0A0A0A"
-  muted:        "#6E6E6E"
-typography:
-  heading:      "Anton"            # condensed, agressivo
-  body:         "Space Mono"       # monospace cru
-  mono:         "Space Mono"
-  heading_weight: 900
-image_mood: >
-  High-contrast B&W photography, grain texture, editorial cutouts,
-  newspaper print overlays, raw concrete, industrial grids,
-  protest posters aesthetic, CMYK misregistration effects.
-```
-
----
-
-### PRESET D — Vapor Clinic
-```yaml
-identity: "Estética clínica com alma vaporwave. Clean mas com personalidade Y2K."
-palette:
-  background:   "#F8F4FF"   # lavanda muito claro
-  surface:      "#FFFFFF"
-  primary:      "#A855F7"   # roxo vaporwave
-  secondary:    "#22D3EE"   # cyan neon claro
-  accent:       "#F472B6"   # pink pastel neon
-  text:         "#1A0533"   # roxo escuro
-  muted:        "#9CA3AF"
-typography:
-  heading:      "Space Grotesk"    # clean + caráter
-  body:         "Outfit"
-  mono:         "JetBrains Mono"
-  heading_weight: 700
-image_mood: >
-  Pastel gradients, holographic foil textures, vaporwave sunsets,
-  clean medical/lab aesthetics, translucent UI overlays,
-  Y2K chrome effects, soft neon glows on white backgrounds,
-  abstract 3D blobs in lavender/cyan/pink.
+  Fotografia de estúdio clean, luz suave difusa, texturas de concreto
+  claro, alumínio usinado, refração óptica estilo Liquid Glass,
+  representações minimalistas de documentos e timelines factuais.
 ```
 
 ---
@@ -139,7 +66,7 @@ image_mood: >
 ## §3. DESIGN SYSTEM FIXO — Regras Invioláveis de UI
 
 ### 3.1 Noise Global (CSS)
-Todo layout DEVE incluir o ruído de textura global com opacidade 0.05.
+Todo layout DEVE incluir o ruído de textura global com opacidade 0.03.
 Inserir IMEDIATAMENTE após o `<body>`:
 
 ```css
@@ -150,15 +77,15 @@ body::before {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 ```
 
-### 3.2 Bordas — rounded-[2rem]
-- **Cards, Modais, Imagens de destaque:** `border-radius: 2rem` (32px)
-- **Inputs, Chips, Tags:** `border-radius: 0.75rem` (12px)
-- **Botões primários:** `border-radius: 9999px` (pill) — exceto Preset C (0px, brutalist)
+### 3.2 Bordas — rounded-[32px]
+- **Cards, Modais, Previews de destaque:** `border-radius: 32px` (2rem) com sombra de oclusão suave
+- **Inputs, Chips, Tags:** `border-radius: 12px` (0.75rem)
+- **Botões primários:** `border-radius: 9999px` (pill)
 - **Proibido:** border-radius < 8px em qualquer componente de card.
 
 ### 3.3 Botões Magnéticos
@@ -185,10 +112,10 @@ document.querySelectorAll('[data-magnetic]').forEach(btn => {
 });
 ```
 
-Markup obrigatório: `<button data-magnetic ...>`
+Markup obrigatório: `<button data-magnetic ...>` ou `<a data-magnetic ...>`
 
 ### 3.4 Ciclo de Animação via GSAP — Sequência Padrão
-Toda landing page DEVE implementar a sequência de entrada abaixo:
+Toda página DEVE implementar a sequência de entrada abaixo:
 
 ```javascript
 // Fase 1 — Hero entrance (executar no DOMContentLoaded)
@@ -217,24 +144,21 @@ gsap.utils.toArray('[data-anim="fade-up"]').forEach(el => {
 
 Atributos `data-anim` obrigatórios em todos os elementos de destaque.
 
-### 3.5 Importação GSAP — CDN Obrigatório
-```html
-<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-<script>gsap.registerPlugin(ScrollTrigger);</script>
-```
+### 3.5 Importação GSAP
+GSAP e seus plugins são gerenciados localmente no script client de cada rota ou carregados de forma otimizada via Astro.
 
 ---
 
 ## §4. ESTRUTURA DE SEÇÕES — Ordem Canônica
 
 ```
-1. Hero          — Fullscreen (100svh), headline + sub + CTA magnético
-2. Social Proof  — Logos ou depoimentos com foto (mín. 3)
-3. Features      — Grid 3 colunas, benefit-focused, ícones + hover lift
-4. Como Funciona — Steps numerados (3-4), linear, sem clutter
-5. CTA Section   — Fundo com gradient do preset, CTA isolado, urgência opcional
-6. Footer        — Minimal: logo + links legais + copyright
+1. Header Capsule — Navbar flutuante suspensa (top-4) que contrai ao rolar
+2. Hero Section   — Grid assimétrico, headline True Charcoal, CTA magnético e Cinema Video Box
+3. Manifesto      — Espaçamento py-36 a py-44, Manifesto Tipográfico com scroll sheens
+4. Bento Features — Grid 3 colunas assimétricas (Engine 1: 2 col, Engine 2: 1 col, Engine 3: 3 col)
+5. Trust Lineup   — Governança de privacidade e ética OAB (estilo Apple Trust Lineup)
+6. Pricing Card   — Hardware box com Fresnel island, 7 dias grátis sem cartão
+7. Footer Capsule — Links institucionais minimalistas
 ```
 
 ---
@@ -243,17 +167,16 @@ Atributos `data-anim` obrigatórios em todos os elementos de destaque.
 
 | Check | Regra |
 |-------|-------|
-| Mobile-First | Breakpoint base = 375px. Nada é desktop-only. |
-| Touch Targets | Mín. 44×44px em todos os elementos interativos. |
-| Fonte Externa | Google Fonts via `<link rel="preconnect">` + `display=swap`. |
-| Imagens | WebP obrigatório. `loading="lazy"` fora do hero. |
-| Semântica | `<header>`, `<main>`, `<section>`, `<footer>`. Um único `<h1>`. |
-| Contraste | Mínimo 7:1 para texto principal (WCAG AAA). |
-| Performance | Lighthouse Mobile ≥ 85 esperado antes do deploy. |
+| Mobile-First | Breakpoint base = 375px. Escala e espaçamento ordenados para mobile. |
+| Touch Targets | Mín. 44×44px em todos os elementos interativos (Apple HIG). |
+| Fontes Locais | Apenas pilhas locais de SF Pro. Zero fontes de CDN. |
+| Imagens | WebP obrigatório com loading="lazy" fora da dobra. |
+| Semântica | `<header>`, `<main>`, `<section>`, `<footer>`. Um único `<h1>` por página. |
+| Contraste | Mínimo 7:1 para legibilidade premium no Warm Concrete. |
+| GPU Gates | Aceleração nativa via `will-change: transform` e `translate3d` em animações. |
 | Noise Overlay | Sempre `pointer-events: none` e `z-index: 9999`. |
 
 ---
 
-> **Este arquivo é a fonte de verdade estética e comportamental do Site Factory 3.0.**
-> Nenhum agente pode ignorar o Gate das 4 Perguntas (§1) ou os Presets (§2).
-> Violações devem ser documentadas em `ESTADO.md` como blocking issue.
+> **Este arquivo é a fonte de verdade estética e comportamental do JurisAI.**
+> Qualquer agente que violar a estética Monumental Editorial / Warm Concrete será impedido no QA.

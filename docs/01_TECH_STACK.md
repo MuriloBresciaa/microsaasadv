@@ -1,38 +1,43 @@
 # 01 — Tech Stack
 
-> Documento canônico da stack tecnológica do Site Factory V2.0.
+> Documento canônico da stack tecnológica do JurisAI.
+> Última atualização: 2026-05-21
 
 ## Runtime & Framework
 
-| Camada    | Tecnologia    | Versão  | Papel                                  |
-|-----------|---------------|---------|----------------------------------------|
-| Framework | Astro         | 6.x     | SSG/SSR, Islands Architecture          |
-| UI        | React         | 19.x    | Componentes interativos (Islands)      |
-| Styling   | Tailwind CSS  | 4.x     | Utility-first CSS via Vite plugin      |
-| Motion    | Framer Motion | 12.x    | Animações declarativas em React        |
-| Icons     | Lucide React  | 1.x     | Ícones SVG otimizados                  |
+| Camada         | Tecnologia                     | Versão Mínima | Papel                                  |
+| -------------- | ------------------------------ | ------------- | -------------------------------------- |
+| Runtime        | Node.js (via Corepack)         | 22 LTS        | Motor de execução server-side          |
+| Package Manager| PNPM (strict, frozen-lockfile) | v9.15.4       | Gerenciamento de dependências          |
+| Framework      | Astro (Islands Architecture)   | v6+           | SSG/SSR, file-based routing            |
+| UI Layer       | React                          | v19+          | Componentes interativos (Islands)      |
+| Styling        | Tailwind CSS v4 (Vite Plugin)  | v4+           | Utility-first CSS via `@tailwindcss/vite` |
+| Motion         | GSAP + ScrollTrigger           | v3.12+        | Animações imperativas de alta performance |
+| Icons          | SVGs inline puros              | -             | Ícones de linha laser encapsulados     |
 
-## State & Data
+## Data Layer
 
-| Camada   | Tecnologia      | Papel                           |
-|----------|------------------|---------------------------------|
-| State    | Nano Stores      | Estado global reativo (atoms)   |
-| Database | Supabase (PG)    | Backend-as-a-Service, Auth, RLS |
-| Client   | @supabase/supabase-js | Client-side typed queries  |
+| Camada    | Tecnologia        | Papel                                       |
+| --------- | ----------------- | ------------------------------------------- |
+| ORM       | Drizzle ORM       | Type-safe queries, Prepared Statements      |
+| Database  | MySQL 8.x         | Banco relacional local (Laragon, porta 3306)|
+| Driver    | mysql2/promise     | Conexão async/await nativa                  |
+| State     | Nano Stores       | Estado global reativo (atoms)               |
 
 ## DX & Utilities
 
-| Tool          | Papel                                    |
-|---------------|------------------------------------------|
-| clsx          | Merge condicional de classes CSS         |
-| tailwind-merge| Resolve conflitos de classes Tailwind    |
-| cn()          | Wrapper Shadcn (clsx + twMerge)          |
-| pnpm          | Package manager (obrigatório)            |
-| TypeScript    | Strict mode, path aliases (`@/*`)        |
+| Tool           | Papel                                    |
+| -------------- | ---------------------------------------- |
+| clsx           | Merge condicional de classes CSS         |
+| tailwind-merge | Resolve conflitos de classes Tailwind    |
+| cn()           | Wrapper Shadcn (clsx + twMerge)          |
+| pnpm           | Package manager (obrigatório, v9 strict) |
+| TypeScript     | Strict mode, path aliases (`@/*`)        |
 
 ## Integrações Astro
 
-- `@astrojs/react` — Hydration de componentes React
+- `@astrojs/react` — Hydration de componentes React (Islands)
+- `@astrojs/node` — Adapter para endpoints server-side
 - `@tailwindcss/vite` — Tailwind v4 via Vite plugin (substitui `@astrojs/tailwind`)
 
 ## Path Aliases
@@ -52,3 +57,4 @@
 - **Imports**: Sempre absolutos via `@/` (ex: `@/lib/utils`).
 - **Componentes UI**: Padrão Shadcn em `src/components/ui/`.
 - **Componentes de Domínio**: Em `src/components/` (fora de `/ui`).
+- **Queries de Banco**: Sempre via Drizzle ORM. Proibido SQL raw concatenado.

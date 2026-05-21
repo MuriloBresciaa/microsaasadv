@@ -1,6 +1,6 @@
 # 09 — Apple Bento Geometry Rules
 
-Este guia consolida as diretrizes oficiais de bento grid e geometria do ecossistema Apple extraídas do repositório `.agent/vendor/apple-bento-grid/design-system.md`. Serve como a especificação formal para grids e painéis de dados.
+Este guia consolida as diretrizes oficiais de bento grid e geometria do ecossistema Apple extraídas do repositório `.agent/vendor/apple-bento-grid/design-system.md`. Serve como a especificação formal para grids e painéis de dados do JurisAI.
 
 ---
 
@@ -69,8 +69,8 @@ O alinhamento milimétrico e o preenchimento de espaços são o que torna o bent
 
 ## 3. Tipografia Premium para Bento
 
-*   **Sora:** Usada para títulos de destaque, números de estatísticas grandes, métricas e valores de gráficos.
-*   **DM Sans:** Usada para corpo de texto, labels secundários, badges e tags secundárias.
+*   **SF Pro Display:** Usada para títulos de destaque, números de estatísticas grandes, métricas e valores de gráficos.
+*   **SF Pro Text:** Usada para corpo de texto, labels secundários, badges e tags secundárias.
 
 ---
 
@@ -86,13 +86,13 @@ O alinhamento milimétrico e o preenchimento de espaços são o que torna o bent
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #1d1d1f, #6e6e73, #1d1d1f);
+  background: linear-gradient(90deg, #1d1d1f, #86868b, #1d1d1f);
   border-radius: 18px 18px 0 0;
 }
 ```
 
 ### 4.2. Stat Card (Métrica Simples)
-*   Focado em exibir um único número gigante colorido (`.num`) e uma legenda cinza (`.label`).
+*   Focado em exibir um único número gigante e uma legenda cinza (`.label`).
 *   **Tamanho de Números:**
     *   Métricas Curtas (1-4 dígitos): `44px`
     *   Métricas Médias (5-7 caracteres): `40px`
@@ -103,13 +103,13 @@ O alinhamento milimétrico e o preenchimento de espaços são o que torna o bent
 
 ### 4.4. Bar Chart Card (Mini Gráficos de Barra)
 *   Gráficos simples integrados nos cards usando barras proporcionais de crescimento.
-*   Utilize gradientes graduados (ex: escala verde de crescimento):
-    *   Barra 1 (Baixa): `linear-gradient(180deg, #a7f3d0, #6ee7b7)`
-    *   Barra 2 (Média): `linear-gradient(180deg, #6ee7b7, #34d399)`
-    *   Barra 3 (Alta): `linear-gradient(180deg, #34d399, #059669)`
+*   Utilize gradientes graduados (ex: escala de crescimento gold/slate):
+    *   Barra 1 (Baixa): `linear-gradient(180deg, #f5f5f4, #e5e5e0)`
+    *   Barra 2 (Média): `linear-gradient(180deg, #e5e5e0, #b8860b)`
+    *   Barra 3 (Alta): `linear-gradient(180deg, #b8860b, #996515)`
 
 ### 4.5. Quote Card (Destaque Escuro)
-*   Fundo escuro (`#1d1d1f`), texto branco e ênfase colorida via elemento `em` (ex: `em { color: #34d399 }` com estilo normal).
+*   Fundo escuro (`#0f172a`), texto branco e ênfase colorida via elemento `em` (ex: `em { color: #b8860b }` com estilo normal).
 
 ### 4.6. Highlight Card (Destaque Colorido Integral)
-*   Fundo preenchido inteiramente com gradiente vibrante (ex: verde, azul ou vermelho), número centralizado gigante branco (`font-size: 72px`) e legenda clara translúcida (`rgba(255,255,255,0.85)`).
+*   Fundo preenchido inteiramente com gradiente vibrante gold/navy, número centralizado gigante branco (`font-size: 72px`) e legenda clara translúcida (`rgba(255,255,255,0.85)`).
