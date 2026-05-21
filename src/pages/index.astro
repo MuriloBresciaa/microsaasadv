@@ -41,7 +41,7 @@ import Fresnel from "../components/ui/Fresnel";
 
       <!-- Bloco B: Cinema Video Box -->
       <div id="video-reveal-container" class="z-10 relative flex justify-center lg:justify-end w-full lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-3 self-center">
-        <div class="apple-video-hardware-card w-full max-w-xl aspect-[16/10] bg-white apple-squircle-g2 relative overflow-hidden p-1.5 bg-slate-50 isolate">
+        <div class="apple-video-hardware-card w-full max-w-xl aspect-[16/10] bg-white rounded-[32px] relative overflow-hidden p-1.5 bg-slate-50 border border-border shadow-xl">
           <div class="w-full h-full rounded-[26px] apple-video-inner overflow-hidden relative">
             <video 
               class="w-full h-full object-cover scale-102" 
@@ -110,7 +110,7 @@ import Fresnel from "../components/ui/Fresnel";
         <div class="flex flex-col gap-12 sm:gap-16">
           
           <!-- Produto 01: Análise de Contratos -->
-          <div data-engine="1" class="interactive-engine-card active apple-hardware-card apple-squircle-g2 p-8 sm:p-12 lg:p-16 transition-all cursor-pointer isolate">
+          <div data-engine="1" class="interactive-engine-card active apple-hardware-card p-8 sm:p-12 lg:p-16 transition-all cursor-pointer">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               
               <!-- Coluna Texto -->
@@ -134,7 +134,7 @@ import Fresnel from "../components/ui/Fresnel";
 
               <!-- Coluna Visual Mockup -->
               <div class="lg:col-span-5 flex justify-center lg:justify-end w-full">
-                <div class="bg-slate-50/80 apple-mockup-card p-6 border border-slate-100 max-w-sm w-full shadow-xs flex flex-col gap-4">
+                <div class="bg-slate-50/80 rounded-[24px] apple-mockup-card p-6 border border-slate-100 max-w-sm w-full shadow-xs flex flex-col gap-4">
                   <div class="flex items-center justify-between border-b border-slate-200/60 pb-3 w-full">
                     <span class="text-[9px] font-bold text-slate-400 font-apple-text tracking-wider uppercase">contrato_servicos.docx</span>
                     <span class="w-2 h-2 rounded-full bg-slate-300"></span>
@@ -170,7 +170,7 @@ import Fresnel from "../components/ui/Fresnel";
           </div>
 
           <!-- Produto 02: Criador de Petições (Asymmetric Alternated Layout) -->
-          <div data-engine="2" class="interactive-engine-card apple-hardware-card apple-squircle-g2 p-8 sm:p-12 lg:p-16 transition-all cursor-pointer isolate">
+          <div data-engine="2" class="interactive-engine-card apple-hardware-card p-8 sm:p-12 lg:p-16 transition-all cursor-pointer">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               
               <!-- Coluna Visual Mockup (On left for desktop) -->
@@ -228,7 +228,7 @@ import Fresnel from "../components/ui/Fresnel";
           </div>
 
           <!-- Produto 03: Organizador de Provas -->
-          <div data-engine="3" class="interactive-engine-card apple-hardware-card apple-squircle-g2 p-8 sm:p-12 lg:p-16 transition-all cursor-pointer isolate">
+          <div data-engine="3" class="interactive-engine-card apple-hardware-card p-8 sm:p-12 lg:p-16 transition-all cursor-pointer">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               
               <!-- Coluna Texto -->
@@ -402,7 +402,7 @@ import Fresnel from "../components/ui/Fresnel";
           Transparência absoluta. Sem fidelidade.
         </h2>
         
-        <div class="relative overflow-hidden p-8 sm:p-12 max-w-xl mx-auto text-left apple-squircle-g2 isolate">
+        <div class="relative overflow-hidden p-8 sm:p-12 max-w-xl mx-auto text-left rounded-[32px] apple-glass-card">
           <Fresnel client:load bezelType="convex_squircle" glassThickness={120} refractiveIndex={1.52} tintColor="#ffffff" tintOpacity={78} className="absolute inset-0 z-0 pointer-events-none" />
           <div class="relative z-10">
             <div class="flex justify-between items-start mb-6">
