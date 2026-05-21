@@ -61,8 +61,17 @@ body::before {
 }
 
 /* ── Calibração Furtiva do Reflexo Metálico Apple ── */
+h1, h2 {
+  background: linear-gradient(135deg, #0C0A09 0%, #1C1917 25%, #44403C 50%, #D6D3D1 75%, #1C1917 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
 .apple-text-sheen {
-  background: linear-gradient(90deg, #1D1D1F 0%, #48484A 50%, #1D1D1F 100%);
+  background: linear-gradient(135deg, #0C0A09 0%, #1C1917 25%, #44403C 50%, #D6D3D1 75%, #1C1917 100%);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
