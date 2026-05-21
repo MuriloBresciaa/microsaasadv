@@ -43,6 +43,7 @@
 }
 
 html, body {
+  @apply antialiased;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
@@ -59,9 +60,8 @@ p, li, span {
   text-wrap: pretty;
 }
 
-::selection {
-  background-color: rgba(184, 134, 11, 0.16);
-  color: var(--color-primary);
+*::selection {
+  background-color: rgba(184, 134, 11, 0.16) !important;
 }
 
 a, button, [role="button"], input, select, textarea {
@@ -69,6 +69,10 @@ a, button, [role="button"], input, select, textarea {
 }
 
 body {
+  @apply antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   background-color: var(--color-background);
   color: var(--color-primary);
   font-family: var(--font-apple-text);
@@ -127,17 +131,18 @@ h1, h2 {
 }
 
 
-/* ── Técnica Liquid Glass de Profundidade Óptica ── */
+/* ── Técnica Liquid Glass de Profundidade Óptica (Qualidade Ultra) ── */
 .apple-glass-card,
 .apple-hardware-card,
 .rounded-\[32px\] {
   box-shadow:
-    0 0 0 1px rgba(29, 29, 31, 0.03),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
-    0 1px 2px rgba(29, 29, 31, 0.01),
-    0 8px 16px rgba(29, 29, 31, 0.02),
-    0 24px 48px -8px rgba(29, 29, 31, 0.03),
-    0 50px 100px -20px rgba(29, 29, 31, 0.04);
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.4),  /* Luz interna superior (halo) */
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.1), /* Reflexo interno inferior */
+    0 0 0 1px rgba(0, 0, 0, 0.03),               /* Borda de difração Retina */
+    0 1px 2px rgba(0, 0, 0, 0.005),
+    0 4px 10px rgba(0, 0, 0, 0.01),
+    0 12px 30px rgba(0, 0, 0, 0.025),
+    0 32px 64px -12px rgba(0, 0, 0, 0.04);
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -170,12 +175,13 @@ h1, h2 {
 .rounded-\[32px\]:hover {
   transform: translateY(-4px);
   box-shadow:
-    0 0 0 1px rgba(29, 29, 31, 0.05),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.3),
-    0 2px 4px rgba(29, 29, 31, 0.02),
-    0 16px 32px rgba(29, 29, 31, 0.03),
-    0 40px 80px -10px rgba(29, 29, 31, 0.05),
-    0 80px 160px -30px rgba(29, 29, 31, 0.08);
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 1.5px 0 rgba(255, 255, 255, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 2px 4px rgba(0, 0, 0, 0.01),
+    0 8px 20px rgba(0, 0, 0, 0.02),
+    0 24px 50px rgba(0, 0, 0, 0.035),
+    0 64px 120px -20px rgba(0, 0, 0, 0.06);
 }
 
 .apple-glass-card:active,
@@ -400,13 +406,15 @@ html .apple-squircle-g2 {
 
 #precos .apple-hardware-card {
   background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
   box-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
-    0 2px 4px rgba(0, 0, 0, 0.2),
-    0 8px 16px rgba(0, 0, 0, 0.25),
-    0 24px 48px -8px rgba(0, 0, 0, 0.35),
-    0 50px 100px -20px rgba(0, 0, 0, 0.5) !important;
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.03),
+    0 1px 2px rgba(0, 0, 0, 0.005),
+    0 4px 10px rgba(0, 0, 0, 0.01),
+    0 12px 30px rgba(0, 0, 0, 0.025),
+    0 32px 64px -12px rgba(0, 0, 0, 0.04) !important;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -417,11 +425,13 @@ html .apple-squircle-g2 {
 #precos .apple-hardware-card:hover {
   transform: translateY(-4px);
   box-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.3),
-    0 4px 8px rgba(0, 0, 0, 0.25),
-    0 16px 32px rgba(0, 0, 0, 0.30),
-    0 40px 80px -10px rgba(0, 0, 0, 0.45),
-    0 80px 160px -30px rgba(0, 0, 0, 0.55) !important;
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 1.5px 0 rgba(255, 255, 255, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 2px 4px rgba(0, 0, 0, 0.01),
+    0 8px 20px rgba(0, 0, 0, 0.02),
+    0 24px 50px rgba(0, 0, 0, 0.035),
+    0 64px 120px -20px rgba(0, 0, 0, 0.06) !important;
 }
 
 #precos .apple-hardware-card:active {
@@ -443,4 +453,3 @@ html .apple-squircle-g2 {
   opacity: 0.9;
   transition: transform 0.1s cubic-bezier(0.25, 1, 0.5, 1) !important;
 }
-

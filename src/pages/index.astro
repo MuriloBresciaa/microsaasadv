@@ -10,14 +10,14 @@ import Fresnel from "../components/ui/Fresnel";
         <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
-        <span class="font-apple-display font-bold tracking-tight text-sm text-primary">JurisAI</span>
+        <span class="font-apple-display font-bold tracking-tight text-sm text-primary [font-optical-sizing:auto] [font-kerning:normal] text-balance">JurisAI</span>
       </div>
       <nav class="hidden md:flex items-center gap-8 text-xs font-semibold text-secondary">
-        <a href="#features" class="hover:text-primary transition-colors font-apple-text py-2">Soluções</a>
-        <a href="#governanca" class="hover:text-primary transition-colors font-apple-text py-2">Privacidade</a>
-        <a href="#precos" class="hover:text-primary transition-colors font-apple-text py-2">Preços</a>
+        <a href="#features" class="hover:text-primary transition-colors font-apple-text py-2 leading-[1.47] tracking-[-0.01em]">Soluções</a>
+        <a href="#governanca" class="hover:text-primary transition-colors font-apple-text py-2 leading-[1.47] tracking-[-0.01em]">Privacidade</a>
+        <a href="#precos" class="hover:text-primary transition-colors font-apple-text py-2 leading-[1.47] tracking-[-0.01em]">Preços</a>
       </nav>
-      <a href="/app/auth" data-magnetic-element class="cta-link bg-primary text-white font-semibold text-[11px] px-4 min-h-[44px] flex items-center justify-center rounded-full apple-pill hover:bg-slate-800 transition-colors shadow-xs font-apple-text">
+      <a href="/app/auth" data-magnetic-element class="cta-link bg-primary text-white font-semibold text-[11px] px-4 min-h-[44px] flex items-center justify-center rounded-full apple-pill hover:bg-slate-800 transition-colors shadow-xs font-apple-text leading-[1.47] tracking-[-0.01em]">
         Iniciar Teste
       </a>
     </div>
@@ -25,23 +25,23 @@ import Fresnel from "../components/ui/Fresnel";
 
   <main id="main-content" class="w-full bg-background pt-16 overflow-hidden">
     
-    <section id="hero-trigger" class="max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-32 pb-16 sm:pb-24 relative grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-x-24 lg:gap-y-6 items-center">
+    <section id="hero-trigger" class="max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-32 pb-16 sm:pb-24 relative grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-x-24 lg:gap-y-6 items-center transform-gpu will-change-transform [backface-visibility:hidden] [contain:layout_paint_style]">
       
       <div id="hero-backlight" class="absolute w-[600px] h-[600px] rounded-full bg-radial from-slate-200/40 via-slate-100/10 to-transparent blur-3xl pointer-events-none z-0 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
 
       <!-- Bloco A: Tag + Título -->
       <div class="z-10 relative text-left lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2">
-        <span data-anim="hero-tag" class="inline-block text-[10px] sm:text-[11px] font-semibold tracking-tight text-primary bg-white border border-border shadow-xs px-3.5 py-1.5 rounded-full apple-pill mb-6 font-apple-text">
+        <span data-anim="hero-tag" class="inline-block text-[10px] sm:text-[11px] font-semibold text-primary bg-white border border-border shadow-xs px-3.5 py-1.5 rounded-full apple-pill mb-6 font-apple-text leading-[1.47] tracking-[-0.01em] text-pretty">
           INFRAESTRUTURA DE AUDITORIA JURÍDICA
         </span>
-        <h1 data-anim="hero-title" class="apple-text-sheen font-apple-display font-bold text-3xl sm:text-4xl lg:text-[62px] tracking-[-0.05em] leading-[1.05]">
+        <h1 data-anim="hero-title" class="apple-text-sheen font-apple-display font-bold text-3xl sm:text-4xl lg:text-[62px] tracking-[-0.04em] leading-[1.04] [font-optical-sizing:auto] [font-kerning:normal] text-balance">
           Proteja sua assinatura contra passivos ocultos.
         </h1>
       </div>
 
       <!-- Bloco B: Cinema Video Box -->
       <div id="video-reveal-container" class="z-10 relative flex justify-center lg:justify-end w-full lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-3 self-center">
-        <div class="apple-video-hardware-card w-full max-w-xl aspect-[16/10] bg-white rounded-[32px] relative overflow-hidden p-1.5 bg-slate-50 border border-border shadow-xl">
+        <div class="apple-video-hardware-card w-full max-w-xl aspect-[16/10] bg-white rounded-[32px] border border-black/[0.06] relative overflow-hidden p-1.5 bg-slate-50 shadow-xl">
           <div class="w-full h-full rounded-[26px] apple-video-inner overflow-hidden relative">
             <video 
               class="w-full h-full object-cover scale-102" 
@@ -54,7 +54,7 @@ import Fresnel from "../components/ui/Fresnel";
             >
               <source src="/div.mp4" type="video/mp4" />
               <track kind="captions" src="" label="Sem legendas" />
-              <p class="text-xs text-secondary p-4">Seu navegador não suporta vídeos incorporados.</p>
+              <p class="text-xs text-secondary p-4 font-apple-text leading-[1.47] tracking-[-0.01em] text-pretty">Seu navegador não suporta vídeos incorporados.</p>
             </video>
             <div class="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent pointer-events-none"></div>
           </div>
@@ -63,31 +63,31 @@ import Fresnel from "../components/ui/Fresnel";
 
       <!-- Bloco C: Descrição + CTAs -->
       <div class="z-10 relative text-left lg:col-start-1 lg:col-end-2 lg:row-start-2 lg:row-end-3">
-        <p data-anim="hero-sub" class="mt-4 lg:mt-6 font-apple-text font-normal text-secondary text-sm sm:text-base leading-relaxed max-w-xl">
+        <p data-anim="hero-sub" class="mt-4 lg:mt-6 font-apple-text font-normal text-secondary text-sm sm:text-base leading-[1.47] tracking-[-0.01em] text-pretty max-w-xl">
           Auditoria de minutas contratuais e estruturação de peças sob o controle absoluto do sócio. Dados 100% privados.
         </p>
         <div data-anim="hero-cta" class="mt-8 lg:mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
-          <a href="/app/auth" data-magnetic-element class="cta-link bg-primary text-white font-semibold text-xs px-7 min-h-[46px] flex items-center justify-center rounded-full apple-pill hover:bg-slate-800 transition-all shadow-xs font-apple-text">
+          <a href="/app/auth" data-magnetic-element class="cta-link bg-primary text-white font-semibold text-xs px-7 min-h-[46px] flex items-center justify-center rounded-full apple-pill hover:bg-slate-800 transition-all shadow-xs font-apple-text leading-[1.47] tracking-[-0.01em]">
             Iniciar Teste Grátis (7 Dias)
           </a>
-          <a href="#governanca" class="text-xs font-semibold text-primary hover:underline underline-offset-4 flex items-center min-h-[44px] px-2 gap-1 font-apple-text">
+          <a href="#governanca" class="text-xs font-semibold text-primary hover:underline underline-offset-4 flex items-center min-h-[44px] px-2 gap-1 font-apple-text leading-[1.47] tracking-[-0.01em]">
             Ver Segurança →
           </a>
         </div>
-        <p class="text-[11px] text-slate-500 mt-3 pl-1 font-apple-text">Sem cartão de crédito. Ativação imediata.</p>
+        <p class="text-[11px] text-slate-500 mt-3 pl-1 font-apple-text leading-[1.47] tracking-[-0.01em] text-pretty">Sem cartão de crédito. Ativação imediata.</p>
       </div>
 
     </section>
 
     <!-- Seção 1: O Manifesto Tipográfico -->
-    <section class="w-full bg-[#F9F9FB] py-36 sm:py-44 px-4 sm:px-6 relative overflow-hidden flex flex-col items-center justify-center text-center border-t border-slate-200/40">
+    <section class="w-full bg-[#F9F9FB] py-36 sm:py-44 px-4 sm:px-6 relative overflow-hidden flex flex-col items-center justify-center text-center border-t border-slate-200/40 transform-gpu will-change-transform [backface-visibility:hidden] [contain:layout_paint_style]">
       <div class="max-w-4xl mx-auto z-10">
-        <h2 class="font-apple-display font-bold text-4xl sm:text-7xl tracking-[-0.05em] leading-[1.05] [text-wrap:auto]">
+        <h2 class="font-apple-display font-bold text-4xl sm:text-7xl tracking-[-0.04em] leading-[1.04] [font-optical-sizing:auto] [font-kerning:normal] text-balance">
           <span class="block apple-text-sheen">A complexidade jurídica</span>
           <span class="block apple-text-sheen">resolvida com elegância</span>
           <span class="block apple-text-sheen">matemática.</span>
         </h2>
-        <p class="mt-8 font-apple-text font-normal text-secondary text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+        <p class="mt-8 font-apple-text font-normal text-secondary text-base sm:text-lg leading-[1.47] tracking-[-0.01em] text-pretty max-w-2xl mx-auto">
           Padronização institucional para mitigar falhas de escaneamento visual e blindar operações volumosas.
         </p>
       </div>
@@ -95,16 +95,16 @@ import Fresnel from "../components/ui/Fresnel";
     </section>
 
     <!-- Seção 2: Linha de Produtos (Apple Lineup Style) -->
-    <section id="features" class="border-t border-slate-200/50 bg-white py-24 sm:py-32 relative overflow-hidden">
+    <section id="features" class="border-t border-slate-200/50 bg-[#f5f5f4] py-24 sm:py-32 relative overflow-hidden transform-gpu will-change-transform [backface-visibility:hidden] [contain:layout_paint_style]">
       <!-- Atmospheric Mesh Lights -->
       <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        <div class="absolute w-[80%] aspect-square rounded-full bg-[#b8860b] blur-[150px] md:blur-[200px] opacity-[0.12] md:opacity-[0.08] top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:-top-[10%] md:-left-[10%] md:w-[50%] md:h-[60%] transform-gpu will-change-transform will-change-[filter] pointer-events-none"></div>
-        <div class="absolute w-[80%] aspect-square rounded-full bg-[#0f172a] blur-[150px] md:blur-[200px] opacity-[0.12] md:opacity-[0.08] top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:-bottom-[10%] md:-right-[10%] md:w-[50%] md:h-[60%] transform-gpu will-change-transform will-change-[filter] pointer-events-none"></div>
+        <div class="absolute w-[80%] md:w-[50%] aspect-square rounded-full bg-[#b8860b] blur-[200px] opacity-[0.08] top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:-top-[10%] md:-left-[10%] transform-gpu will-change-transform pointer-events-none"></div>
+        <div class="absolute w-[80%] md:w-[50%] aspect-square rounded-full bg-[#0f172a] blur-[200px] opacity-[0.08] top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:-bottom-[10%] md:-right-[10%] transform-gpu will-change-transform pointer-events-none"></div>
       </div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div class="max-w-3xl mb-20 sm:mb-24">
-          <h2 class="apple-text-sheen font-apple-display font-bold text-3xl sm:text-5xl tracking-[-0.04em] leading-[1.1]">
+          <h2 class="apple-text-sheen font-apple-display font-bold text-3xl sm:text-5xl tracking-[-0.04em] leading-[1.04] [font-optical-sizing:auto] [font-kerning:normal] text-balance">
             Três motores de auditoria. Exposição silenciosa extinta.
           </h2>
         </div>
@@ -112,13 +112,13 @@ import Fresnel from "../components/ui/Fresnel";
         <div class="flex flex-col gap-12 sm:gap-16">
           
           <!-- Produto 01: Análise de Contratos -->
-          <div data-engine="1" class="interactive-engine-card active apple-hardware-card p-8 sm:p-12 lg:p-16 transition-all cursor-pointer">
+          <div data-engine="1" class="interactive-engine-card active apple-hardware-card rounded-[32px] border border-black/[0.06] p-8 sm:p-12 lg:p-16 transition-all cursor-pointer">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               
               <!-- Coluna Texto -->
               <div class="lg:col-span-7 space-y-6">
                 <div class="flex items-center gap-3">
-                  <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase apple-vibrancy">01 / REVISÃO</span>
+                  <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase apple-vibrancy leading-[1.47] tracking-[-0.01em]">01 / REVISÃO</span>
                   <div class="w-8 h-8 bg-white rounded-xl flex items-center justify-center shadow-xs border border-slate-100 laser-icon-wrapper shrink-0">
                     <svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
@@ -126,9 +126,9 @@ import Fresnel from "../components/ui/Fresnel";
                   </div>
                 </div>
                 <div class="space-y-4">
-                  <h3 class="font-apple-display font-bold text-2xl sm:text-3xl tracking-[-0.04em] text-primary leading-[1.1]">Auditoria de Minutas</h3>
-                  <p class="font-apple-display font-semibold text-lg text-slate-700 leading-normal">Antes de assinar, desvios de conformidade são localizados e relatados.</p>
-                  <p class="apple-proximity-text font-apple-text font-normal text-slate-500 text-sm leading-relaxed">
+                  <h3 class="font-apple-display font-bold text-2xl sm:text-3xl tracking-[-0.04em] leading-[1.04] [font-optical-sizing:auto] [font-kerning:normal] text-balance text-primary">Auditoria de Minutas</h3>
+                  <p class="font-apple-display font-semibold text-lg text-slate-700 leading-normal [font-optical-sizing:auto] [font-kerning:normal] text-balance">Antes de assinar, desvios de conformidade são localizados e relatados.</p>
+                  <p class="apple-proximity-text font-apple-text font-normal text-slate-500 text-sm leading-[1.47] tracking-[-0.01em] text-pretty">
                     Varra a redação contrária, localize desvios de conformidade e emita relatórios de exceções imediatos antes de assinar.
                   </p>
                 </div>
@@ -138,7 +138,7 @@ import Fresnel from "../components/ui/Fresnel";
               <div class="lg:col-span-5 flex justify-center lg:justify-end w-full">
                 <div class="bg-slate-50/80 rounded-[24px] apple-mockup-card p-6 border border-slate-100 max-w-sm w-full shadow-xs flex flex-col gap-4">
                   <div class="flex items-center justify-between border-b border-slate-200/60 pb-3 w-full">
-                    <span class="text-[9px] font-bold text-slate-400 font-apple-text tracking-wider uppercase">contrato_servicos.docx</span>
+                    <span class="text-[9px] font-bold text-slate-400 font-apple-text tracking-wider uppercase leading-[1.47] tracking-[-0.01em]">contrato_servicos.docx</span>
                     <span class="w-2 h-2 rounded-full bg-slate-300"></span>
                   </div>
                   <div class="flex flex-col gap-2 w-full">
@@ -147,16 +147,16 @@ import Fresnel from "../components/ui/Fresnel";
                   </div>
                   <div class="bg-red-50/40 border border-red-100 rounded-xl p-4 flex flex-col gap-3 relative w-full">
                     <div class="flex items-center justify-between gap-2 w-full">
-                      <span class="inline-flex items-center gap-1.5 text-[8px] font-bold text-red-600 bg-red-50 px-2.5 py-1 rounded-full apple-pill uppercase tracking-wider font-apple-text shrink-0">
+                      <span class="inline-flex items-center gap-1.5 text-[8px] font-bold text-red-600 bg-red-50 px-2.5 py-1 rounded-full apple-pill uppercase tracking-wider font-apple-text leading-[1.47] tracking-[-0.01em]">
                         <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
                         Passivo Identificado
                       </span>
-                      <span class="text-[8px] font-semibold text-slate-400 font-apple-text shrink-0">Cláusula 12.4</span>
+                      <span class="text-[8px] font-semibold text-slate-400 font-apple-text leading-[1.47] tracking-[-0.01em]">Cláusula 12.4</span>
                     </div>
-                    <p class="font-apple-text text-[10px] text-red-900 leading-relaxed font-medium">
+                    <p class="font-apple-text text-[10px] text-red-900 leading-[1.47] tracking-[-0.01em] font-medium text-pretty">
                       "Multa rescisória de 40% sobre o saldo total pendente..."
                     </p>
-                    <div class="text-[9px] font-semibold text-slate-500 font-apple-text bg-white/90 p-2 rounded-lg border border-red-100/30 flex items-center gap-1.5 w-full">
+                    <div class="text-[9px] font-semibold text-slate-500 font-apple-text bg-white/90 p-2 rounded-lg border border-red-100/30 flex items-center gap-1.5 w-full leading-[1.47] tracking-[-0.01em]">
                       <span class="shrink-0">⚠️</span>
                       <span class="leading-normal">Abusividade Material: Contraria a orientação consolidada do STJ.</span>
                     </div>
@@ -172,7 +172,7 @@ import Fresnel from "../components/ui/Fresnel";
           </div>
 
           <!-- Produto 02: Criador de Petições (Asymmetric Alternated Layout) -->
-          <div data-engine="2" class="interactive-engine-card apple-hardware-card p-8 sm:p-12 lg:p-16 transition-all cursor-pointer">
+          <div data-engine="2" class="interactive-engine-card apple-hardware-card rounded-[32px] border border-black/[0.06] p-8 sm:p-12 lg:p-16 transition-all cursor-pointer">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               
               <!-- Coluna Visual Mockup (On left for desktop) -->
@@ -182,22 +182,22 @@ import Fresnel from "../components/ui/Fresnel";
                   <div class="bg-slate-50 apple-mockup-card-small p-4 border border-slate-200/60 shadow-xs max-w-[170px] w-full space-y-2.5 rotate-[-4deg] z-10 absolute left-4 sm:left-8 top-4 hover:rotate-0 transition-transform duration-300">
                     <div class="flex items-center gap-2 border-b border-slate-200/60 pb-2">
                       <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                      <span class="text-[8px] font-bold text-slate-400 font-apple-text tracking-wider uppercase">notas_caso.txt</span>
+                      <span class="text-[8px] font-bold text-slate-400 font-apple-text tracking-wider uppercase leading-[1.47] tracking-[-0.01em]">notas_caso.txt</span>
                     </div>
-                    <p class="font-apple-text text-[9px] text-slate-500 leading-relaxed italic">
+                    <p class="font-apple-text text-[9px] text-slate-500 leading-[1.47] tracking-[-0.01em] text-pretty italic">
                       "O cliente trabalhou 3 anos sem receber horas extras, fazia duas horas a mais por dia e a empresa nunca pagou..."
                     </p>
                   </div>
                   <!-- Petição Estruturada -->
                   <div class="bg-white apple-mockup-card p-5 border border-slate-200/80 shadow-md max-w-[210px] w-full space-y-3.5 rotate-[4deg] z-20 absolute right-4 sm:right-8 bottom-4 hover:rotate-0 transition-transform duration-300">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-2">
-                      <span class="text-[8px] font-bold text-accent font-apple-text tracking-wider uppercase">peca_inicial.pdf</span>
+                      <span class="text-[8px] font-bold text-accent font-apple-text tracking-wider uppercase leading-[1.47] tracking-[-0.01em]">peca_inicial.pdf</span>
                       <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
                     </div>
-                    <div class="space-y-2 text-[9px] font-apple-text text-primary">
+                    <div class="space-y-2 text-[9px] font-apple-text text-primary leading-[1.47] tracking-[-0.01em]">
                       <div class="font-bold text-[7px] text-slate-400 uppercase">Art. 319 do CPC</div>
                       <div class="font-bold border-l-2 border-primary pl-2 my-1">I. DOS FATOS</div>
-                      <p class="text-[8px] text-slate-500 leading-normal">
+                      <p class="text-[8px] text-slate-500 leading-normal text-pretty">
                         "O Reclamante laborou sob regime de sobrejornada habitual, extrapolando..."
                       </p>
                       <div class="font-bold border-l-2 border-primary pl-2 my-1">II. DO DIREITO</div>
@@ -210,7 +210,7 @@ import Fresnel from "../components/ui/Fresnel";
               <!-- Coluna Texto -->
               <div class="lg:col-span-7 space-y-6">
                 <div class="flex items-center gap-3">
-                  <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase apple-vibrancy">02 / PROTOCOLO</span>
+                  <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase apple-vibrancy leading-[1.47] tracking-[-0.01em]">02 / PROTOCOLO</span>
                   <div class="w-8 h-8 bg-white rounded-xl flex items-center justify-center shadow-xs border border-slate-100 laser-icon-wrapper shrink-0">
                     <svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
@@ -218,9 +218,9 @@ import Fresnel from "../components/ui/Fresnel";
                   </div>
                 </div>
                 <div class="space-y-4">
-                  <h3 class="font-apple-display font-bold text-2xl sm:text-3xl tracking-[-0.04em] text-primary leading-[1.1]">Copiloto de Peças</h3>
-                  <p class="font-apple-display font-semibold text-lg text-slate-700 leading-normal">Aderência estrita aos ritos estruturais do CPC.</p>
-                  <p class="apple-proximity-text font-apple-text font-normal text-slate-500 text-sm leading-relaxed">
+                  <h3 class="font-apple-display font-bold text-2xl sm:text-3xl tracking-[-0.04em] leading-[1.04] [font-optical-sizing:auto] [font-kerning:normal] text-balance text-primary">Copiloto de Peças</h3>
+                  <p class="font-apple-display font-semibold text-lg text-slate-700 leading-normal [font-optical-sizing:auto] [font-kerning:normal] text-balance">Aderência estrita aos ritos estruturais do CPC.</p>
+                  <p class="apple-proximity-text font-apple-text font-normal text-slate-500 text-sm leading-[1.47] tracking-[-0.01em] text-pretty">
                     Assemelhe manifestações e peças iniciais ao padrão técnico do sócio decisor, sob total aderência aos ritos estruturais do CPC.
                   </p>
                 </div>
@@ -230,13 +230,13 @@ import Fresnel from "../components/ui/Fresnel";
           </div>
 
           <!-- Produto 03: Organizador de Provas -->
-          <div data-engine="3" class="interactive-engine-card apple-hardware-card p-8 sm:p-12 lg:p-16 transition-all cursor-pointer">
+          <div data-engine="3" class="interactive-engine-card apple-hardware-card rounded-[32px] border border-black/[0.06] p-8 sm:p-12 lg:p-16 transition-all cursor-pointer">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               
               <!-- Coluna Texto -->
               <div class="lg:col-span-7 space-y-6">
                 <div class="flex items-center gap-3">
-                  <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase apple-vibrancy">03 / INSTRUÇÃO</span>
+                  <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase apple-vibrancy leading-[1.47] tracking-[-0.01em]">03 / INSTRUÇÃO</span>
                   <div class="w-8 h-8 bg-white rounded-xl flex items-center justify-center shadow-xs border border-slate-100 laser-icon-wrapper shrink-0">
                     <svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -244,9 +244,9 @@ import Fresnel from "../components/ui/Fresnel";
                   </div>
                 </div>
                 <div class="space-y-4">
-                  <h3 class="font-apple-display font-bold text-2xl sm:text-3xl tracking-[-0.04em] text-primary leading-[1.1]">Cronologia de Provas</h3>
-                  <p class="font-apple-display font-semibold text-lg text-slate-700 leading-normal">Linha do tempo auditável para contradições materiais.</p>
-                  <p class="apple-proximity-text font-apple-text font-normal text-slate-500 text-sm leading-relaxed">
+                  <h3 class="font-apple-display font-bold text-2xl sm:text-3xl tracking-[-0.04em] leading-[1.04] [font-optical-sizing:auto] [font-kerning:normal] text-balance text-primary">Cronologia de Provas</h3>
+                  <p class="font-apple-display font-semibold text-lg text-slate-700 leading-normal [font-optical-sizing:auto] [font-kerning:normal] text-balance">Linha do tempo auditável para contradições materiais.</p>
+                  <p class="apple-proximity-text font-apple-text font-normal text-slate-500 text-sm leading-[1.47] tracking-[-0.01em] text-pretty">
                     Organize históricos fragmentados de comunicações e mídias em uma linha do tempo auditável que aponta contradições materiais.
                   </p>
                 </div>
@@ -256,7 +256,7 @@ import Fresnel from "../components/ui/Fresnel";
               <div class="lg:col-span-5 flex justify-center lg:justify-end w-full">
                 <div class="bg-slate-50/80 apple-mockup-card p-6 border border-slate-100 max-w-sm w-full shadow-xs space-y-4">
                   <div class="flex items-center justify-between border-b border-slate-200/60 pb-3">
-                    <span class="text-[9px] font-bold text-slate-400 font-apple-text tracking-wider uppercase">linha_tempo_provas.exe</span>
+                    <span class="text-[9px] font-bold text-slate-400 font-apple-text tracking-wider uppercase leading-[1.47] tracking-[-0.01em]">linha_tempo_provas.exe</span>
                     <span class="w-2 h-2 rounded-full bg-slate-300"></span>
                   </div>
                   
@@ -265,10 +265,10 @@ import Fresnel from "../components/ui/Fresnel";
                     <div class="flex flex-col items-start space-y-1">
                       <div class="bg-white text-slate-800 rounded-xl rounded-tl-none p-3 max-w-[240px] border border-slate-200/40 shadow-xs">
                         <div class="flex justify-between items-center gap-4 mb-1">
-                          <span class="font-bold text-[8px] text-slate-500 font-apple-text">WhatsApp (Réu)</span>
-                          <span class="text-[7px] text-slate-400 font-apple-text">14/03 14:22</span>
+                          <span class="font-bold text-[8px] text-slate-500 font-apple-text leading-[1.47] tracking-[-0.01em]">WhatsApp (Réu)</span>
+                          <span class="text-[7px] text-slate-400 font-apple-text leading-[1.47] tracking-[-0.01em]">14/03 14:22</span>
                         </div>
-                        <p class="font-apple-text text-[9px] text-slate-700 leading-normal">
+                        <p class="font-apple-text text-[9px] text-slate-700 leading-normal text-pretty">
                           "Nunca recebi a mercadoria."
                         </p>
                       </div>
@@ -279,13 +279,13 @@ import Fresnel from "../components/ui/Fresnel";
                       <div class="absolute -left-[14px] top-4 w-2 h-2 bg-red-400 rounded-full border-2 border-white"></div>
                       
                       <div class="flex justify-between items-center">
-                        <span class="inline-flex items-center gap-1 text-[8px] font-bold text-red-600 bg-red-50 bg-red-50/80 px-2 py-0.5 rounded-full apple-pill uppercase tracking-wider font-apple-text">
+                        <span class="inline-flex items-center gap-1 text-[8px] font-bold text-red-600 bg-red-50 bg-red-50/80 px-2 py-0.5 rounded-full apple-pill uppercase tracking-wider font-apple-text leading-[1.47] tracking-[-0.01em]">
                           Divergência: Conflito Material
                         </span>
-                        <span class="text-[7px] font-semibold text-slate-400 font-apple-text">Fato #04</span>
+                        <span class="text-[7px] font-semibold text-slate-400 font-apple-text leading-[1.47] tracking-[-0.01em]">Fato #04</span>
                       </div>
                       
-                      <div class="text-[9px] text-red-950 font-apple-text leading-relaxed">
+                      <div class="text-[9px] text-red-950 font-apple-text leading-relaxed text-pretty">
                         A assinatura digital autenticada no comprovante no dia 14/03 às 10:15h.
                       </div>
                     </div>
@@ -301,15 +301,15 @@ import Fresnel from "../components/ui/Fresnel";
     </section>
 
     <!-- Seção 3: O Cofre de Governança (Apple Privacy Style) -->
-    <section id="governanca" class="py-24 sm:py-32 bg-white border-t border-slate-200/50 relative overflow-hidden">
+    <section id="governanca" class="py-24 sm:py-32 bg-white border-t border-slate-200/50 relative overflow-hidden transform-gpu will-change-transform [backface-visibility:hidden] [contain:layout_paint_style]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         
         <!-- Header da Governança -->
         <div class="max-w-3xl mb-20 sm:mb-28">
-          <span class="inline-block text-[10px] font-bold text-accent bg-accent/10 px-2.5 py-1 rounded-full apple-pill uppercase tracking-wider font-apple-text mb-4">
+          <span class="inline-block text-[10px] font-bold text-accent bg-accent/10 px-2.5 py-1 rounded-full apple-pill uppercase tracking-wider font-apple-text mb-4 leading-[1.47] tracking-[-0.01em]">
             GOVERNANÇA CORPORATIVA E SEGURANÇA DA INFORMAÇÃO
           </span>
-          <h2 class="apple-text-sheen font-apple-display font-bold text-3xl sm:text-5xl tracking-[-0.04em] leading-[1.1]">
+          <h2 class="apple-text-sheen font-apple-display font-bold text-3xl sm:text-5xl tracking-[-0.04em] leading-[1.04] [font-optical-sizing:auto] [font-kerning:normal] text-balance">
             Segredo de negócio.
           </h2>
           <span class="block pl-6 md:pl-12 opacity-60 apple-vibrancy font-apple-display font-semibold text-xl sm:text-2xl tracking-[-0.03em] mt-3">
@@ -321,7 +321,7 @@ import Fresnel from "../components/ui/Fresnel";
         <div class="border-t border-slate-200/80 pt-12 space-y-12 lg:space-y-16">
           
           <!-- Pilar 1: Confidencialidade (Asset Esq / Texto Dir) -->
-          <div class="governanca-shelf apple-hardware-card p-6 sm:p-10 lg:p-14">
+          <div class="governanca-shelf apple-hardware-card rounded-[32px] border border-black/[0.06] p-6 sm:p-10 lg:p-14">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
               <!-- Asset Container (60%) -->
               <div class="lg:col-span-7 apple-glass-image-card relative overflow-hidden aspect-[16/10] bg-[#F9F9FB]/40 w-full">
@@ -334,9 +334,9 @@ import Fresnel from "../components/ui/Fresnel";
               </div>
               <!-- Text Container (40%) -->
               <div class="lg:col-span-5 flex flex-col justify-center">
-                <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase mb-3">01 / CONFIDENCIALIDADE</span>
-                <h3 class="font-apple-display font-bold text-2xl lg:text-3xl text-primary tracking-[-0.03em] leading-tight mb-4">Confidencialidade e Isolamento de Modelos</h3>
-                <p class="apple-proximity-text font-apple-text font-normal text-secondary text-sm lg:text-base leading-relaxed">
+                <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase mb-3 leading-[1.47] tracking-[-0.01em]">01 / CONFIDENCIALIDADE</span>
+                <h3 class="font-apple-display font-bold text-2xl lg:text-3xl text-primary tracking-[-0.04em] leading-[1.04] [font-optical-sizing:auto] [font-kerning:normal] text-balance mb-4">Confidencialidade e Isolamento de Modelos</h3>
+                <p class="apple-proximity-text font-apple-text font-normal text-secondary text-sm lg:text-base leading-[1.47] tracking-[-0.01em] text-pretty">
                   Processamento em nuvem fechada. Seus dados nunca treinam a inteligência artificial.
                 </p>
               </div>
@@ -344,13 +344,13 @@ import Fresnel from "../components/ui/Fresnel";
           </div>
 
           <!-- Pilar 2: Blindagem (Texto Esq / Asset Dir) -->
-          <div class="governanca-shelf apple-hardware-card p-6 sm:p-10 lg:p-14">
+          <div class="governanca-shelf apple-hardware-card rounded-[32px] border border-black/[0.06] p-6 sm:p-10 lg:p-14">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
               <!-- Text Container (40%) - Desktop Order 1 -->
               <div class="lg:col-span-5 lg:order-1 flex flex-col justify-center">
-                <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase mb-3">02 / BLINDAGEM</span>
-                <h3 class="font-apple-display font-bold text-2xl lg:text-3xl text-primary tracking-[-0.03em] leading-tight mb-4">Criptografia Bancária</h3>
-                <p class="apple-proximity-text font-apple-text font-normal text-secondary text-sm lg:text-base leading-relaxed">
+                <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase mb-3 leading-[1.47] tracking-[-0.01em]">02 / BLINDAGEM</span>
+                <h3 class="font-apple-display font-bold text-2xl lg:text-3xl text-primary tracking-[-0.04em] leading-[1.04] [font-optical-sizing:auto] [font-kerning:normal] text-balance mb-4">Criptografia Bancária</h3>
+                <p class="apple-proximity-text font-apple-text font-normal text-secondary text-sm lg:text-base leading-[1.47] tracking-[-0.01em] text-pretty">
                   Tráfego blindado por chaves de segurança dinâmicas ponta a ponta (AES-256).
                 </p>
               </div>
@@ -367,7 +367,7 @@ import Fresnel from "../components/ui/Fresnel";
           </div>
 
           <!-- Pilar 3: Ética (Asset Esq / Texto Dir) -->
-          <div class="governanca-shelf apple-hardware-card p-6 sm:p-10 lg:p-14">
+          <div class="governanca-shelf apple-hardware-card rounded-[32px] border border-black/[0.06] p-6 sm:p-10 lg:p-14">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
               <!-- Asset Container (60%) -->
               <div class="lg:col-span-7 apple-glass-image-card relative overflow-hidden aspect-[16/10] bg-[#F9F9FB]/40 w-full">
@@ -380,9 +380,9 @@ import Fresnel from "../components/ui/Fresnel";
               </div>
               <!-- Text Container (40%) -->
               <div class="lg:col-span-5 flex flex-col justify-center">
-                <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase mb-3">03 / ÉTICA E LEI</span>
-                <h3 class="font-apple-display font-bold text-2xl lg:text-3xl text-primary tracking-[-0.03em] leading-tight mb-4">Conformidade OAB</h3>
-                <p class="apple-proximity-text font-apple-text font-normal text-secondary text-sm lg:text-base leading-relaxed">
+                <span class="text-[10px] font-bold text-slate-400 font-apple-text tracking-wider uppercase mb-3 leading-[1.47] tracking-[-0.01em]">03 / ÉTICA E LEI</span>
+                <h3 class="font-apple-display font-bold text-2xl lg:text-3xl text-primary tracking-[-0.04em] leading-[1.04] [font-optical-sizing:auto] [font-kerning:normal] text-balance mb-4">Conformidade OAB</h3>
+                <p class="apple-proximity-text font-apple-text font-normal text-secondary text-sm lg:text-base leading-[1.47] tracking-[-0.01em] text-pretty">
                   Suporte estritamente instrumental de meio, preservando integralmente as prerrogativas profissionais.
                 </p>
               </div>
@@ -395,33 +395,33 @@ import Fresnel from "../components/ui/Fresnel";
     </section>
 
     <!-- Seção 4: Preço — Apple Store Product Page -->
-    <section id="precos" class="py-32 sm:py-44 bg-[#0f172a] relative overflow-hidden">
+    <section id="precos" class="py-32 sm:py-44 bg-[#f5f5f4] relative overflow-hidden transform-gpu will-change-transform [backface-visibility:hidden] [contain:layout_paint_style]">
       <!-- Atmospheric Mesh Lights (Studio Calibrated) -->
       <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        <div class="absolute w-[80%] aspect-square rounded-full bg-[#b8860b] blur-[200px] opacity-[0.08] top-0 left-1/4 -translate-x-1/2 transform-gpu will-change-transform pointer-events-none"></div>
-        <div class="absolute w-[80%] aspect-square rounded-full bg-[#0f172a] blur-[200px] opacity-[0.08] bottom-0 right-0 md:-bottom-[10%] md:-right-[10%] transform-gpu will-change-transform pointer-events-none"></div>
+        <div class="absolute w-[80%] md:w-[50%] aspect-square rounded-full bg-[#b8860b] blur-[200px] opacity-[0.08] top-0 left-1/4 -translate-x-1/2 transform-gpu will-change-transform pointer-events-none"></div>
+        <div class="absolute w-[80%] md:w-[50%] aspect-square rounded-full bg-[#0f172a] blur-[200px] opacity-[0.08] bottom-0 right-0 md:-bottom-[10%] md:-right-[10%] transform-gpu will-change-transform pointer-events-none"></div>
       </div>
 
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
         <!-- Section Header -->
-        <h2 class="apple-text-sheen font-apple-display font-bold text-4xl sm:text-6xl tracking-[-0.04em] leading-[1.05] mb-16 sm:mb-24">
+        <h2 class="apple-text-sheen font-apple-display font-bold text-4xl sm:text-6xl tracking-[-0.04em] leading-[1.04] [font-optical-sizing:auto] [font-kerning:normal] text-balance mb-16 sm:mb-24">
           Transparência absoluta. Sem fidelidade.
         </h2>
 
         <!-- Pricing Card — Apple Hardware Card floating on Dark -->
-        <div class="relative overflow-hidden p-10 sm:p-14 lg:p-16 max-w-2xl mx-auto text-left rounded-[32px] apple-hardware-card">
+        <div class="relative overflow-hidden p-10 sm:p-14 lg:p-16 max-w-2xl mx-auto text-left rounded-[32px] apple-hardware-card border border-black/[0.06]">
           <Fresnel client:load bezelType="convex_squircle" glassThickness={120} refractiveIndex={1.52} tintColor="#ffffff" tintOpacity={78} className="absolute inset-0 z-0 pointer-events-none" />
           <div class="relative z-10">
 
             <!-- Plan Name + Trial Badge -->
             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-10">
               <div>
-                <h3 class="font-apple-display font-bold text-xl sm:text-2xl text-[#1d1d1f] tracking-[-0.03em]">Assinatura Mensal Pro</h3>
+                <h3 class="font-apple-display font-bold text-xl sm:text-2xl text-[#1d1d1f] tracking-[-0.04em] leading-[1.04] [font-optical-sizing:auto] [font-kerning:normal] text-balance">Assinatura Mensal Pro</h3>
                 <div class="mt-2 inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100/80 text-slate-800 apple-vibrancy">
                   Acesso ilimitado às 3 engines cognitivas
                 </div>
               </div>
-              <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#b8860b]/10 text-[#b8860b] border border-[#b8860b]/20 shrink-0 self-start">
+              <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#b8860b]/10 text-[#b8860b] border border-[#b8860b]/20 shrink-0 self-start leading-[1.47] tracking-[-0.01em]">
                 7 Dias Grátis
               </span>
             </div>
@@ -429,7 +429,7 @@ import Fresnel from "../components/ui/Fresnel";
             <!-- Price — Monumental Scale -->
             <div class="flex items-baseline gap-2 mb-12">
               <span class="font-apple-display text-7xl sm:text-8xl font-extralight tracking-[-0.03em] text-[#1d1d1f] antialiased">R$ 297</span>
-              <span class="text-sm font-normal text-secondary font-apple-text">/mês</span>
+              <span class="text-sm font-normal text-secondary font-apple-text leading-[1.47] tracking-[-0.01em] text-pretty">/mês</span>
             </div>
 
             <!-- Engine Icons Row -->
@@ -440,7 +440,7 @@ import Fresnel from "../components/ui/Fresnel";
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                   </svg>
                 </div>
-                <span class="text-[11px] font-semibold text-slate-500 font-apple-text">Contratos</span>
+                <span class="text-[11px] font-semibold text-slate-500 font-apple-text leading-[1.47] tracking-[-0.01em]">Contratos</span>
               </div>
               <div class="apple-divider-v h-5 shrink-0"></div>
               <div class="flex items-center gap-2.5">
@@ -449,7 +449,7 @@ import Fresnel from "../components/ui/Fresnel";
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                   </svg>
                 </div>
-                <span class="text-[11px] font-semibold text-slate-500 font-apple-text">Petições</span>
+                <span class="text-[11px] font-semibold text-slate-500 font-apple-text leading-[1.47] tracking-[-0.01em]">Petições</span>
               </div>
               <div class="apple-divider-v h-5 shrink-0"></div>
               <div class="flex items-center gap-2.5">
@@ -458,29 +458,29 @@ import Fresnel from "../components/ui/Fresnel";
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span class="text-[11px] font-semibold text-slate-500 font-apple-text">Provas</span>
+                <span class="text-[11px] font-semibold text-slate-500 font-apple-text leading-[1.47] tracking-[-0.01em]">Provas</span>
               </div>
             </div>
             
             <!-- Benefits with Subpixel Dividers -->
             <div class="space-y-0 mb-10">
               <div class="apple-divider-h"></div>
-              <div class="py-4 text-[13px] font-normal text-slate-600 font-apple-text">
+              <div class="py-4 text-[13px] font-normal text-slate-600 font-apple-text leading-[1.47] tracking-[-0.01em] text-pretty">
                 Processamento seguro de arquivos PDF e DOCX
               </div>
               <div class="apple-divider-h"></div>
-              <div class="py-4 text-[13px] font-normal text-slate-600 font-apple-text">
+              <div class="py-4 text-[13px] font-normal text-slate-600 font-apple-text leading-[1.47] tracking-[-0.01em] text-pretty">
                 Exportação estruturada sob as diretrizes do CPC
               </div>
               <div class="apple-divider-h"></div>
-              <div class="py-4 text-[13px] font-normal text-slate-600 font-apple-text">
+              <div class="py-4 text-[13px] font-normal text-slate-600 font-apple-text leading-[1.47] tracking-[-0.01em] text-pretty">
                 Criptografia de dados ativa e segredo de negócio blindado
               </div>
               <div class="apple-divider-h"></div>
             </div>
 
             <!-- Primary CTA -->
-            <a href="/app/auth" data-magnetic-element class="cta-link apple-cta-button data-magnetic-element w-full bg-primary text-white font-semibold text-sm min-h-[52px] flex items-center justify-center rounded-full apple-pill hover:bg-slate-800 transition-all duration-200 shadow-sm font-apple-text relative z-10">
+            <a href="/app/auth" data-magnetic-element class="cta-link apple-cta-button data-magnetic-element w-full bg-primary text-white font-semibold text-sm min-h-[52px] flex items-center justify-center rounded-full apple-pill hover:bg-slate-800 transition-all duration-200 shadow-sm font-apple-text leading-[1.47] tracking-[-0.01em] relative z-10">
               Iniciar Validação de Infraestrutura
             </a>
           </div>
@@ -492,10 +492,10 @@ import Fresnel from "../components/ui/Fresnel";
             <svg class="w-4 h-4 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
             </svg>
-            <span class="text-[11px] text-slate-500 font-apple-text font-normal">Sem cartão de crédito. Ativação imediata.</span>
+            <span class="text-[11px] text-slate-500 font-apple-text font-normal leading-[1.47] tracking-[-0.01em] text-pretty">Sem cartão de crédito. Ativação imediata.</span>
           </div>
           <div class="hidden sm:block apple-divider-v h-4 shrink-0"></div>
-          <span class="text-[11px] text-slate-500 font-apple-text font-normal">Cancele a qualquer momento.</span>
+          <span class="text-[11px] text-slate-500 font-apple-text font-normal leading-[1.47] tracking-[-0.01em] text-pretty">Cancele a qualquer momento.</span>
         </div>
       </div>
     </section>
@@ -510,8 +510,8 @@ import Fresnel from "../components/ui/Fresnel";
             <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-accent rounded-full border border-white apple-online-pulse"></span>
           </div>
           <div>
-            <h4 class="font-apple-display font-bold text-xs text-primary leading-tight">Concierge JurisAI</h4>
-            <span class="text-[9px] text-accent font-semibold font-apple-text tracking-wide uppercase">Online agora</span>
+            <h4 class="font-apple-display font-bold text-xs text-primary leading-[1.04] [font-optical-sizing:auto] [font-kerning:normal] text-balance tracking-[-0.04em]">Concierge JurisAI</h4>
+            <span class="text-[9px] text-accent font-semibold font-apple-text tracking-wide uppercase leading-[1.47] tracking-[-0.01em]">Online agora</span>
           </div>
         </div>
         <button id="concierge-close" class="w-7 h-7 rounded-full flex items-center justify-center hover:bg-slate-200/50 transition-colors text-slate-400 hover:text-slate-800 cursor-pointer">
@@ -527,7 +527,7 @@ import Fresnel from "../components/ui/Fresnel";
         <div class="flex items-start gap-2.5">
           <div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200/40 text-[9px] font-bold text-slate-700 shrink-0">AI</div>
           <div class="bg-white border border-slate-200/40 rounded-2xl rounded-tl-none p-3.5 shadow-xs max-w-[85%]">
-            <p class="font-apple-text text-[11px] text-slate-800 leading-relaxed font-normal">
+            <p class="font-apple-text text-[11px] text-slate-800 leading-[1.47] tracking-[-0.01em] text-pretty font-normal">
               Olá. Sou o Concierge do JurisAI. Como posso otimizar a rotina de análise e redação jurídica do seu escritório hoje?
             </p>
           </div>
@@ -535,15 +535,15 @@ import Fresnel from "../components/ui/Fresnel";
 
         <!-- Suggestion Chip Area -->
         <div id="concierge-suggestions" class="space-y-2 pt-2">
-          <p class="text-[9px] font-bold text-slate-400 font-apple-text tracking-wider uppercase pl-8 mb-2">Sugestões de perguntas</p>
+          <p class="text-[9px] font-bold text-slate-400 font-apple-text tracking-wider uppercase pl-8 mb-2 leading-[1.47] tracking-[-0.01em]">Sugestões de perguntas</p>
           <div class="flex flex-col gap-1.5 pl-8">
-            <button class="suggestion-chip text-left text-[10px] font-apple-text font-semibold text-slate-600 hover:text-primary bg-white hover:bg-slate-100/80 border border-slate-200/60 rounded-xl px-3 py-2 transition-all shadow-2xs hover:shadow-xs active:scale-98 cursor-pointer">
+            <button class="suggestion-chip text-left text-[10px] font-apple-text font-semibold text-slate-600 hover:text-primary bg-white hover:bg-slate-100/80 border border-slate-200/60 rounded-xl px-3 py-2 transition-all shadow-2xs hover:shadow-xs active:scale-98 cursor-pointer leading-[1.47] tracking-[-0.01em]">
               Como funciona o teste de 7 dias?
             </button>
-            <button class="suggestion-chip text-left text-[10px] font-apple-text font-semibold text-slate-600 hover:text-primary bg-white hover:bg-slate-100/80 border border-slate-200/60 rounded-xl px-3 py-2 transition-all shadow-2xs hover:shadow-xs active:scale-98 cursor-pointer">
+            <button class="suggestion-chip text-left text-[10px] font-apple-text font-semibold text-slate-600 hover:text-primary bg-white hover:bg-slate-100/80 border border-slate-200/60 rounded-xl px-3 py-2 transition-all shadow-2xs hover:shadow-xs active:scale-98 cursor-pointer leading-[1.47] tracking-[-0.01em]">
               A IA atende às normas da OAB?
             </button>
-            <button class="suggestion-chip text-left text-[10px] font-apple-text font-semibold text-slate-600 hover:text-primary bg-white hover:bg-slate-100/80 border border-slate-200/60 rounded-xl px-3 py-2 transition-all shadow-2xs hover:shadow-xs active:scale-98 cursor-pointer">
+            <button class="suggestion-chip text-left text-[10px] font-apple-text font-semibold text-slate-600 hover:text-primary bg-white hover:bg-slate-100/80 border border-slate-200/60 rounded-xl px-3 py-2 transition-all shadow-2xs hover:shadow-xs active:scale-98 cursor-pointer leading-[1.47] tracking-[-0.01em]">
               Posso auditar contratos em lote?
             </button>
           </div>
@@ -556,7 +556,7 @@ import Fresnel from "../components/ui/Fresnel";
           type="text" 
           id="concierge-input" 
           placeholder="Escreva sua dúvida..." 
-          class="flex-1 bg-white border border-slate-200/60 rounded-full px-4 py-2 text-xs font-apple-text text-primary focus:outline-hidden focus:border-slate-400 transition-colors"
+          class="flex-1 bg-white border border-slate-200/60 rounded-full px-4 py-2 text-xs font-apple-text text-primary focus:outline-hidden focus:border-slate-400 transition-colors leading-[1.47] tracking-[-0.01em]"
         />
         <button 
           id="concierge-send" 
@@ -875,12 +875,12 @@ import Fresnel from "../components/ui/Fresnel";
         : `<div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200/40 text-[9px] font-bold text-slate-700 shrink-0">AI</div>`;
         
       const bgAndStyle = sender === "user"
-        ? "bg-primary text-white rounded-2xl rounded-tr-none p-3.5 shadow-xs max-w-[85%]"
+        ? "bg-primary text-white rounded-2xl rounded-tl-none p-3.5 shadow-xs max-w-[85%]"
         : "bg-white border border-slate-200/40 rounded-2xl rounded-tl-none p-3.5 shadow-xs max-w-[85%]";
 
       const textStyle = sender === "user"
-        ? "font-apple-text text-[11px] leading-relaxed font-normal"
-        : "font-apple-text text-[11px] text-slate-800 leading-relaxed font-normal";
+        ? "font-apple-text text-[11px] leading-[1.47] tracking-[-0.01em] font-normal"
+        : "font-apple-text text-[11px] text-slate-800 leading-[1.47] tracking-[-0.01em] font-normal";
 
       msgDiv.innerHTML = `
         ${iconOrNone}
