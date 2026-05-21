@@ -30,7 +30,8 @@
 }
 
 @theme {
-  --color-background: #F9F9FB;
+  --color-bg-base: #F9F9FB;
+  --color-background: var(--color-bg-base);
   --color-surface: #FFFFFF;
   --color-primary: #1D1D1F;
   --color-secondary: #86868B;
@@ -50,6 +51,19 @@ html, body {
   letter-spacing: -0.011em;
 }
 
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+p, li, span {
+  text-wrap: pretty;
+}
+
+::selection {
+  background-color: rgba(184, 134, 11, 0.16);
+  color: var(--color-primary);
+}
+
 a, button, [role="button"], input, select, textarea {
   -webkit-tap-highlight-color: transparent;
 }
@@ -66,7 +80,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 999;
   pointer-events: none;
   opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
@@ -134,6 +148,10 @@ h1, h2 {
   -webkit-backdrop-filter: blur(20px);
   border-radius: 32px;
   corner-shape: squircle;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .apple-hardware-card {
@@ -141,6 +159,10 @@ h1, h2 {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 32px;
   corner-shape: squircle;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .apple-glass-card:hover,
@@ -198,7 +220,7 @@ h1, h2 {
 
 .interactive-engine-card.active {
   border-color: var(--color-primary);
-  background: #FFFFFF;
+  background-color: var(--color-surface);
   box-shadow: 0 10px 30px rgba(29, 29, 31, 0.03);
 }
 
@@ -222,8 +244,6 @@ h1, h2 {
   clip-path: url(#apple-squircle-mask);
   -webkit-clip-path: url(#apple-squircle-mask);
   /* Critical fix to eliminate browser-native circular arcs and force the G2 mathematical mask to define the full curve. */
-  border-radius: 0 !important;
-  border: none !important;
   will-change: transform, filter;
   transform: translate3d(0, 0, 0);
   box-shadow:
@@ -234,6 +254,15 @@ h1, h2 {
           drop-shadow(0 24px 48px -8px rgba(29, 29, 31, 0.03))
           drop-shadow(0 50px 100px -20px rgba(29, 29, 31, 0.04));
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+html .apple-squircle-g2 {
+  border-radius: 0;
+  border: none;
 }
 
 .apple-squircle-g2:hover {
