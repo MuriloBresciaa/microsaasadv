@@ -96,6 +96,8 @@
 
 - [x] **Rollback Cirúrgico via Git Diff (Mask Geometry Fix):** Auditado o histórico de commits (`git log --oneline src/pages/index.astro`) e extraídos os diffs entre os commits `8fe1f76` → `6f90013` → `1ed4e3b`. Identificados 6 pontos de distorção onde a classe `.apple-squircle-g2` foi aplicada a contêineres retangulares assimétricos causando recorte oval e corte de conteúdo. Removida cirurgicamente a classe dos 3 cards de produto (`data-engine 1/2/3`), do vídeo do Hero e do card de preços. Restaurado `rounded-[32px]` + `border border-border shadow-xl` no vídeo hero, `rounded-[24px]` no mockup do Produto 01 e `apple-glass-card` no card de preços Fresnel. QA Validator aprovado e build de produção compilado sem erros. Commit `f34170e` pushed para `main`.
 
+- [x] **Hard Rollback Forçado via Git Checkout (Mobile Viewport Recovery):** Identificado o commit estável `f34170e` via `git log --oneline -n 10 src/pages/index.astro` como o estado anterior às intervenções de `text-wrap` e hierarquia de `span.block` que causaram colisão de layout no mobile. Executado `git checkout f34170e -- src/pages/index.astro` restaurando o Hero H1 ("A inteligência artificial que lê, analisa e redige seus documentos jurídicos.") e o Manifesto Tipográfico em texto corrido limpo, sem `[text-wrap:auto]` nem `span.block`. QA Validator aprovado, build compilado em 6.37s sem erros. Commit `86fda02` pushed para `main` disparando reverção do Netlify.
+
 ## Próximos Passos
 1. Conectar as telas internas de cada módulo (/app/analista-contratos, /app/copiloto-peticoes, /app/auditoria-provas) aos Drizzle schemas e fluxos correspondentes do banco.
 2. Implementar a persistência e gravação de logs de uso do período de testes em MySQL local.
