@@ -2,35 +2,28 @@
 
 @font-face {
   font-family: "SF Pro Display";
-  src: url("https://cdn.jsdelivr.net/gh/skorobogatko/apple-fonts@master/fonts/SFProDisplay-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("https://cdn.jsdelivr.net/gh/skorobogatko/apple-fonts@master/fonts/SFProDisplay-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("https://cdn.jsdelivr.net/gh/skorobogatko/apple-fonts@master/fonts/SFProDisplay-Bold.woff2") format("woff2");
+  src: url("/assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Text";
-  src: url("https://cdn.jsdelivr.net/gh/skorobogatko/apple-fonts@master/fonts/SFProText-Regular.woff2") format("woff2");
+  src: url("/assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Text-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Text";
-  src: url("https://cdn.jsdelivr.net/gh/skorobogatko/apple-fonts@master/fonts/SFProText-Semibold.woff2") format("woff2");
+  src: url("/assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Text-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("/assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Text-Semibold.otf") format("opentype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -44,8 +37,8 @@
   --color-accent: #10B981;
   --color-border: rgba(29, 29, 31, 0.06);
   
-  --font-apple-display: "SF Pro Display", sans-serif;
-  --font-apple-text: "SF Pro Text", sans-serif;
+  --font-apple-display: "SF Pro Display", -apple-system, sans-serif;
+  --font-apple-text: "SF Pro Text", -apple-system, sans-serif;
 }
 
 body {
@@ -195,6 +188,4 @@ body::before {
   animation: online-pulse 2s infinite;
 }
 
-
-
-
+/* interface */
