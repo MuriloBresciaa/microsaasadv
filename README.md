@@ -10,7 +10,7 @@
 
 Plataforma MicroSaaS projetada para escritórios de advocacia e profissionais do direito. O projeto combina uma interface moderna, componentes otimizados para alta conversão e estrutura pronta para integração com serviços backend e autenticação.
 
-- **Demonstração Online:** [Acessar Projeto na Netlify](https://seu-link.netlify.app)
+- **Demonstração Online:** [Acessar Projeto na Netlify] (https://juriiia.netlify.app/)
 - **Status:** Frontend v1.0 Concluído / Integração de Core e API em Desenvolvimento
 
 <hr />
